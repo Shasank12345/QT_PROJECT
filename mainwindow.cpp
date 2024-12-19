@@ -1,6 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include<Qstring>
+#include<QPixmap>
+#include<QPalette>
 #include "adminwindow.h"
 #include "teacherwindow.h"
 #include "studentwindow.h"
@@ -10,6 +12,8 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+
 
 
 
