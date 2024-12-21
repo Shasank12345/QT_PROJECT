@@ -10,6 +10,8 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    adminstudent_edit.cpp \
+    adminteacher_edit.cpp \
     adminwindow.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -17,12 +19,16 @@ SOURCES += \
     teacherwindow.cpp
 
 HEADERS += \
+    adminstudent_edit.h \
+    adminteacher_edit.h \
     adminwindow.h \
     mainwindow.h \
     studentwindow.h \
     teacherwindow.h
 
 FORMS += \
+    adminstudent_edit.ui \
+    adminteacher_edit.ui \
     adminwindow.ui \
     mainwindow.ui \
     studentwindow.ui \
