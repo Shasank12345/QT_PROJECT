@@ -18,7 +18,7 @@ MainWindow::MainWindow(QWidget *parent)
 
 
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-    db.setDatabaseName("C:/Users/User/OneDrive/Desktop/proj/untitled/untitled/DATABASE/FACULTY.db");
+    db.setDatabaseName("C:/Users/User/OneDrive/Desktop/proj/untitled/DATABASE/FACULTY.db");
     if (!db.open()) {
         QMessageBox::critical(this, "Database Error", "Failed to connect to database: " + db.lastError().text());
     }
