@@ -13,19 +13,6 @@
   <property name="windowTitle">
    <string>ADMIN_STUDENT_EDIT_WINDOW</string>
   </property>
-  <widget class="QLineEdit" name="lineEdit">
-   <property name="geometry">
-    <rect>
-     <x>80</x>
-     <y>10</y>
-     <width>431</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>WELCOME TO STUDENT EDIT SECTION</string>
-   </property>
-  </widget>
  </widget>
  <resources/>
  <connections/>
