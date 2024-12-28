@@ -21,7 +21,7 @@ private slots:
 
     void on_teacherpart_clicked();
 
-    void on_adminpart_clicked();
+    //void on_adminpart_clicked();
 
     void on_studentEdit_clicked();
 

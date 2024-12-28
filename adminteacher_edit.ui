@@ -41,7 +41,7 @@
     <string notr="true">QLabel{font-size: 20pt;}</string>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="page1">
     <widget class="QWidget" name="layoutWidget">
