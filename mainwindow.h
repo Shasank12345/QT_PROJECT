@@ -37,7 +37,11 @@ private slots:
     void on_radioButton_2_toggled(bool checked);
 
     void on_radioButton_3_toggled(bool checked);
+<<<<<<< HEAD
+    void on_radioButton_clicked();
+=======
     void on_radioButton_4_clicked(bool checked);
+>>>>>>> 4481b371cd5e7552da5308ae0ead6c1adfbe7f54
 
 private:
 

@@ -16,6 +16,7 @@ SOURCES += \
     crwindow.cpp \
     main.cpp \
     mainwindow.cpp \
+    routinewindow.cpp \
     studentwindow.cpp \
     teacherwindow.cpp
 
@@ -25,6 +26,7 @@ HEADERS += \
     adminwindow.h \
     crwindow.h \
     mainwindow.h \
+    routinewindow.h \
     studentwindow.h \
     teacherwindow.h
 
@@ -34,6 +36,7 @@ FORMS += \
     adminwindow.ui \
     crwindow.ui \
     mainwindow.ui \
+    routinewindow.ui \
     studentwindow.ui \
     teacherwindow.ui
 

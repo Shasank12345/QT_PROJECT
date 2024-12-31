@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include"adminstudent_edit.h"
 #include"adminteacher_edit.h"
+#include"routinewindow.h"
 namespace Ui {
 class AdminWindow;
 }
@@ -18,17 +19,14 @@ public:
 
 private slots:
 
+    void on_OK1_clicked();
 
-    void on_teacherpart_clicked();
-
-    //void on_adminpart_clicked();
-
-    void on_studentEdit_clicked();
 
 private:
     Ui::AdminWindow *ui;
     AdminTeacher_Edit *adminTeacher_edit;
     AdminStudent_Edit *adminStudent_edit;
+    RoutineWindow *routinewindow;
 };
 
 #endif // ADMINWINDOW_H
