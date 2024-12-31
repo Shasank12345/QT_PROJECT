@@ -41,7 +41,7 @@ private slots:
 
     void on_addback_clicked();
 
-     void on_editback_clicked();
+    void on_editback_clicked();
 
     void on_deletback_clicked();
 

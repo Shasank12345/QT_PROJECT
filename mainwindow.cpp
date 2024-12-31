@@ -6,7 +6,12 @@
 #include "adminwindow.h"
 #include "teacherwindow.h"
 #include "studentwindow.h"
+<<<<<<< HEAD
 #include<qmessagebox.h>
+=======
+#include "crwindow.h"
+
+>>>>>>> 4481b371cd5e7552da5308ae0ead6c1adfbe7f54
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -22,6 +27,44 @@ MainWindow::MainWindow(QWidget *parent)
     if (!db.open()) {
         QMessageBox::critical(this, "Database Error", "Failed to connect to database: " + db.lastError().text());
     }
+    ui->lineEdit_1->setStyleSheet(
+        "QLineEdit {"
+        "   color: black;"
+        "   background-color:black;"
+        "   border: 2px solid black;"
+        "   border-radius: 10px;"
+        "   font-size:12px;"
+        "   padding: 4px;"
+        "}"
+        "QLineEdit:hover {"
+        "   border: 2px solid black;"  // Green border on hover
+        "}"
+        "QLineEdit:focus {"
+        "   background-color: brown;"  // Light green background on focus
+        "   border: 2px solid brown;"  // Green border on focus
+        "}"
+        );
+
+ui->lineEdit_2->setStyleSheet(
+    "QLineEdit {"
+    "   color: black;"
+    "   background-color:black;"
+    "   border: 2px solid black;"
+    "   border-radius: 10px;"
+    "   font-size:12px;"
+    "   padding: 4px;"
+    "}"
+    "QLineEdit:hover {"
+    "   border: 2px solid black;"  // Green border on hover
+    "}"
+    "QLineEdit:focus {"
+    "   background-color:brown;"  // Light green background on focus
+    "   border: 2px solid brown;"  // Green border on focus
+    "}"
+    );
+
+
+
 
 
 }
@@ -160,6 +203,8 @@ QString MainWindow::getSelectedRole()
         return "TEACHER";
     if (ui->radioButton_3->isChecked())
         return "STUDENT";
+    if (ui->radioButton_4->isChecked())
+        return "CR";
     else
     return "";
 }
@@ -186,6 +231,12 @@ void MainWindow::openRoleWindow(const QString &role)
 
 
     }
+    else if(role=="CR"){
+        CRWindow *crwindow =new CRWindow();
+        crwindow->show();
+    }
+
+
 
 
     else
@@ -193,3 +244,28 @@ void MainWindow::openRoleWindow(const QString &role)
     }
 
 
+<<<<<<< HEAD
+=======
+
+
+
+
+
+    void MainWindow::on_radioButton_4_clicked(bool checked)
+    {
+
+        if(checked){
+
+        ui->lineEdit_1->setPlaceholderText("example@CR.ku.edu.np");
+        ui->lineEdit_2->setPlaceholderText("Enter your password...");
+        ui->label_4->setText("SELECTED ROLE: \"CR\"");
+        ui->label_4->setFont(QFont("BOLD",12));
+        ui->label_4->setStyleSheet("color: darkgreen;");
+        ui->label_5->setStyleSheet("color: green;");
+        ui->label_5->setText("STATUS:");
+        ui->label_5->setFont(QFont("BOLD",14));
+        }
+
+    }
+
+>>>>>>> 4481b371cd5e7552da5308ae0ead6c1adfbe7f54

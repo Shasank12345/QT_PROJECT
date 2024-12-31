@@ -13,6 +13,7 @@ SOURCES += \
     adminstudent_edit.cpp \
     adminteacher_edit.cpp \
     adminwindow.cpp \
+    crwindow.cpp \
     main.cpp \
     mainwindow.cpp \
     routinewindow.cpp \
@@ -23,6 +24,7 @@ HEADERS += \
     adminstudent_edit.h \
     adminteacher_edit.h \
     adminwindow.h \
+    crwindow.h \
     mainwindow.h \
     routinewindow.h \
     studentwindow.h \
@@ -32,6 +34,7 @@ FORMS += \
     adminstudent_edit.ui \
     adminteacher_edit.ui \
     adminwindow.ui \
+    crwindow.ui \
     mainwindow.ui \
     routinewindow.ui \
     studentwindow.ui \
@@ -42,4 +45,5 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-RESOURCES +=
+RESOURCES += \
+    resource.qrc
