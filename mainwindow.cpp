@@ -23,6 +23,44 @@ MainWindow::MainWindow(QWidget *parent)
     if (!db.open()) {
         QMessageBox::critical(this, "Database Error", "Failed to connect to database: " + db.lastError().text());
     }
+    ui->lineEdit_1->setStyleSheet(
+        "QLineEdit {"
+        "   color: black;"
+        "   background-color:black;"
+        "   border: 2px solid black;"
+        "   border-radius: 10px;"
+        "   font-size:12px;"
+        "   padding: 4px;"
+        "}"
+        "QLineEdit:hover {"
+        "   border: 2px solid black;"  // Green border on hover
+        "}"
+        "QLineEdit:focus {"
+        "   background-color: brown;"  // Light green background on focus
+        "   border: 2px solid brown;"  // Green border on focus
+        "}"
+        );
+
+ui->lineEdit_2->setStyleSheet(
+    "QLineEdit {"
+    "   color: black;"
+    "   background-color:black;"
+    "   border: 2px solid black;"
+    "   border-radius: 10px;"
+    "   font-size:12px;"
+    "   padding: 4px;"
+    "}"
+    "QLineEdit:hover {"
+    "   border: 2px solid black;"  // Green border on hover
+    "}"
+    "QLineEdit:focus {"
+    "   background-color:brown;"  // Light green background on focus
+    "   border: 2px solid brown;"  // Green border on focus
+    "}"
+    );
+
+
+
 
 
 }
