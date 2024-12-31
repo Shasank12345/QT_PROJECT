@@ -6,6 +6,7 @@
 #include "adminwindow.h"
 #include "teacherwindow.h"
 #include "studentwindow.h"
+#include "crwindow.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -160,6 +161,8 @@ QString MainWindow::getSelectedRole()
         return "TEACHER";
     if (ui->radioButton_3->isChecked())
         return "STUDENT";
+    if (ui->radioButton_4->isChecked())
+        return "CR";
     else
     return "";
 }
@@ -186,6 +189,12 @@ void MainWindow::openRoleWindow(const QString &role)
 
 
     }
+    else if(role=="CR"){
+        CRWindow *crwindow =new CRWindow();
+        crwindow->show();
+    }
+
+
 
 
     else
@@ -196,4 +205,22 @@ void MainWindow::openRoleWindow(const QString &role)
 
 
 
+
+
+    void MainWindow::on_radioButton_4_clicked(bool checked)
+    {
+
+        if(checked){
+
+        ui->lineEdit_1->setPlaceholderText("example@CR.ku.edu.np");
+        ui->lineEdit_2->setPlaceholderText("Enter your password...");
+        ui->label_4->setText("SELECTED ROLE: \"CR\"");
+        ui->label_4->setFont(QFont("BOLD",12));
+        ui->label_4->setStyleSheet("color: darkgreen;");
+        ui->label_5->setStyleSheet("color: green;");
+        ui->label_5->setText("STATUS:");
+        ui->label_5->setFont(QFont("BOLD",14));
+        }
+
+    }
 

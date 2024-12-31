@@ -18,6 +18,7 @@ QT_END_NAMESPACE
 class adminwindow;
 class teacherwindow;
 class studentwindow;
+class crwindow;
 
 class MainWindow : public QMainWindow
 {
@@ -36,6 +37,8 @@ private slots:
     void on_radioButton_2_toggled(bool checked);
 
     void on_radioButton_3_toggled(bool checked);
+    void on_radioButton_4_clicked(bool checked);
+
 private:
 
     QString getSelectedRole();

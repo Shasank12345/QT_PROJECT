@@ -13,6 +13,7 @@ SOURCES += \
     adminstudent_edit.cpp \
     adminteacher_edit.cpp \
     adminwindow.cpp \
+    crwindow.cpp \
     main.cpp \
     mainwindow.cpp \
     studentwindow.cpp \
@@ -22,6 +23,7 @@ HEADERS += \
     adminstudent_edit.h \
     adminteacher_edit.h \
     adminwindow.h \
+    crwindow.h \
     mainwindow.h \
     studentwindow.h \
     teacherwindow.h
@@ -30,6 +32,7 @@ FORMS += \
     adminstudent_edit.ui \
     adminteacher_edit.ui \
     adminwindow.ui \
+    crwindow.ui \
     mainwindow.ui \
     studentwindow.ui \
     teacherwindow.ui
