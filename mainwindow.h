@@ -36,6 +36,8 @@ private slots:
     void on_radioButton_2_toggled(bool checked);
 
     void on_radioButton_3_toggled(bool checked);
+    void on_radioButton_clicked();
+
 private:
 
     QString getSelectedRole();

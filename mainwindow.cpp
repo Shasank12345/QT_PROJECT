@@ -6,7 +6,7 @@
 #include "adminwindow.h"
 #include "teacherwindow.h"
 #include "studentwindow.h"
-
+#include<qmessagebox.h>
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -18,7 +18,7 @@ MainWindow::MainWindow(QWidget *parent)
 
 
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-    db.setDatabaseName("C:/Users/User/OneDrive/Desktop/proj/untitled/DATABASE/FACULTY.db");
+    db.setDatabaseName("../../DATABASE/FACULTY.db");
     if (!db.open()) {
         QMessageBox::critical(this, "Database Error", "Failed to connect to database: " + db.lastError().text());
     }
@@ -191,9 +191,5 @@ void MainWindow::openRoleWindow(const QString &role)
     else
         this->close(); // Close login window
     }
-
-
-
-
 
 

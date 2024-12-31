@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>210</x>
@@ -36,19 +36,6 @@ background-color : blue; color : white; }</string>
       </widget>
      </item>
      <item>
-      <spacer name="verticalSpacer">
-       <property name="orientation">
-        <enum>Qt::Orientation::Vertical</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>20</width>
-         <height>40</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
       <widget class="QLabel" name="label_2">
        <property name="styleSheet">
         <string notr="true">QLabel{font-size: 18pt;
@@ -61,54 +48,47 @@ background-color : White; color : Darkblue; }</string>
      </item>
     </layout>
    </widget>
+   <widget class="QPushButton" name="OK1">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>330</y>
+      <width>93</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>OK</string>
+    </property>
+   </widget>
    <widget class="QWidget" name="">
     <property name="geometry">
      <rect>
-      <x>400</x>
-      <y>200</y>
-      <width>221</width>
-      <height>101</height>
+      <x>390</x>
+      <y>180</y>
+      <width>241</width>
+      <height>141</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_2">
      <item>
-      <widget class="QPushButton" name="studentEdit">
-       <property name="maximumSize">
-        <size>
-         <width>200</width>
-         <height>16777215</height>
-        </size>
-       </property>
-       <property name="layoutDirection">
-        <enum>Qt::LayoutDirection::LeftToRight</enum>
-       </property>
-       <property name="autoFillBackground">
-        <bool>true</bool>
-       </property>
+      <widget class="QRadioButton" name="radioButton4">
        <property name="text">
-        <string>STUDENT SECTION</string>
-       </property>
-       <property name="autoExclusive">
-        <bool>true</bool>
+        <string>MANAGE TEACHER</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="teacherpart">
-       <property name="maximumSize">
-        <size>
-         <width>200</width>
-         <height>16777215</height>
-        </size>
-       </property>
-       <property name="layoutDirection">
-        <enum>Qt::LayoutDirection::LeftToRight</enum>
-       </property>
+      <widget class="QRadioButton" name="radioButton5">
        <property name="text">
-        <string>TEACHER SECTION</string>
+        <string>MANAGE STUDENT</string>
        </property>
-       <property name="default">
-        <bool>false</bool>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="radioButton6">
+       <property name="text">
+        <string>MANAGE ROUTINE</string>
        </property>
       </widget>
      </item>
