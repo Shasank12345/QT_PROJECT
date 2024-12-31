@@ -92,6 +92,29 @@
        </property>
       </spacer>
      </item>
+     <item row="10" column="1">
+      <widget class="QLabel" name="label">
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+color: black;
+ 
+
+       font-size: 50 px;  
+       padding: 0px; 
+       font-weight: bold;  
+     text-align: center; 
+   
+}
+</string>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:24pt;&quot;&gt;LOGIN PAGE&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="textFormat">
+        <enum>Qt::TextFormat::RichText</enum>
+       </property>
+      </widget>
+     </item>
      <item row="24" column="0">
       <widget class="QLabel" name="label_2">
        <property name="styleSheet">
@@ -353,29 +376,6 @@ color: rgb(0, 0, 0);</string>
        </property>
        <property name="text">
         <string>LOGIN</string>
-       </property>
-      </widget>
-     </item>
-     <item row="10" column="1">
-      <widget class="QLabel" name="label">
-       <property name="styleSheet">
-        <string notr="true">QLabel{
-color: black;
- 
-
-       font-size: 50 px;  
-       padding: 0px; 
-       font-weight: bold;  
-     text-align: center; 
-   
-}
-</string>
-       </property>
-       <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:24pt;&quot;&gt;LOGIN PAGE&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-       </property>
-       <property name="textFormat">
-        <enum>Qt::TextFormat::RichText</enum>
        </property>
       </widget>
      </item>
