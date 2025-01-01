@@ -6,17 +6,17 @@
 #include "adminwindow.h"
 #include "teacherwindow.h"
 #include "studentwindow.h"
-<<<<<<< HEAD
+//<<<<<<< HEAD
 //<<<<<<< HEAD
 #include<qmessagebox.h>
 //=======
 #include "crwindow.h"
 
 //>>>>>>> 4481b371cd5e7552da5308ae0ead6c1adfbe7f54
-=======
+//=======
 #include<qmessagebox.h>
 #include "crwindow.h"
->>>>>>> 75fa5a418d762f7f0180e1dcbb65ff3d8b8c84b7
+//>>>>>>> 75fa5a418d762f7f0180e1dcbb65ff3d8b8c84b7
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -246,11 +246,11 @@ void MainWindow::openRoleWindow(const QString &role)
     else
         this->close(); // Close login window
     }
-<<<<<<< HEAD
+//<<<<<<< HEAD
 
 
-=======
->>>>>>> 75fa5a418d762f7f0180e1dcbb65ff3d8b8c84b7
+//=======
+//>>>>>>> 75fa5a418d762f7f0180e1dcbb65ff3d8b8c84b7
     void MainWindow::on_radioButton_4_clicked(bool checked)
     {
 
@@ -267,7 +267,4 @@ void MainWindow::openRoleWindow(const QString &role)
         }
 
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 75fa5a418d762f7f0180e1dcbb65ff3d8b8c84b7
