@@ -13,34 +13,19 @@
   <property name="maximumSize">
    <size>
     <width>800</width>
-    <height>600</height>
+    <height>700</height>
    </size>
   </property>
-  <property name="font">
-   <font>
-    <pointsize>20</pointsize>
-   </font>
-  </property>
   <property name="windowTitle">
-   <string>ADMIN_TEACHER_EDITWINDOW</string>
-  </property>
-  <property name="styleSheet">
-   <string notr="true">QLabel{font-size: 18pt;}</string>
+   <string>Dialog</string>
   </property>
   <widget class="QStackedWidget" name="stackedWidget">
    <property name="geometry">
     <rect>
-<<<<<<< HEAD
-     <x>40</x>
-     <y>80</y>
+     <x>50</x>
+     <y>40</y>
      <width>680</width>
      <height>400</height>
-=======
-     <x>30</x>
-     <y>10</y>
-     <width>761</width>
-     <height>551</height>
->>>>>>> 4481b371cd5e7552da5308ae0ead6c1adfbe7f54
     </rect>
    </property>
    <property name="maximumSize">
@@ -53,11 +38,7 @@
     <string notr="true">QLabel{font-size: 20pt;}</string>
    </property>
    <property name="currentIndex">
-<<<<<<< HEAD
-    <number>7</number>
-=======
     <number>0</number>
->>>>>>> 4481b371cd5e7552da5308ae0ead6c1adfbe7f54
    </property>
    <widget class="QWidget" name="page0">
     <widget class="QLabel" name="label_20">
@@ -76,8 +57,8 @@
     <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
-       <x>140</x>
-       <y>20</y>
+       <x>190</x>
+       <y>50</y>
        <width>406</width>
        <height>97</height>
       </rect>
@@ -109,13 +90,12 @@ color:red;
       </item>
      </layout>
     </widget>
-    <widget class="QWidget" name="layoutWidget">
+    <widget class="QWidget" name="layoutWidget_2">
      <property name="geometry">
       <rect>
-<<<<<<< HEAD
-       <x>130</x>
-       <y>120</y>
-       <width>425</width>
+       <x>240</x>
+       <y>150</y>
+       <width>311</width>
        <height>221</height>
       </rect>
      </property>
@@ -156,15 +136,9 @@ color:red;
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="View">
-          <property name="maximumSize">
-           <size>
-            <width>1000</width>
-            <height>16777215</height>
-           </size>
-          </property>
+         <widget class="QPushButton" name="view1">
           <property name="text">
-           <string>VIEW</string>
+           <string>View</string>
           </property>
          </widget>
         </item>
@@ -174,30 +148,10 @@ color:red;
        <layout class="QHBoxLayout" name="horizontalLayout_7">
         <property name="spacing">
          <number>70</number>
-=======
-       <x>230</x>
-       <y>230</y>
-       <width>241</width>
-       <height>201</height>
-      </rect>
-     </property>
-     <layout class="QFormLayout" name="formLayout">
-      <item row="8" column="0">
-       <layout class="QVBoxLayout" name="verticalLayout_2"/>
-      </item>
-      <item row="1" column="1">
-       <widget class="QPushButton" name="Add_data">
-        <property name="maximumSize">
-         <size>
-          <width>100</width>
-          <height>16777215</height>
-         </size>
->>>>>>> 4481b371cd5e7552da5308ae0ead6c1adfbe7f54
         </property>
         <property name="leftMargin">
          <number>0</number>
         </property>
-<<<<<<< HEAD
         <item>
          <widget class="QPushButton" name="home0">
           <property name="maximumSize">
@@ -225,48 +179,6 @@ color:red;
          </widget>
         </item>
        </layout>
-=======
-       </widget>
-      </item>
-      <item row="2" column="1">
-       <widget class="QPushButton" name="Edit">
-        <property name="maximumSize">
-         <size>
-          <width>100</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>Edit</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="1">
-       <widget class="QPushButton" name="Delet">
-        <property name="maximumSize">
-         <size>
-          <width>100</width>
-          <height>100</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>Delete</string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="1">
-       <widget class="QPushButton" name="View">
-        <property name="maximumSize">
-         <size>
-          <width>100</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>View</string>
-        </property>
-       </widget>
->>>>>>> 4481b371cd5e7552da5308ae0ead6c1adfbe7f54
       </item>
      </layout>
     </widget>
@@ -439,14 +351,20 @@ color:red;
         </widget>
        </item>
        <item row="4" column="0">
-        <widget class="QLabel" name="label_37">
+        <widget class="QLabel" name="label_32">
          <property name="text">
-          <string>Enter Subject:</string>
+          <string>Chose Subject</string>
          </property>
         </widget>
        </item>
        <item row="4" column="1">
-        <widget class="QComboBox" name="comboBox">
+        <widget class="QComboBox" name="comboBox_2">
+         <property name="maximumSize">
+          <size>
+           <width>400</width>
+           <height>16777215</height>
+          </size>
+         </property>
          <property name="font">
           <font>
            <pointsize>20</pointsize>
@@ -559,24 +477,82 @@ color:red;
     </layout>
    </widget>
    <widget class="QWidget" name="page_2">
+    <widget class="QLabel" name="label_6">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>70</y>
+       <width>471</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Whose Data You Want To Edit</string>
+     </property>
+    </widget>
     <widget class="QLabel" name="label_8">
      <property name="geometry">
       <rect>
        <x>160</x>
-       <y>70</y>
+       <y>20</y>
        <width>421</width>
        <height>31</height>
       </rect>
      </property>
      <property name="text">
-      <string>Please Select </string>
+      <string>Please Select Teacher ID</string>
      </property>
     </widget>
-    <widget class="QWidget" name="layoutWidget">
+    <widget class="QComboBox" name="comboBox2">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>120</y>
+       <width>241</width>
+       <height>41</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="comboBox3">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>170</y>
+       <width>241</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>Not_Selected</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Name</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Email</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Phone_Number</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Subject</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QWidget" name="layoutWidget_3">
      <property name="geometry">
       <rect>
        <x>180</x>
-       <y>240</y>
+       <y>220</y>
        <width>311</width>
        <height>71</height>
       </rect>
@@ -620,86 +596,6 @@ color:red;
       </item>
      </layout>
     </widget>
-    <widget class="QWidget" name="formLayoutWidget">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>120</y>
-       <width>621</width>
-       <height>109</height>
-      </rect>
-     </property>
-     <layout class="QFormLayout" name="formLayout">
-      <item row="0" column="1">
-       <widget class="QComboBox" name="comboBox2">
-        <property name="font">
-         <font>
-          <pointsize>20</pointsize>
-         </font>
-        </property>
-       </widget>
-      </item>
-<<<<<<< HEAD
-      <item row="0" column="0">
-       <widget class="QLabel" name="label_32">
-        <property name="font">
-         <font>
-          <pointsize>20</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>Teacher ID:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0">
-       <widget class="QLabel" name="label_33">
-        <property name="font">
-         <font>
-          <pointsize>20</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>What You Want To Edit </string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="1">
-       <widget class="QComboBox" name="comboBox3">
-        <property name="font">
-         <font>
-          <pointsize>20</pointsize>
-         </font>
-        </property>
-        <item>
-         <property name="text">
-          <string>Not_Selected</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Name</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Email</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Phone_Number</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Subject</string>
-         </property>
-        </item>
-       </widget>
-      </item>
-     </layout>
-    </widget>
    </widget>
    <widget class="QWidget" name="page2">
     <widget class="QLabel" name="label_3">
@@ -715,157 +611,149 @@ color:red;
       <string>                             Enter The Detail</string>
      </property>
     </widget>
-    <widget class="QWidget" name="layoutWidget">
+    <widget class="QWidget" name="layoutWidget_4">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>140</y>
-       <width>661</width>
-       <height>149</height>
+       <x>20</x>
+       <y>70</y>
+       <width>631</width>
+       <height>171</height>
       </rect>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_8">
+     <layout class="QFormLayout" name="formLayout_7">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_24">
+        <property name="text">
+         <string>Enter Name:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="lineEdit_17">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="baseSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>20</pointsize>
+         </font>
+        </property>
+        <property name="placeholderText">
+         <string>name to be update</string>
+        </property>
+        <property name="clearButtonEnabled">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_34">
+        <property name="text">
+         <string>Enter Teacher ID:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="lineEdit_36">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="baseSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>20</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="placeholderText">
+         <string>6311</string>
+        </property>
+        <property name="clearButtonEnabled">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="horizontalLayoutWidget_2">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>250</y>
+       <width>681</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <property name="spacing">
+       <number>200</number>
+      </property>
       <item>
-       <layout class="QFormLayout" name="formLayout_7">
-        <item row="0" column="0">
-         <widget class="QLabel" name="label_24">
-          <property name="text">
-           <string>Enter Name:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="1">
-         <widget class="QLineEdit" name="lineEdit_17">
-          <property name="enabled">
-           <bool>true</bool>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>400</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="sizeIncrement">
-           <size>
-            <width>0</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="baseSize">
-           <size>
-            <width>0</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>20</pointsize>
-           </font>
-          </property>
-          <property name="placeholderText">
-           <string>name to be update</string>
-          </property>
-          <property name="clearButtonEnabled">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="1">
-         <widget class="QLineEdit" name="lineEdit_36">
-          <property name="enabled">
-           <bool>true</bool>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>400</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="sizeIncrement">
-           <size>
-            <width>0</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="baseSize">
-           <size>
-            <width>0</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>20</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-          <property name="placeholderText">
-           <string>6311</string>
-          </property>
-          <property name="clearButtonEnabled">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="0">
-         <widget class="QLabel" name="label_34">
-          <property name="text">
-           <string>Enter Teacher ID:</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
+       <widget class="QPushButton" name="editback">
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{ align:center;}</string>
+        </property>
+        <property name="text">
+         <string>BACK</string>
+        </property>
+       </widget>
       </item>
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_2">
-        <property name="spacing">
-         <number>100</number>
+       <widget class="QPushButton" name="name_edit">
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>16777215</height>
+         </size>
         </property>
-        <item>
-         <widget class="QPushButton" name="editback">
-          <property name="maximumSize">
-           <size>
-            <width>100</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QPushButton{ align:center;}</string>
-          </property>
-          <property name="text">
-           <string>BACK</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="edit">
-          <property name="maximumSize">
-           <size>
-            <width>100</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="text">
-           <string>EDIT</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="home2">
-          <property name="maximumSize">
-           <size>
-            <width>100</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="text">
-           <string>HOME</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
+        <property name="text">
+         <string>EDIT</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="home2">
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>HOME</string>
+        </property>
+       </widget>
       </item>
      </layout>
     </widget>
@@ -884,145 +772,149 @@ color:red;
       <string>                        Enter The Detail</string>
      </property>
     </widget>
-    <widget class="QWidget" name="layoutWidget">
+    <widget class="QWidget" name="layoutWidget_5">
      <property name="geometry">
       <rect>
-       <x>0</x>
-       <y>110</y>
-       <width>683</width>
-       <height>161</height>
+       <x>10</x>
+       <y>100</y>
+       <width>631</width>
+       <height>171</height>
       </rect>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_9">
+     <layout class="QFormLayout" name="formLayout_8">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_25">
+        <property name="text">
+         <string>Enter Email:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="lineEdit_18">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="baseSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>20</pointsize>
+         </font>
+        </property>
+        <property name="placeholderText">
+         <string>Email to be update</string>
+        </property>
+        <property name="clearButtonEnabled">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_35">
+        <property name="text">
+         <string>Enter Teacher ID:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="lineEdit_37">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="baseSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>20</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="placeholderText">
+         <string>6311</string>
+        </property>
+        <property name="clearButtonEnabled">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="horizontalLayoutWidget_3">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>290</y>
+       <width>681</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_9">
+      <property name="spacing">
+       <number>200</number>
+      </property>
       <item>
-       <layout class="QFormLayout" name="formLayout_8">
-        <item row="0" column="0">
-         <widget class="QLabel" name="label_25">
-          <property name="text">
-           <string>Enter Email:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="1">
-         <widget class="QLineEdit" name="lineEdit_18">
-          <property name="enabled">
-           <bool>true</bool>
-          </property>
-          <property name="sizeIncrement">
-           <size>
-            <width>0</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="baseSize">
-           <size>
-            <width>0</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>20</pointsize>
-           </font>
-          </property>
-          <property name="placeholderText">
-           <string>Email to be update</string>
-          </property>
-          <property name="clearButtonEnabled">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="0">
-         <widget class="QLabel" name="label_35">
-          <property name="text">
-           <string>Enter Teacher ID:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="1">
-         <widget class="QLineEdit" name="lineEdit_37">
-          <property name="enabled">
-           <bool>true</bool>
-          </property>
-          <property name="sizeIncrement">
-           <size>
-            <width>0</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="baseSize">
-           <size>
-            <width>0</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>20</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-          <property name="placeholderText">
-           <string>6311</string>
-          </property>
-          <property name="clearButtonEnabled">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-       </layout>
+       <widget class="QPushButton" name="editback_2">
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{ align:center;}</string>
+        </property>
+        <property name="text">
+         <string>BACK</string>
+        </property>
+       </widget>
       </item>
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_9">
-        <property name="spacing">
-         <number>200</number>
+       <widget class="QPushButton" name="email_edit">
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>16777215</height>
+         </size>
         </property>
-        <item>
-         <widget class="QPushButton" name="editback_2">
-          <property name="maximumSize">
-           <size>
-            <width>100</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QPushButton{ align:center;}</string>
-          </property>
-          <property name="text">
-           <string>BACK</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="edit_2">
-          <property name="maximumSize">
-           <size>
-            <width>100</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="text">
-           <string>EDIT</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="home2_2">
-          <property name="maximumSize">
-           <size>
-            <width>100</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="text">
-           <string>HOME</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
+        <property name="text">
+         <string>EDIT</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="home2_2">
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>HOME</string>
+        </property>
+       </widget>
       </item>
      </layout>
     </widget>
@@ -1031,7 +923,7 @@ color:red;
     <widget class="QLabel" name="label_10">
      <property name="geometry">
       <rect>
-       <x>-50</x>
+       <x>0</x>
        <y>50</y>
        <width>521</width>
        <height>31</height>
@@ -1041,279 +933,183 @@ color:red;
       <string>                             Enter The Detail</string>
      </property>
     </widget>
-    <widget class="QWidget" name="layoutWidget">
+    <widget class="QWidget" name="layoutWidget_6">
      <property name="geometry">
       <rect>
-       <x>0</x>
-       <y>110</y>
-       <width>683</width>
-       <height>149</height>
+       <x>20</x>
+       <y>100</y>
+       <width>631</width>
+       <height>171</height>
       </rect>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_7">
-      <item>
-       <layout class="QFormLayout" name="formLayout_9">
-        <item row="0" column="0">
-         <widget class="QLabel" name="label_26">
-          <property name="text">
-           <string>Enter Phone Number:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="1">
-         <widget class="QLineEdit" name="lineEdit_19">
-          <property name="enabled">
-           <bool>true</bool>
-          </property>
-          <property name="sizeIncrement">
-           <size>
-            <width>0</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="baseSize">
-           <size>
-            <width>0</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>20</pointsize>
-           </font>
-          </property>
-          <property name="placeholderText">
-           <string>Phn... to be update</string>
-          </property>
-          <property name="clearButtonEnabled">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="0">
-         <widget class="QLabel" name="label_36">
-          <property name="text">
-           <string>Enter Teacher ID:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="1">
-         <widget class="QLineEdit" name="lineEdit_38">
-          <property name="enabled">
-           <bool>true</bool>
-          </property>
-          <property name="sizeIncrement">
-           <size>
-            <width>0</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="baseSize">
-           <size>
-            <width>0</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>20</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-          <property name="placeholderText">
-           <string>6311</string>
-          </property>
-          <property name="clearButtonEnabled">
-           <bool>true</bool>
-          </property>
-=======
-      <item row="9" column="0">
-       <widget class="QLabel" name="label_3">
-        <property name="text">
-         <string/>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="0">
-       <widget class="QLabel" name="label_19">
-        <property name="text">
-         <string>Enter Name</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="0">
-       <widget class="QLabel" name="label_14">
-        <property name="text">
-         <string>Enter Email:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="0">
-       <widget class="QLabel" name="label_16">
-        <property name="text">
-         <string>Enter Contact Number:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="1">
-       <widget class="QLineEdit" name="lineEdit_18"/>
-      </item>
-      <item row="3" column="1">
-       <layout class="QHBoxLayout" name="horizontalLayout_2">
-        <item>
-         <widget class="QLineEdit" name="lineEdit_20">
-          <property name="maximumSize">
-           <size>
-            <width>300</width>
-            <height>16777215</height>
-           </size>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="lineEdit_19">
-          <property name="maximumSize">
-           <size>
-            <width>300</width>
-            <height>16777215</height>
-           </size>
-          </property>
->>>>>>> 4481b371cd5e7552da5308ae0ead6c1adfbe7f54
-         </widget>
-        </item>
-       </layout>
-      </item>
-<<<<<<< HEAD
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_10">
-        <property name="spacing">
-         <number>200</number>
-        </property>
-        <item>
-         <widget class="QPushButton" name="editback_3">
-          <property name="maximumSize">
-           <size>
-            <width>100</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QPushButton{ align:center;}</string>
-          </property>
-          <property name="text">
-           <string>BACK</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="edit_3">
-          <property name="maximumSize">
-           <size>
-            <width>100</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="text">
-           <string>UPDATE</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="home2_3">
-          <property name="maximumSize">
-           <size>
-            <width>100</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="text">
-           <string>HOME</string>
-          </property>
-=======
-      <item row="4" column="1">
-       <layout class="QHBoxLayout" name="horizontalLayout_3">
-        <item>
-         <widget class="QLineEdit" name="lineEdit_21">
-          <property name="maximumSize">
-           <size>
-            <width>300</width>
-            <height>16777215</height>
-           </size>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="lineEdit_22">
-          <property name="maximumSize">
-           <size>
-            <width>300</width>
-            <height>16777215</height>
-           </size>
-          </property>
->>>>>>> 4481b371cd5e7552da5308ae0ead6c1adfbe7f54
-         </widget>
-        </item>
-       </layout>
-      </item>
-<<<<<<< HEAD
-     </layout>
-    </widget>
-   </widget>
-   <widget class="QWidget" name="page_5">
-    <widget class="QLabel" name="label_11">
-     <property name="geometry">
-      <rect>
-       <x>160</x>
-       <y>50</y>
-       <width>421</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Please Select </string>
-     </property>
-    </widget>
-    <widget class="QWidget" name="formLayoutWidget_2">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>120</y>
-       <width>671</width>
-       <height>109</height>
-      </rect>
-     </property>
-     <layout class="QFormLayout" name="formLayout_2">
+     <layout class="QFormLayout" name="formLayout_9">
       <item row="0" column="0">
-       <widget class="QLabel" name="label_38">
+       <widget class="QLabel" name="label_26">
+        <property name="text">
+         <string>Enter Phone Number:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="lineEdit_19">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="baseSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
         <property name="font">
          <font>
           <pointsize>20</pointsize>
          </font>
         </property>
-        <property name="text">
-         <string>Teacher ID:</string>
+        <property name="placeholderText">
+         <string>Phn... to be update</string>
+        </property>
+        <property name="clearButtonEnabled">
+         <bool>true</bool>
         </property>
        </widget>
       </item>
       <item row="1" column="0">
-       <widget class="QLabel" name="label_39">
+       <widget class="QLabel" name="label_36">
+        <property name="text">
+         <string>Enter Teacher ID:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="lineEdit_38">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="baseSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
         <property name="font">
          <font>
           <pointsize>20</pointsize>
          </font>
         </property>
         <property name="text">
-         <string>Subject</string>
+         <string/>
+        </property>
+        <property name="placeholderText">
+         <string>6311</string>
+        </property>
+        <property name="clearButtonEnabled">
+         <bool>true</bool>
         </property>
        </widget>
       </item>
-      <item row="1" column="1">
+     </layout>
+    </widget>
+    <widget class="QWidget" name="horizontalLayoutWidget_4">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>270</y>
+       <width>681</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_10">
+      <property name="spacing">
+       <number>200</number>
+      </property>
+      <item>
+       <widget class="QPushButton" name="editback_3">
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{ align:center;}</string>
+        </property>
+        <property name="text">
+         <string>BACK</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="phn_edit">
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>EDIT</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="home2_3">
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>HOME</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_5">
+    <widget class="QWidget" name="layoutWidget_9">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>70</y>
+       <width>651</width>
+       <height>161</height>
+      </rect>
+     </property>
+     <layout class="QFormLayout" name="formLayout_10">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_27">
+        <property name="text">
+         <string>Chose Subject</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_37">
+        <property name="text">
+         <string>Enter Teacher ID:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
        <widget class="QComboBox" name="comboBox_3">
         <property name="maximumSize">
          <size>
-          <width>500</width>
+          <width>400</width>
           <height>16777215</height>
          </size>
         </property>
@@ -1369,109 +1165,21 @@ color:red;
         </item>
        </widget>
       </item>
-      <item row="0" column="1">
-       <widget class="QLineEdit" name="lineEdit">
-=======
-      <item row="5" column="0">
-       <widget class="QLabel" name="label_15">
-        <property name="text">
-         <string>Enter Subject:</string>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="lineEdit_39">
+        <property name="enabled">
+         <bool>true</bool>
         </property>
-       </widget>
-      </item>
-      <item row="6" column="0">
-       <widget class="QLabel" name="label_17">
-        <property name="text">
-         <string>Enter Class Time:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="7" column="0">
-       <widget class="QLabel" name="label_18">
-        <property name="text">
-         <string>Enter Phn.:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="5" column="1">
-       <layout class="QHBoxLayout" name="horizontalLayout_4">
-        <item>
-         <widget class="QLineEdit" name="lineEdit_23">
-          <property name="maximumSize">
-           <size>
-            <width>300</width>
-            <height>16777215</height>
-           </size>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="lineEdit_24">
-          <property name="maximumSize">
-           <size>
-            <width>300</width>
-            <height>16777215</height>
-           </size>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item row="6" column="1">
-       <layout class="QHBoxLayout" name="horizontalLayout_5">
-        <item>
-         <widget class="QLineEdit" name="lineEdit_25">
-          <property name="maximumSize">
-           <size>
-            <width>300</width>
-            <height>16777215</height>
-           </size>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="lineEdit_26">
-          <property name="maximumSize">
-           <size>
-            <width>300</width>
-            <height>16777215</height>
-           </size>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item row="7" column="1">
-       <layout class="QHBoxLayout" name="horizontalLayout_6">
-        <item>
-         <widget class="QLineEdit" name="lineEdit_27">
-          <property name="maximumSize">
-           <size>
-            <width>300</width>
-            <height>16777215</height>
-           </size>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="lineEdit_28">
-          <property name="maximumSize">
-           <size>
-            <width>300</width>
-            <height>16777215</height>
-           </size>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item row="8" column="1">
-       <widget class="QPushButton" name="pushButton_2">
->>>>>>> 4481b371cd5e7552da5308ae0ead6c1adfbe7f54
-        <property name="maximumSize">
+        <property name="sizeIncrement">
          <size>
-          <width>500</width>
-          <height>16777215</height>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="baseSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
          </size>
         </property>
         <property name="font">
@@ -1479,189 +1187,202 @@ color:red;
           <pointsize>20</pointsize>
          </font>
         </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="placeholderText">
+         <string>6311</string>
+        </property>
+        <property name="clearButtonEnabled">
+         <bool>true</bool>
+        </property>
        </widget>
       </item>
      </layout>
     </widget>
-    <widget class="QWidget" name="layoutWidget">
+    <widget class="QLabel" name="label_11">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>20</y>
+       <width>749</width>
+       <height>45</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>                             Enter The Detail</string>
+     </property>
+    </widget>
+    <widget class="QWidget" name="horizontalLayoutWidget_5">
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>240</y>
-       <width>631</width>
-       <height>71</height>
+       <y>250</y>
+       <width>681</width>
+       <height>41</height>
       </rect>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout_11">
+      <property name="spacing">
+       <number>200</number>
+      </property>
       <item>
-       <widget class="QPushButton" name="home5_2">
-        <property name="text">
-         <string>Home</string>
+       <widget class="QPushButton" name="editback_4">
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>16777215</height>
+         </size>
         </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="Edit5">
-        <property name="text">
-         <string>Edit</string>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{ align:center;}</string>
         </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="back5_2">
         <property name="text">
          <string>BACK</string>
         </property>
        </widget>
       </item>
-      <item row="1" column="1">
-       <layout class="QHBoxLayout" name="horizontalLayout">
-        <item>
-         <widget class="QLabel" name="label_4">
-          <property name="maximumSize">
-           <size>
-            <width>100</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="text">
-           <string>OLD</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="label_5">
-          <property name="maximumSize">
-           <size>
-            <width>100</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="text">
-           <string>NEW</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
+      <item>
+       <widget class="QPushButton" name="sub_edit">
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>EDIT</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="home2_4">
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>HOME</string>
+        </property>
+       </widget>
       </item>
      </layout>
     </widget>
    </widget>
    <widget class="QWidget" name="page3">
-    <widget class="QWidget" name="layoutWidget">
+    <widget class="QLabel" name="label_4">
      <property name="geometry">
       <rect>
-       <x>130</x>
-       <y>150</y>
-       <width>423</width>
-       <height>151</height>
+       <x>190</x>
+       <y>50</y>
+       <width>421</width>
+       <height>31</height>
       </rect>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_10">
+     <property name="text">
+      <string>Please Select Teacher ID</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_5">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>100</y>
+       <width>471</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Whose Data You Want To Delet</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="comboBox1">
+     <property name="geometry">
+      <rect>
+       <x>270</x>
+       <y>180</y>
+       <width>311</width>
+       <height>41</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QWidget" name="layoutWidget_7">
+     <property name="geometry">
+      <rect>
+       <x>250</x>
+       <y>230</y>
+       <width>341</width>
+       <height>131</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_3">
       <item>
-       <widget class="QComboBox" name="comboBox1"/>
-      </item>
-      <item>
-       <layout class="QVBoxLayout" name="verticalLayout_3">
+       <layout class="QHBoxLayout" name="horizontalLayout">
         <item>
-         <layout class="QHBoxLayout" name="horizontalLayout">
-          <property name="spacing">
-           <number>80</number>
+         <widget class="QPushButton" name="view5">
+          <property name="maximumSize">
+           <size>
+            <width>200</width>
+            <height>16777215</height>
+           </size>
           </property>
-          <item>
-           <widget class="QPushButton" name="view5">
-            <property name="maximumSize">
-             <size>
-              <width>130</width>
-              <height>16777215</height>
-             </size>
-            </property>
-            <property name="text">
-             <string>View Teacher ID</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="delet">
-            <property name="maximumSize">
-             <size>
-              <width>100</width>
-              <height>16777215</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QPushButton{ align:center;}</string>
-            </property>
-            <property name="text">
-             <string>Delet</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
+          <property name="text">
+           <string>View Teacher ID</string>
+          </property>
+         </widget>
         </item>
         <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_5">
-          <property name="spacing">
-           <number>70</number>
+         <widget class="QPushButton" name="delet">
+          <property name="maximumSize">
+           <size>
+            <width>100</width>
+            <height>16777215</height>
+           </size>
           </property>
-          <item>
-           <widget class="QPushButton" name="deletback">
-            <property name="maximumSize">
-             <size>
-              <width>100</width>
-              <height>16777215</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QPushButton{ align:center;}</string>
-            </property>
-            <property name="text">
-             <string>BACK</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="home3">
-            <property name="maximumSize">
-             <size>
-              <width>100</width>
-              <height>16777215</height>
-             </size>
-            </property>
-            <property name="text">
-             <string>Home</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{ align:center;}</string>
+          </property>
+          <property name="text">
+           <string>Delete</string>
+          </property>
+         </widget>
         </item>
        </layout>
       </item>
-     </layout>
-    </widget>
-    <widget class="QWidget" name="layoutWidget">
-     <property name="geometry">
-      <rect>
-       <x>110</x>
-       <y>40</y>
-       <width>454</width>
-       <height>97</height>
-      </rect>
-     </property>
-     <layout class="QVBoxLayout" name="verticalLayout_11">
       <item>
-       <widget class="QLabel" name="label_4">
-        <property name="text">
-         <string>Please Select Teacher ID</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="label_5">
-        <property name="text">
-         <string>Whose Data You Want To Delet</string>
-        </property>
-       </widget>
+       <layout class="QHBoxLayout" name="horizontalLayout_5">
+        <item>
+         <widget class="QPushButton" name="deletback">
+          <property name="maximumSize">
+           <size>
+            <width>100</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{ align:center;}</string>
+          </property>
+          <property name="text">
+           <string>BACK</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="home3">
+          <property name="maximumSize">
+           <size>
+            <width>100</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Home</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </item>
      </layout>
     </widget>
@@ -1677,7 +1398,7 @@ color:red;
       </rect>
      </property>
     </widget>
-    <widget class="QWidget" name="layoutWidget">
+    <widget class="QWidget" name="layoutWidget_8">
      <property name="geometry">
       <rect>
        <x>40</x>

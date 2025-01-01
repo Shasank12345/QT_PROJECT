@@ -22,6 +22,8 @@ private slots:
     void on_OK1_clicked();
 
 
+    void on_home_clicked();
+
 private:
     Ui::AdminWindow *ui;
     AdminTeacher_Edit *adminTeacher_edit;

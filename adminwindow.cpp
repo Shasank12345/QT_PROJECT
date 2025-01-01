@@ -4,6 +4,7 @@
 #include<QPushButton>
 #include<QHBoxLayout>
 #include<QMessageBox>
+#include"mainwindow.h"
 AdminWindow::AdminWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::AdminWindow)
@@ -40,4 +41,11 @@ void AdminWindow::on_OK1_clicked()
 
 
 
+
+
+void AdminWindow::on_home_clicked()
+{
+    MainWindow *mainWindow =new MainWindow();
+    mainWindow->show();
+}
 
