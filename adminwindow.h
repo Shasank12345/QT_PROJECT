@@ -3,11 +3,12 @@
 
 #include <QMainWindow>
 #include"adminstudent_edit.h"
-#include"adminteacher_edit.h"
+//#include"adminteacher_edit.h"
 #include"routinewindow.h"
 namespace Ui {
 class AdminWindow;
 }
+
 
 class AdminWindow : public QMainWindow
 {
@@ -24,7 +25,7 @@ private slots:
 
 private:
     Ui::AdminWindow *ui;
-    AdminTeacher_Edit *adminTeacher_edit;
+    //AdminTeacher_Edit *adminTeacher_edit;
     AdminStudent_Edit *adminStudent_edit;
     RoutineWindow *routinewindow;
 };
