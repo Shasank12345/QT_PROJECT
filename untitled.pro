@@ -11,7 +11,6 @@ CONFIG += c++17
 
 SOURCES += \
     adminstudent_edit.cpp \
-    adminteacher_edit.cpp \
     adminwindow.cpp \
     crwindow.cpp \
     main.cpp \
@@ -22,7 +21,6 @@ SOURCES += \
 
 HEADERS += \
     adminstudent_edit.h \
-    adminteacher_edit.h \
     adminwindow.h \
     crwindow.h \
     mainwindow.h \
@@ -32,7 +30,6 @@ HEADERS += \
 
 FORMS += \
     adminstudent_edit.ui \
-    adminteacher_edit.ui \
     adminwindow.ui \
     crwindow.ui \
     mainwindow.ui \
