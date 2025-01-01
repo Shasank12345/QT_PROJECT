@@ -17,6 +17,7 @@ SOURCES += \
     mainwindow.cpp \
     routinewindow.cpp \
     studentwindow.cpp \
+    adminteacher_edit.cpp \
     teacherwindow.cpp
 
 HEADERS += \
@@ -26,6 +27,7 @@ HEADERS += \
     mainwindow.h \
     routinewindow.h \
     studentwindow.h \
+    adminteacher_edit.h \
     teacherwindow.h
 
 FORMS += \
@@ -35,6 +37,7 @@ FORMS += \
     mainwindow.ui \
     routinewindow.ui \
     studentwindow.ui \
+    adminteacher_edit.ui \
     teacherwindow.ui
 
 # Default rules for deployment.

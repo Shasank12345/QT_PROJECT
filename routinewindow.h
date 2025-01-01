@@ -36,7 +36,7 @@ private slots:
 
     void on_show_clicked();
 
-    void on_load_clicked();
+    //void on_load_clicked();
 
     void on_load1_clicked();
 

@@ -66,7 +66,7 @@ private slots:
 
     void on_ok_clicked();
 
-    void on_edit_clicked();
+    //void on_edit_clicked();
 
     void on_name_edit_clicked();
 

@@ -23,7 +23,7 @@ AdminWindow::~AdminWindow()
 
 
 
-/*void AdminWindow::on_OK1_clicked()
+void AdminWindow::on_OK1_clicked()
 {
    if(ui->radioButton4->isChecked()){
         adminTeacher_edit =new AdminTeacher_Edit(this);
@@ -38,7 +38,7 @@ AdminWindow::~AdminWindow()
         routinewindow->show();
     }
 }
-*/
+
 
 
 
