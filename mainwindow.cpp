@@ -92,11 +92,25 @@ void MainWindow::on_pushButton_clicked()
     password=ui->lineEdit_2->text();
 
     if (username.isEmpty() || password.isEmpty()) {
-        QMessageBox::warning(this, "Input Error", "Please enter both username and password.");
+       // QMessageBox::warning(this, "Input Error", "Please enter both username and password.");
+        QMessageBox msgBox;
+        msgBox.setWindowTitle("Input Error");
+        msgBox.setIcon(QMessageBox::Warning);
+        msgBox.setStyleSheet("QLabel { color:grey;"
+                             "font:italic; }");
+        msgBox.setText("Please enter both username and password");
+        msgBox.exec();
         return;
     }
     if (selectedRole.isEmpty()) {
-        QMessageBox::warning(this, "Role Error", "Please select a role.");
+        //QMessageBox::warning(this, "Role Error", "Please select a role.");
+        QMessageBox msgBox;
+        msgBox.setWindowTitle("login failed");
+        msgBox.setIcon(QMessageBox::Warning);
+        msgBox.setStyleSheet("QLabel { color:grey;"
+                             "font:italic; }");
+        msgBox.setText("Please select a role.");
+        msgBox.exec();
         return;
     }
     QSqlQuery query;
@@ -106,14 +120,32 @@ void MainWindow::on_pushButton_clicked()
     query.bindValue(":role", selectedRole);
 
     if (query.exec() && query.next() && query.value(0).toInt() == 1) {
-        QMessageBox::information(this, "Login Success", "Welcome " + username + "!");
-         openRoleWindow(selectedRole);
+        //(this, "Login Success", "Welcome " + username + "!");
+
+        QMessageBox msgBox;
+        msgBox.setWindowTitle("login Sucess");
+        msgBox.setIcon(QMessageBox::Information);
+        msgBox.setStyleSheet("QLabel { color:grey; "
+                             "font:italic;}");
+        msgBox.setText("WELCOME "+username+";");
+        msgBox.exec();
+        openRoleWindow(selectedRole);
+
 
 
 
 
     } else {
-        QMessageBox::warning(this, "Login Failed", "Invalid username, password, or role.");
+        //QMessageBox::warning(this, "Login Failed", "Invalid username, password, or role.");
+        QMessageBox msgBox;
+        msgBox.setWindowTitle("login failed");
+        msgBox.setIcon(QMessageBox::Warning);
+        msgBox.setStyleSheet("QLabel { color:grey;"
+                             "font:italic; }");
+        msgBox.setText("Invalid username,password,or role.");
+        msgBox.exec();
+       // openRoleWindow(selectedRole);
+
     }
 }
 
