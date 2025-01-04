@@ -43,7 +43,7 @@
     <enum>QFrame::Shape::Box</enum>
    </property>
    <property name="currentIndex">
-    <number>9</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="page">
     <widget class="QLabel" name="label">
@@ -165,7 +165,7 @@ color:blue;
        <x>120</x>
        <y>90</y>
        <width>561</width>
-       <height>274</height>
+       <height>278</height>
       </rect>
      </property>
      <layout class="QFormLayout" name="formLayout">
@@ -971,7 +971,7 @@ color:blue;
       <rect>
        <x>220</x>
        <y>110</y>
-       <width>371</width>
+       <width>389</width>
        <height>79</height>
       </rect>
      </property>
@@ -1352,7 +1352,7 @@ color:blue;
       <string>Whose Data You Want To Delete</string>
      </property>
     </widget>
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>220</x>
@@ -1430,7 +1430,7 @@ color:blue;
       <string>Delete</string>
      </property>
     </widget>
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>140</x>
