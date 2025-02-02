@@ -19,16 +19,16 @@ AdminTeacher_Edit::AdminTeacher_Edit(QWidget *parent)
     , ui(new Ui::AdminTeacher_Edit)
 {
     ui->setupUi(this);
-    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
+   /* QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
     db.setDatabaseName("../../DATABASE/FACULTY.db");
     if (!db.open()) {
         QMessageBox::critical(this, "Database Error", "Failed to connect to database: " + db.lastError().text());
-    }
+    }*/
 //connecting the push button
     connect(ui->add, &QPushButton::clicked, this, &AdminTeacher_Edit::on_add_clicked);
     connect(ui->Edit, &QPushButton::clicked, this, &AdminTeacher_Edit::on_Edit_clicked);
     connect(ui->Delet, &QPushButton::clicked, this, &AdminTeacher_Edit::on_Delet_clicked);
-    connect(ui->addback, &QPushButton::clicked, this, &AdminTeacher_Edit::on_addback_clicked);
+    connect(ui->back, &QPushButton::clicked, this, &AdminTeacher_Edit::on_addback_clicked);
     connect(ui->back5, &QPushButton::clicked, this, &AdminTeacher_Edit::on_back5_clicked);
     connect(ui->editback, &QPushButton::clicked, this, &AdminTeacher_Edit::on_editback_clicked);
     connect(ui->editback_2, &QPushButton::clicked, this, &AdminTeacher_Edit::on_editback_2_clicked);
@@ -46,13 +46,11 @@ AdminTeacher_Edit::AdminTeacher_Edit(QWidget *parent)
     connect(ui->home3, &QPushButton::clicked, this, &AdminTeacher_Edit::on_home3_clicked);
     connect(ui->home4, &QPushButton::clicked, this, &AdminTeacher_Edit::on_home4_clicked);
     connect(ui->save, &QPushButton::clicked, this, &AdminTeacher_Edit::on_save_clicked);
-    connect(ui->show_id, &QPushButton::clicked, this, &AdminTeacher_Edit::on_show_id_clicked);
     connect(ui->ok, &QPushButton::clicked, this, &AdminTeacher_Edit::on_ok_clicked);
     connect(ui->name_edit, &QPushButton::clicked, this, &AdminTeacher_Edit::on_name_edit_clicked);
     connect(ui->email_edit, &QPushButton::clicked, this, &AdminTeacher_Edit::on_email_edit_clicked);
     connect(ui->phn_edit, &QPushButton::clicked, this, &AdminTeacher_Edit::on_phn_edit_clicked);
     connect(ui->sub_edit, &QPushButton::clicked, this, &AdminTeacher_Edit::on_sub_edit_clicked);
-    connect(ui->view5, &QPushButton::clicked, this, &AdminTeacher_Edit::on_view5_clicked);
     connect(ui->delet, &QPushButton::clicked, this, &AdminTeacher_Edit::on_delet_clicked);
     connect(ui->show, &QPushButton::clicked, this, &AdminTeacher_Edit::on_show_clicked);
     connect(ui->view1, &QPushButton::clicked, this, &AdminTeacher_Edit::on_view1_clicked);
@@ -86,15 +84,60 @@ void AdminTeacher_Edit::on_view1_clicked()
 {
      ui->stackedWidget->setCurrentIndex(8);
 }
+
+void AdminTeacher_Edit::populatecomboboz()
+{
+    ui->comboBox2->clear();
+
+    // Prepare a query to fetch all Teacher_IDs
+    QSqlQuery qry;
+    qry.prepare("SELECT Teacher_ID FROM teacher_data");
+
+    if (qry.exec()) {
+        while (qry.next()) {
+            // Retrieve each Teacher_ID and add it to the combobox
+            QString teacher_id = qry.value(0).toString();
+            ui->comboBox2->addItem(teacher_id);
+        }
+    } else {
+        QMessageBox::critical(this, "Database Error", "Failed to retrieve Teacher IDs: " + qry.lastError().text());
+    }
+
+}
+
+void AdminTeacher_Edit::populatecombox()
+{
+    ui->comboBox->clear();
+
+    // Prepare a query to fetch all Teacher_IDs
+    QSqlQuery qry;
+    qry.prepare("SELECT Teacher_ID FROM teacher_data");
+
+    if (qry.exec()) {
+        while (qry.next()) {
+            // Retrieve each Teacher_ID and add it to the combobox
+            QString teacher_id = qry.value(0).toString();
+            ui->comboBox->addItem(teacher_id);
+        }
+    } else {
+        QMessageBox::critical(this, "Database Error", "Failed to retrieve Teacher IDs: " + qry.lastError().text());
+    }
+
+}
+
+
 void AdminTeacher_Edit::on_Edit_clicked()
 {
     ui->stackedWidget->setCurrentIndex(2);
+    populatecomboboz();
+
 }
 
 
 void AdminTeacher_Edit::on_Delet_clicked()
 {
     ui->stackedWidget->setCurrentIndex(7);
+    populatecombox();
 }
 
 
@@ -220,7 +263,7 @@ void AdminTeacher_Edit::on_save_clicked()
     email=ui->lineEdit_33->text();
     teacher_id = ui->lineEdit_31->text();
     phn_no=ui->lineEdit_32->text();
-    subject=ui->comboBox_2->currentText();
+    subject=ui->lineEdit->text();
     if (name.isEmpty() ){
         QMessageBox::warning(this, "Input Error", "Please enter Name.");
         return;
@@ -260,32 +303,13 @@ void AdminTeacher_Edit::on_save_clicked()
         ui->lineEdit_33->clear();
         ui->lineEdit_31->clear();
         ui->lineEdit_32->clear();
-        ui->comboBox_2->clearEditText();
+        ui->lineEdit->clear();
     } else {
         QMessageBox::critical(this, "Database Error", "Failed to save teacher information: " + qry.lastError().text());
     }
 }
 
 
-void AdminTeacher_Edit::on_show_id_clicked()
-{
-    // Clear the combobox to avoid duplicate entries
-    ui->comboBox2->clear();
-
-    // Prepare a query to fetch all Teacher_IDs
-    QSqlQuery qry;
-    qry.prepare("SELECT Teacher_ID FROM teacher_data");
-
-    if (qry.exec()) {
-        while (qry.next()) {
-            // Retrieve each Teacher_ID and add it to the combobox
-            QString teacher_id = qry.value(0).toString();
-            ui->comboBox2->addItem(teacher_id);
-        }
-    } else {
-        QMessageBox::critical(this, "Database Error", "Failed to retrieve Teacher IDs: " + qry.lastError().text());
-    }
-}
 
 
 
@@ -299,40 +323,40 @@ void AdminTeacher_Edit::on_ok_clicked()
         QMessageBox::warning(this, "Input Error", "Please select a valid Teacher ID.");
         return;
     }
-    if(select=="Not_Selected")
+    if(select=="NONE SETECTED")
     {
         QMessageBox::warning(this, "Not Selected", "Please select ");
     }
-    if(select=="Name")
+    if(select=="NAME")
     {
         // Set the selected Teacher_ID to the teacher_id field in the edit section
-        ui->lineEdit_36->setText(selectedTeacherId);
+        //ui->lineEdit_36->setText(selectedTeacherId);
 
         // Switch to the edit section
         ui->stackedWidget->setCurrentIndex(3);
     }
 
-    if(select=="Email")
+    if(select=="EMAIL")
     {
         // Set the selected Teacher_ID to the teacher_id field in the edit section
-        ui->lineEdit_37->setText(selectedTeacherId);
+       // ui->lineEdit_35->setText(selectedTeacherId);
 
         // Switch to the edit section
         ui->stackedWidget->setCurrentIndex(4);
     }
 
-    if(select=="Phone_Number")
+    if(select=="PHONE NUMBER")
     {
         // Set the selected Teacher_ID to the teacher_id field in the edit section
-        ui->lineEdit_38->setText(selectedTeacherId);
+       // ui->lineEdit_38->setText(selectedTeacherId);
 
         // Switch to the edit section
         ui->stackedWidget->setCurrentIndex(5);
     }
-    if(select=="Subject")
+    if(select=="SUBJECT")
     {
         // Set the selected Teacher_ID to the teacher_id field in the edit section
-        ui->lineEdit_39->setText(selectedTeacherId);
+       // ui->lineEdit_39->setText(selectedTeacherId);
 
         // Switch to the edit section
         ui->stackedWidget->setCurrentIndex(6);
@@ -392,7 +416,7 @@ void AdminTeacher_Edit::on_email_edit_clicked()
 
 
     email=ui->lineEdit_18->text();
-    teacher_id = ui->lineEdit_37->text();
+    teacher_id = ui->lineEdit_35->text();
 
 
     QSqlQuery qry;
@@ -431,7 +455,7 @@ void AdminTeacher_Edit::on_phn_edit_clicked()
     QString teacher_id;
 
 
-    phn_no=ui->lineEdit_19->text();
+    phn_no=ui->lineEdit_38->text();
     teacher_id = ui->lineEdit_38->text();
 
 
@@ -471,7 +495,7 @@ void AdminTeacher_Edit::on_sub_edit_clicked()
     QString teacher_id;
 
 
-    subject=ui->comboBox_3->currentText();
+    subject=ui->lineEdit_2->text();
     teacher_id = ui->lineEdit_39->text();
 
 
@@ -506,25 +530,6 @@ void AdminTeacher_Edit::on_sub_edit_clicked()
 
 
 
-void AdminTeacher_Edit::on_view5_clicked()
-{
-    // Clear the combobox to avoid duplicate entries
-    ui->comboBox1->clear();
-
-    // Prepare a query to fetch all Teacher_IDs
-    QSqlQuery qry;
-    qry.prepare("SELECT Teacher_ID FROM teacher_data");
-
-    if (qry.exec()) {
-        while (qry.next()) {
-            // Retrieve each Teacher_ID and add it to the combobox
-            QString teacher_id = qry.value(0).toString();
-            ui->comboBox1->addItem(teacher_id);
-        }
-    } else {
-        QMessageBox::critical(this, "Database Error", "Failed to retrieve Teacher IDs: " + qry.lastError().text());
-    }
-}
 
 
 
@@ -532,7 +537,7 @@ void AdminTeacher_Edit::on_delet_clicked()
 {
 
     // Get the selected Teacher_ID from the combobox
-    QString teacher_id = ui->comboBox1->currentText();
+    QString teacher_id = ui->comboBox->currentText();
 
     // Check if a valid Teacher_ID is selected
     if (teacher_id.isEmpty()) {

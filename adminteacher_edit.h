@@ -83,6 +83,8 @@ private slots:
     void on_show_clicked();
 
     void on_view1_clicked();
+    void populatecomboboz();
+    void populatecombox();
 
 private:
     Ui::AdminTeacher_Edit *ui;

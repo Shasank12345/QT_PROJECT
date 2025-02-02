@@ -20,10 +20,16 @@ public:
 
 private slots:
 
-    void on_OK1_clicked();
-
 
     void on_home_clicked();
+
+    void on_pushButton4_clicked();
+
+    void on_pushButton5_clicked();
+
+    void on_pushButton6_clicked();
+
+    void on_OK1_clicked();
 
 private:
     Ui::AdminWindow *ui;

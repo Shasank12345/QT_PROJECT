@@ -6,13 +6,18 @@
 #include "adminwindow.h"
 #include "teacherwindow.h"
 #include "studentwindow.h"
-#include<qmessagebox.h>
-#include "crwindow.h"
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+
+    // Remove layout margins
+    if (ui->centralwidget->layout()) {
+        ui->centralwidget->layout()->setContentsMargins(0, 0, 0, 0);
+        ui->centralwidget->layout()->setSpacing(0);
+    }
 
 
 
@@ -92,8 +97,8 @@ void MainWindow::on_pushButton_clicked()
     password=ui->lineEdit_2->text();
 
     if (username.isEmpty() || password.isEmpty()) {
-       // QMessageBox::warning(this, "Input Error", "Please enter both username and password.");
-        QMessageBox msgBox;
+        //QMessageBox::warning(this, "Input Error", "Please enter both username and password.");
+       QMessageBox msgBox;
         msgBox.setWindowTitle("Input Error");
         msgBox.setIcon(QMessageBox::Warning);
         msgBox.setStyleSheet("QLabel { color:grey;"
@@ -103,7 +108,7 @@ void MainWindow::on_pushButton_clicked()
         return;
     }
     if (selectedRole.isEmpty()) {
-        //QMessageBox::warning(this, "Role Error", "Please select a role.");
+       // QMessageBox::warning(this, "Role Error", "Please select a role.");
         QMessageBox msgBox;
         msgBox.setWindowTitle("login failed");
         msgBox.setIcon(QMessageBox::Warning);
@@ -120,7 +125,7 @@ void MainWindow::on_pushButton_clicked()
     query.bindValue(":role", selectedRole);
 
     if (query.exec() && query.next() && query.value(0).toInt() == 1) {
-        //(this, "Login Success", "Welcome " + username + "!");
+       // QMessageBox::(this, "Login Success", "Welcome " + username + "!");
 
         QMessageBox msgBox;
         msgBox.setWindowTitle("login Sucess");
@@ -144,7 +149,6 @@ void MainWindow::on_pushButton_clicked()
                              "font:italic; }");
         msgBox.setText("Invalid username,password,or role.");
         msgBox.exec();
-       // openRoleWindow(selectedRole);
 
     }
 }
@@ -230,8 +234,6 @@ QString MainWindow::getSelectedRole()
         return "TEACHER";
     if (ui->radioButton_3->isChecked())
         return "STUDENT";
-    if (ui->radioButton_4->isChecked())
-        return "CR";
     else
     return "";
 }
@@ -241,10 +243,12 @@ void MainWindow::openRoleWindow(const QString &role)
     if(role=="ADMIN"){
         AdminWindow *adminWindow = new AdminWindow();
         adminWindow->show();
+         this->close();
     }
     else if(role=="TEACHER"){
         TeacherWindow *teacherWindow =new TeacherWindow();
         teacherWindow->show();
+         this->close();
 
 
 
@@ -254,13 +258,10 @@ void MainWindow::openRoleWindow(const QString &role)
     else if(role=="STUDENT"){
         StudentWindow *studentWindow =new StudentWindow();
         studentWindow->show();
+        this->close();
 
 
 
-    }
-    else if(role=="CR"){
-        CRWindow *crwindow =new CRWindow();
-        crwindow->show();
     }
 
 
@@ -268,20 +269,4 @@ void MainWindow::openRoleWindow(const QString &role)
 
     else
         this->close(); // Close login window
-    }
-    void MainWindow::on_radioButton_4_clicked(bool checked)
-    {
-
-        if(checked){
-
-        ui->lineEdit_1->setPlaceholderText("example@CR.ku.edu.np");
-        ui->lineEdit_2->setPlaceholderText("Enter your password...");
-        ui->label_4->setText("SELECTED ROLE: \"CR\"");
-        ui->label_4->setFont(QFont("BOLD",12));
-        ui->label_4->setStyleSheet("color: darkgreen;");
-        ui->label_5->setStyleSheet("color: green;");
-        ui->label_5->setText("STATUS:");
-        ui->label_5->setFont(QFont("BOLD",14));
-        }
-
     }

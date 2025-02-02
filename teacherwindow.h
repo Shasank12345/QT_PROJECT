@@ -2,6 +2,22 @@
 #define TEACHERWINDOW_H
 
 #include <QMainWindow>
+#include<QStackedWidget>
+#include <QtSql/QSqlDatabase>
+#include <QtSql/QSqlQuery>
+#include <QtSql/QSqlError>
+#include <QDebug>
+#include<QMessageBox>
+#include <QSqlQueryModel>
+#include<QDateEdit>
+#include<QSqlTableModel>
+#include"takeattendance.h"
+#include"viewattendance.h"
+#include"viewroutine.h"
+#include"mainwindow.h"
+
+
+
 
 namespace Ui {
 class TeacherWindow;
@@ -15,8 +31,27 @@ public:
     explicit TeacherWindow(QWidget *parent = nullptr);
     ~TeacherWindow();
 
+private slots:
+
+    void on_pushButton_3_clicked();
+
+    void on_pushButton_clicked();
+
+    void on_pushButton_2_clicked();
+
+    void on_pushButton_5_clicked();
+
+    void on_pushButton_6_clicked();
+
+    void on_pushButton_4_clicked();
+
 private:
     Ui::TeacherWindow *ui;
+    MainWindow *main=new MainWindow;
+    takeattendance *take=new takeattendance;
+    VIEWATTENDANCE *view=new VIEWATTENDANCE;
+    VIEWROUTINE *view2=new VIEWROUTINE;
+    //QSqlQueryModel *model;
 };
 
 #endif // TEACHERWINDOW_H

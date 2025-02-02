@@ -85,6 +85,8 @@ private slots:
     void on_back9_clicked();
 
     void on_home10_clicked();
+    void populatecombo();
+    void populatecombo1();
 
 private:
     Ui::AdminStudent_Edit *ui;

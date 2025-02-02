@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>710</width>
-    <height>510</height>
+    <width>699</width>
+    <height>500</height>
    </rect>
   </property>
   <property name="maximumSize">
@@ -35,10 +35,11 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QLabel{font-size: 20pt;}</string>
+    <string notr="true">background-image: url(:/image/TECAHER.jpg);
+</string>
    </property>
    <property name="currentIndex">
-    <number>7</number>
+    <number>2</number>
    </property>
    <widget class="QWidget" name="page0">
     <widget class="QLabel" name="label_20">
@@ -54,114 +55,176 @@
       <string/>
      </property>
     </widget>
-    <widget class="QWidget" name="layoutWidget">
+    <widget class="QLabel" name="label">
      <property name="geometry">
       <rect>
-       <x>140</x>
-       <y>40</y>
-       <width>406</width>
-       <height>97</height>
+       <x>200</x>
+       <y>60</y>
+       <width>341</width>
+       <height>51</height>
       </rect>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout">
-      <item>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0, 0, 0);</string>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:22pt; font-weight:700;&quot;&gt;ADMIN PAGE&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+    <widget class="QWidget" name="formLayoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>130</y>
+       <width>471</width>
+       <height>211</height>
+      </rect>
+     </property>
+     <layout class="QFormLayout" name="formLayout">
+      <item row="1" column="1">
+       <widget class="QPushButton" name="add">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string>ADD</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
        <widget class="QLabel" name="label_7">
         <property name="styleSheet">
          <string notr="true">QLabel{
-color : blue;
-}</string>
+color: black;
+   
+
+       font-size:20px;  
+       padding: 1px; 
+       font-weight: bold;  
+     text-align: center; 
+   
+}
+</string>
         </property>
         <property name="text">
-         <string>Welcome to Teacher section</string>
+         <string>ADD TEACHER DATA:</string>
         </property>
        </widget>
       </item>
-      <item>
-       <widget class="QLabel" name="label_21">
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_12">
         <property name="styleSheet">
-         <string notr="true">QLabel {
-color:red;
-}</string>
+         <string notr="true">QLabel{
+color: black;
+   
+
+       font-size:20px;  
+       padding: 1px; 
+       font-weight: bold;  
+     text-align: center; 
+   
+}
+</string>
         </property>
         <property name="text">
-         <string>Make Your Choice</string>
+         <string>EDIT TEACHER DATA:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QPushButton" name="Edit">
+        <property name="maximumSize">
+         <size>
+          <width>1000</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string>EDIT</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="label_13">
+        <property name="styleSheet">
+         <string notr="true">QLabel{
+color: black;
+   
+
+       font-size:20px;  
+       padding: 1px; 
+       font-weight: bold;  
+     text-align: center; 
+   
+}
+</string>
+        </property>
+        <property name="text">
+         <string>DELETE TEACHER DATA:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QPushButton" name="Delet">
+        <property name="maximumSize">
+         <size>
+          <width>1000</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string>DELETE</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QPushButton" name="view1">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string>VIEW</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="label_14">
+        <property name="styleSheet">
+         <string notr="true">QLabel{
+color: black;
+   
+
+       font-size:20px;  
+       padding: 1px; 
+       font-weight: bold;  
+     text-align: center; 
+   
+}
+</string>
+        </property>
+        <property name="text">
+         <string>VIEW TEACHER DATA</string>
         </property>
        </widget>
       </item>
      </layout>
     </widget>
-    <widget class="QWidget" name="layoutWidget_2">
+    <widget class="QWidget" name="horizontalLayoutWidget">
      <property name="geometry">
       <rect>
-       <x>190</x>
-       <y>150</y>
-       <width>311</width>
-       <height>221</height>
-      </rect>
-     </property>
-     <layout class="QVBoxLayout" name="verticalLayout_6">
-      <item>
-       <layout class="QVBoxLayout" name="verticalLayout_2">
-        <item>
-         <widget class="QPushButton" name="add">
-          <property name="text">
-           <string>ADD</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="Edit">
-          <property name="maximumSize">
-           <size>
-            <width>1000</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="text">
-           <string>EDIT</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="Delet">
-          <property name="maximumSize">
-           <size>
-            <width>1000</width>
-            <height>30</height>
-           </size>
-          </property>
-          <property name="text">
-           <string>DELETE</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="view1">
-          <property name="text">
-           <string>VIEW</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-     </layout>
-    </widget>
-    <widget class="QWidget" name="">
-     <property name="geometry">
-      <rect>
-       <x>190</x>
-       <y>360</y>
-       <width>309</width>
-       <height>73</height>
+       <x>270</x>
+       <y>350</y>
+       <width>195</width>
+       <height>31</height>
       </rect>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout_7">
-      <property name="spacing">
-       <number>70</number>
-      </property>
-      <property name="leftMargin">
-       <number>0</number>
-      </property>
       <item>
        <widget class="QPushButton" name="home0">
         <property name="maximumSize">
@@ -169,6 +232,9 @@ color:red;
           <width>100</width>
           <height>16777215</height>
          </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
         </property>
         <property name="text">
          <string>HOME</string>
@@ -183,6 +249,9 @@ color:red;
           <height>16777215</height>
          </size>
         </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
+        </property>
         <property name="text">
          <string>BACK</string>
         </property>
@@ -194,289 +263,154 @@ color:red;
    <widget class="QWidget" name="page1">
     <layout class="QVBoxLayout" name="verticalLayout_5">
      <item>
-      <widget class="QLabel" name="label_2">
+      <widget class="QLabel" name="label_15">
+       <property name="styleSheet">
+        <string notr="true">color: rgb(0, 0, 0);</string>
+       </property>
        <property name="text">
-        <string>                             Enter The Detail</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:20pt; font-weight:700;&quot;&gt;ENTER THE DETAILS&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
      </item>
      <item>
-      <layout class="QFormLayout" name="formLayout_6">
-       <item row="0" column="0">
-        <widget class="QLabel" name="label_22">
-         <property name="font">
-          <font>
-           <pointsize>20</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string>Enter Name:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="1">
-        <widget class="QLineEdit" name="lineEdit_16">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="sizeIncrement">
-          <size>
-           <width>0</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="baseSize">
-          <size>
-           <width>0</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <pointsize>20</pointsize>
-          </font>
-         </property>
-         <property name="placeholderText">
-          <string>full name</string>
-         </property>
-         <property name="clearButtonEnabled">
-          <bool>true</bool>
-         </property>
-        </widget>
+      <layout class="QFormLayout" name="formLayout_2">
+       <item row="16" column="0" colspan="2">
+        <layout class="QHBoxLayout" name="horizontalLayout_13">
+         <item>
+          <widget class="QPushButton" name="home1">
+           <property name="text">
+            <string>HOME</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="back_2">
+           <property name="text">
+            <string>BACK</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="save">
+           <property name="text">
+            <string>SAVE</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
        <item row="1" column="0">
-        <widget class="QLabel" name="label_29">
+        <widget class="QLabel" name="label_16">
+         <property name="styleSheet">
+          <string notr="true">QLabel{
+color: black;
+   
+
+       font-size:4px;  
+       padding: 1px; 
+       font-weight: bold;  
+     text-align: center; 
+   
+}
+</string>
+         </property>
          <property name="text">
-          <string>Enter Teacher ID:</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;FULL NAME :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="QLineEdit" name="lineEdit_31">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="sizeIncrement">
-          <size>
-           <width>0</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="baseSize">
-          <size>
-           <width>0</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <pointsize>20</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="placeholderText">
-          <string>6311</string>
-         </property>
-         <property name="clearButtonEnabled">
-          <bool>true</bool>
-         </property>
-        </widget>
+        <widget class="QLineEdit" name="lineEdit_16"/>
        </item>
        <item row="2" column="0">
-        <widget class="QLabel" name="label_30">
+        <widget class="QLabel" name="label_17">
+         <property name="styleSheet">
+          <string notr="true">QLabel{
+color: black;
+   
+
+       font-size:4px;  
+       padding: 1px; 
+       font-weight: bold;  
+     text-align: center; 
+   
+}
+</string>
+         </property>
          <property name="text">
-          <string>Enter Phone No:</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;TEACHER ID:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
        </item>
        <item row="2" column="1">
-        <widget class="QLineEdit" name="lineEdit_32">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="sizeIncrement">
-          <size>
-           <width>0</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="baseSize">
-          <size>
-           <width>0</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <pointsize>20</pointsize>
-          </font>
-         </property>
-         <property name="placeholderText">
-          <string>9800000000</string>
-         </property>
-         <property name="clearButtonEnabled">
-          <bool>true</bool>
-         </property>
-        </widget>
+        <widget class="QLineEdit" name="lineEdit_31"/>
        </item>
        <item row="3" column="0">
-        <widget class="QLabel" name="label_31">
+        <widget class="QLabel" name="label_18">
+         <property name="styleSheet">
+          <string notr="true">QLabel{
+color: black;
+   
+
+       font-size:4px;  
+       padding: 1px; 
+       font-weight: bold;  
+     text-align: center; 
+   
+}
+</string>
+         </property>
          <property name="text">
-          <string>Enter Email:</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;E-MAIL ID:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
        </item>
        <item row="3" column="1">
-        <widget class="QLineEdit" name="lineEdit_33">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="sizeIncrement">
-          <size>
-           <width>0</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="baseSize">
-          <size>
-           <width>0</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <pointsize>20</pointsize>
-          </font>
-         </property>
-         <property name="placeholderText">
-          <string>abc123@teacher.ku.edu.np</string>
-         </property>
-         <property name="clearButtonEnabled">
-          <bool>true</bool>
-         </property>
-        </widget>
+        <widget class="QLineEdit" name="lineEdit_33"/>
        </item>
        <item row="4" column="0">
-        <widget class="QLabel" name="label_32">
+        <widget class="QLabel" name="label_19">
+         <property name="styleSheet">
+          <string notr="true">QLabel{
+color: black;
+   
+
+       font-size:4px;  
+       padding: 1px; 
+       font-weight: bold;  
+     text-align: center; 
+   
+}
+</string>
+         </property>
          <property name="text">
-          <string>Chose Subject</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;PHONE NUM:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
        </item>
        <item row="4" column="1">
-        <widget class="QComboBox" name="comboBox_2">
-         <property name="maximumSize">
-          <size>
-           <width>400</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <pointsize>20</pointsize>
-          </font>
-         </property>
-         <item>
-          <property name="text">
-           <string>Not_Selected</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Advanced Calculus (MATH 104)</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>General Physics II (PHYS 102)</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Object-Oriented Programming (COMP 116)</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Elements Of Engineering II (ENGG 112)</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Technical Communication (ENGT 105)</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Introduction to Environmental Engineering (ENVE 102)</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Engineering Drawing II (EDRG 102)</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Engineering Project (ENGG 102)</string>
-          </property>
-         </item>
-        </widget>
+        <widget class="QLineEdit" name="lineEdit_32"/>
        </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_4">
-       <property name="spacing">
-        <number>200</number>
-       </property>
-       <property name="sizeConstraint">
-        <enum>QLayout::SizeConstraint::SetMinimumSize</enum>
-       </property>
-       <item>
-        <widget class="QPushButton" name="addback">
-         <property name="maximumSize">
-          <size>
-           <width>100</width>
-           <height>16777215</height>
-          </size>
-         </property>
+       <item row="5" column="1">
+        <widget class="QLineEdit" name="lineEdit"/>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="label_2">
          <property name="styleSheet">
-          <string notr="true">QPushButton{ align:center;}</string>
+          <string notr="true">QLabel{
+color: black;
+   
+
+       font-size:4px;  
+       padding: 1px; 
+       font-weight: bold;  
+     text-align: center; 
+   
+}
+</string>
          </property>
          <property name="text">
-          <string>BACK</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="save">
-         <property name="maximumSize">
-          <size>
-           <width>100</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QPushButton{ align:center;}</string>
-         </property>
-         <property name="text">
-          <string>SAVE</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="home1">
-         <property name="maximumSize">
-          <size>
-           <width>100</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>HOME</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;CHOOSE SUBJECT :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
        </item>
@@ -488,144 +422,120 @@ color:red;
     <widget class="QLabel" name="label_6">
      <property name="geometry">
       <rect>
-       <x>130</x>
-       <y>130</y>
-       <width>441</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Whose Data You Want To Edit</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_8">
-     <property name="geometry">
-      <rect>
-       <x>170</x>
-       <y>70</y>
-       <width>371</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Please Select Teacher ID</string>
-     </property>
-    </widget>
-    <widget class="QComboBox" name="comboBox3">
-     <property name="geometry">
-      <rect>
-       <x>240</x>
-       <y>260</y>
+       <x>220</x>
+       <y>0</y>
        <width>241</width>
-       <height>41</height>
+       <height>81</height>
       </rect>
      </property>
-     <property name="font">
-      <font>
-       <pointsize>15</pointsize>
-      </font>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0, 0, 0);</string>
      </property>
-     <item>
-      <property name="text">
-       <string>Not_Selected</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Name</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Email</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Phone_Number</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Subject</string>
-      </property>
-     </item>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:20pt; font-weight:700;&quot;&gt;ADMIN PAGE&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
     </widget>
-    <widget class="QWidget" name="layoutWidget_3">
+    <widget class="QWidget" name="formLayoutWidget_3">
      <property name="geometry">
       <rect>
-       <x>210</x>
-       <y>320</y>
-       <width>311</width>
-       <height>71</height>
+       <x>50</x>
+       <y>160</y>
+       <width>627</width>
+       <height>81</height>
       </rect>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_4">
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_6">
-        <item>
-         <widget class="QPushButton" name="ok">
-          <property name="text">
-           <string>OK</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
+     <layout class="QFormLayout" name="formLayout_3">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_8">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;SELECT TEACHER ID:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
       </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_8">
+      <item row="0" column="1">
+       <widget class="QComboBox" name="comboBox2"/>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_21">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;SELECT DETAILS :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QComboBox" name="comboBox3">
         <item>
-         <widget class="QPushButton" name="home5">
-          <property name="text">
-           <string>Home</string>
-          </property>
-         </widget>
+         <property name="text">
+          <string>NONE SELECTED</string>
+         </property>
         </item>
         <item>
-         <widget class="QPushButton" name="back5">
-          <property name="text">
-           <string>BACK</string>
-          </property>
-         </widget>
+         <property name="text">
+          <string>NAME</string>
+         </property>
         </item>
-       </layout>
+        <item>
+         <property name="text">
+          <string>EMAIL</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>PHONE NUMBER</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>SUBJECT</string>
+         </property>
+        </item>
+       </widget>
       </item>
      </layout>
     </widget>
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="horizontalLayoutWidget_7">
      <property name="geometry">
       <rect>
-       <x>200</x>
-       <y>190</y>
-       <width>331</width>
-       <height>51</height>
+       <x>50</x>
+       <y>270</y>
+       <width>621</width>
+       <height>41</height>
       </rect>
      </property>
-     <layout class="QHBoxLayout" name="horizontalLayout_12">
+     <layout class="QHBoxLayout" name="horizontalLayout_6">
       <item>
-       <widget class="QComboBox" name="comboBox2">
-        <property name="font">
-         <font>
-          <pointsize>15</pointsize>
-         </font>
+       <widget class="QPushButton" name="home5">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string>HOME</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="show_id">
-        <property name="maximumSize">
-         <size>
-          <width>100</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>15</pointsize>
-         </font>
+       <widget class="QPushButton" name="back5">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
         </property>
         <property name="text">
-         <string>Show ID</string>
+         <string>BACK</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="ok">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string>SUMBIT</string>
         </property>
        </widget>
       </item>
@@ -636,100 +546,72 @@ color:red;
     <widget class="QLabel" name="label_3">
      <property name="geometry">
       <rect>
-       <x>-20</x>
-       <y>20</y>
-       <width>749</width>
-       <height>45</height>
+       <x>180</x>
+       <y>0</y>
+       <width>301</width>
+       <height>91</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0, 0, 0);</string>
      </property>
      <property name="text">
-      <string>                             Enter The Detail</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:20pt; font-weight:700;&quot;&gt;ADMIN PAGE&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
-    <widget class="QWidget" name="layoutWidget_4">
+    <widget class="QWidget" name="formLayoutWidget_4">
      <property name="geometry">
       <rect>
-       <x>30</x>
-       <y>110</y>
-       <width>631</width>
-       <height>171</height>
+       <x>69</x>
+       <y>130</y>
+       <width>581</width>
+       <height>151</height>
       </rect>
      </property>
-     <layout class="QFormLayout" name="formLayout_7">
-      <item row="0" column="0">
-       <widget class="QLabel" name="label_24">
-        <property name="text">
-         <string>Enter Name:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1">
-       <widget class="QLineEdit" name="lineEdit_17">
-        <property name="enabled">
-         <bool>true</bool>
-        </property>
-        <property name="sizeIncrement">
-         <size>
-          <width>0</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="baseSize">
-         <size>
-          <width>0</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>20</pointsize>
-         </font>
-        </property>
-        <property name="placeholderText">
-         <string>name to be update</string>
-        </property>
-        <property name="clearButtonEnabled">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
+     <layout class="QFormLayout" name="formLayout_4">
       <item row="1" column="0">
-       <widget class="QLabel" name="label_34">
+       <widget class="QLabel" name="label_22">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
+        </property>
         <property name="text">
-         <string>Enter Teacher ID:</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;ENTER NEW NAME :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
       </item>
       <item row="1" column="1">
-       <widget class="QLineEdit" name="lineEdit_36">
-        <property name="enabled">
-         <bool>true</bool>
-        </property>
-        <property name="sizeIncrement">
-         <size>
-          <width>0</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="baseSize">
-         <size>
-          <width>0</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>20</pointsize>
-         </font>
+       <widget class="QLineEdit" name="lineEdit_17">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
         </property>
         <property name="text">
          <string/>
         </property>
         <property name="placeholderText">
-         <string>6311</string>
+         <string>new name </string>
         </property>
-        <property name="clearButtonEnabled">
-         <bool>true</bool>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_23">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;ENTER TEACHER ID :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="lineEdit_36">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="placeholderText">
+         <string>existing teacher id</string>
         </property>
        </widget>
       </item>
@@ -738,26 +620,27 @@ color:red;
     <widget class="QWidget" name="horizontalLayoutWidget_2">
      <property name="geometry">
       <rect>
-       <x>0</x>
+       <x>260</x>
        <y>300</y>
-       <width>681</width>
+       <width>295</width>
        <height>41</height>
       </rect>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout_2">
-      <property name="spacing">
-       <number>200</number>
-      </property>
+      <item>
+       <widget class="QPushButton" name="home2">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string>HOME</string>
+        </property>
+       </widget>
+      </item>
       <item>
        <widget class="QPushButton" name="editback">
-        <property name="maximumSize">
-         <size>
-          <width>100</width>
-          <height>16777215</height>
-         </size>
-        </property>
         <property name="styleSheet">
-         <string notr="true">QPushButton{ align:center;}</string>
+         <string notr="true">color: rgb(0, 0, 0);</string>
         </property>
         <property name="text">
          <string>BACK</string>
@@ -766,27 +649,11 @@ color:red;
       </item>
       <item>
        <widget class="QPushButton" name="name_edit">
-        <property name="maximumSize">
-         <size>
-          <width>100</width>
-          <height>16777215</height>
-         </size>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
         </property>
         <property name="text">
-         <string>EDIT</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="home2">
-        <property name="maximumSize">
-         <size>
-          <width>100</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>HOME</string>
+         <string>UBDATE</string>
         </property>
        </widget>
       </item>
@@ -794,103 +661,75 @@ color:red;
     </widget>
    </widget>
    <widget class="QWidget" name="page_3">
-    <widget class="QLabel" name="label_9">
+    <widget class="QLabel" name="label_24">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>50</y>
-       <width>491</width>
-       <height>41</height>
+       <x>190</x>
+       <y>0</y>
+       <width>301</width>
+       <height>91</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0, 0, 0);</string>
      </property>
      <property name="text">
-      <string>                        Enter The Detail</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:20pt; font-weight:700;&quot;&gt;ADMIN PAGE&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
-    <widget class="QWidget" name="layoutWidget_5">
+    <widget class="QWidget" name="formLayoutWidget_5">
      <property name="geometry">
       <rect>
-       <x>40</x>
-       <y>140</y>
-       <width>631</width>
-       <height>171</height>
+       <x>60</x>
+       <y>100</y>
+       <width>581</width>
+       <height>151</height>
       </rect>
      </property>
-     <layout class="QFormLayout" name="formLayout_8">
-      <item row="0" column="0">
-       <widget class="QLabel" name="label_25">
-        <property name="text">
-         <string>Enter Email:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1">
-       <widget class="QLineEdit" name="lineEdit_18">
-        <property name="enabled">
-         <bool>true</bool>
-        </property>
-        <property name="sizeIncrement">
-         <size>
-          <width>0</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="baseSize">
-         <size>
-          <width>0</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>20</pointsize>
-         </font>
-        </property>
-        <property name="placeholderText">
-         <string>Email to be update</string>
-        </property>
-        <property name="clearButtonEnabled">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
+     <layout class="QFormLayout" name="formLayout_5">
       <item row="1" column="0">
-       <widget class="QLabel" name="label_35">
+       <widget class="QLabel" name="label_25">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
+        </property>
         <property name="text">
-         <string>Enter Teacher ID:</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;ENTER NEW  EMAIL :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
       </item>
       <item row="1" column="1">
-       <widget class="QLineEdit" name="lineEdit_37">
-        <property name="enabled">
-         <bool>true</bool>
-        </property>
-        <property name="sizeIncrement">
-         <size>
-          <width>0</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="baseSize">
-         <size>
-          <width>0</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>20</pointsize>
-         </font>
+       <widget class="QLineEdit" name="lineEdit_18">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
         </property>
         <property name="text">
          <string/>
         </property>
         <property name="placeholderText">
-         <string>6311</string>
+         <string>new name </string>
         </property>
-        <property name="clearButtonEnabled">
-         <bool>true</bool>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_28">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;ENTER TEACHER ID :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="lineEdit_35">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="placeholderText">
+         <string>existing teacher id</string>
         </property>
        </widget>
       </item>
@@ -899,26 +738,27 @@ color:red;
     <widget class="QWidget" name="horizontalLayoutWidget_3">
      <property name="geometry">
       <rect>
-       <x>0</x>
-       <y>350</y>
-       <width>681</width>
+       <x>60</x>
+       <y>320</y>
+       <width>581</width>
        <height>41</height>
       </rect>
      </property>
-     <layout class="QHBoxLayout" name="horizontalLayout_9">
-      <property name="spacing">
-       <number>200</number>
-      </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_8">
+      <item>
+       <widget class="QPushButton" name="home2_2">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string>HOME</string>
+        </property>
+       </widget>
+      </item>
       <item>
        <widget class="QPushButton" name="editback_2">
-        <property name="maximumSize">
-         <size>
-          <width>100</width>
-          <height>16777215</height>
-         </size>
-        </property>
         <property name="styleSheet">
-         <string notr="true">QPushButton{ align:center;}</string>
+         <string notr="true">color: rgb(0, 0, 0);</string>
         </property>
         <property name="text">
          <string>BACK</string>
@@ -927,27 +767,11 @@ color:red;
       </item>
       <item>
        <widget class="QPushButton" name="email_edit">
-        <property name="maximumSize">
-         <size>
-          <width>100</width>
-          <height>16777215</height>
-         </size>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
         </property>
         <property name="text">
-         <string>EDIT</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="home2_2">
-        <property name="maximumSize">
-         <size>
-          <width>100</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>HOME</string>
+         <string>UBDATE</string>
         </property>
        </widget>
       </item>
@@ -955,103 +779,75 @@ color:red;
     </widget>
    </widget>
    <widget class="QWidget" name="page_4">
-    <widget class="QLabel" name="label_10">
+    <widget class="QLabel" name="label_26">
      <property name="geometry">
       <rect>
-       <x>0</x>
-       <y>50</y>
-       <width>521</width>
-       <height>31</height>
+       <x>180</x>
+       <y>0</y>
+       <width>301</width>
+       <height>91</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0, 0, 0);</string>
      </property>
      <property name="text">
-      <string>                             Enter The Detail</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:20pt; font-weight:700;&quot;&gt;ADMIN PAGE&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
-    <widget class="QWidget" name="layoutWidget_6">
+    <widget class="QWidget" name="formLayoutWidget_6">
      <property name="geometry">
       <rect>
-       <x>30</x>
-       <y>140</y>
-       <width>631</width>
-       <height>171</height>
+       <x>60</x>
+       <y>100</y>
+       <width>581</width>
+       <height>151</height>
       </rect>
      </property>
-     <layout class="QFormLayout" name="formLayout_9">
-      <item row="0" column="0">
-       <widget class="QLabel" name="label_26">
-        <property name="text">
-         <string>Enter Phone Number:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1">
-       <widget class="QLineEdit" name="lineEdit_19">
-        <property name="enabled">
-         <bool>true</bool>
-        </property>
-        <property name="sizeIncrement">
-         <size>
-          <width>0</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="baseSize">
-         <size>
-          <width>0</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>20</pointsize>
-         </font>
-        </property>
-        <property name="placeholderText">
-         <string>Phn... to be update</string>
-        </property>
-        <property name="clearButtonEnabled">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
+     <layout class="QFormLayout" name="formLayout_6">
       <item row="1" column="0">
-       <widget class="QLabel" name="label_36">
+       <widget class="QLabel" name="label_29">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
+        </property>
         <property name="text">
-         <string>Enter Teacher ID:</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;ENTER NEW  EMAIL :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
       </item>
       <item row="1" column="1">
        <widget class="QLineEdit" name="lineEdit_38">
-        <property name="enabled">
-         <bool>true</bool>
-        </property>
-        <property name="sizeIncrement">
-         <size>
-          <width>0</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="baseSize">
-         <size>
-          <width>0</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>20</pointsize>
-         </font>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
         </property>
         <property name="text">
          <string/>
         </property>
         <property name="placeholderText">
-         <string>6311</string>
+         <string>new name </string>
         </property>
-        <property name="clearButtonEnabled">
-         <bool>true</bool>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_30">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;ENTER TEACHER ID :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="lineEdit_20">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="placeholderText">
+         <string>existing teacher id</string>
         </property>
        </widget>
       </item>
@@ -1060,26 +856,27 @@ color:red;
     <widget class="QWidget" name="horizontalLayoutWidget_4">
      <property name="geometry">
       <rect>
-       <x>0</x>
-       <y>340</y>
-       <width>681</width>
-       <height>51</height>
+       <x>60</x>
+       <y>270</y>
+       <width>581</width>
+       <height>41</height>
       </rect>
      </property>
-     <layout class="QHBoxLayout" name="horizontalLayout_10">
-      <property name="spacing">
-       <number>200</number>
-      </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_9">
+      <item>
+       <widget class="QPushButton" name="home2_3">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string>HOME</string>
+        </property>
+       </widget>
+      </item>
       <item>
        <widget class="QPushButton" name="editback_3">
-        <property name="maximumSize">
-         <size>
-          <width>100</width>
-          <height>16777215</height>
-         </size>
-        </property>
         <property name="styleSheet">
-         <string notr="true">QPushButton{ align:center;}</string>
+         <string notr="true">color: rgb(0, 0, 0);</string>
         </property>
         <property name="text">
          <string>BACK</string>
@@ -1088,27 +885,11 @@ color:red;
       </item>
       <item>
        <widget class="QPushButton" name="phn_edit">
-        <property name="maximumSize">
-         <size>
-          <width>100</width>
-          <height>16777215</height>
-         </size>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
         </property>
         <property name="text">
-         <string>EDIT</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="home2_3">
-        <property name="maximumSize">
-         <size>
-          <width>100</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>HOME</string>
+         <string>UBDATE</string>
         </property>
        </widget>
       </item>
@@ -1116,161 +897,94 @@ color:red;
     </widget>
    </widget>
    <widget class="QWidget" name="page_5">
-    <widget class="QWidget" name="layoutWidget_9">
+    <widget class="QLabel" name="label_27">
      <property name="geometry">
       <rect>
-       <x>40</x>
-       <y>120</y>
-       <width>651</width>
-       <height>161</height>
+       <x>210</x>
+       <y>0</y>
+       <width>301</width>
+       <height>91</height>
       </rect>
      </property>
-     <layout class="QFormLayout" name="formLayout_10">
-      <item row="0" column="0">
-       <widget class="QLabel" name="label_27">
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0, 0, 0);</string>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:20pt; font-weight:700;&quot;&gt;ADMIN PAGE&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+    <widget class="QWidget" name="formLayoutWidget_7">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>100</y>
+       <width>581</width>
+       <height>151</height>
+      </rect>
+     </property>
+     <layout class="QFormLayout" name="formLayout_7">
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_31">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
+        </property>
         <property name="text">
-         <string>Chose Subject</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;ENTER SUBJECT :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
       </item>
-      <item row="1" column="0">
-       <widget class="QLabel" name="label_37">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_32">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
+        </property>
         <property name="text">
-         <string>Enter Teacher ID:</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;ENTER TEACHER ID :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
       </item>
       <item row="0" column="1">
-       <widget class="QComboBox" name="comboBox_3">
-        <property name="maximumSize">
-         <size>
-          <width>400</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>20</pointsize>
-         </font>
-        </property>
-        <item>
-         <property name="text">
-          <string>Not_Selected</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Advanced Calculus (MATH 104)</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>General Physics II (PHYS 102)</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Object-Oriented Programming (COMP 116)</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Elements Of Engineering II (ENGG 112)</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Technical Communication (ENGT 105)</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Introduction to Environmental Engineering (ENVE 102)</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Engineering Drawing II (EDRG 102)</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Engineering Project (ENGG 102)</string>
-         </property>
-        </item>
-       </widget>
-      </item>
-      <item row="1" column="1">
        <widget class="QLineEdit" name="lineEdit_39">
-        <property name="enabled">
-         <bool>true</bool>
-        </property>
-        <property name="sizeIncrement">
-         <size>
-          <width>0</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="baseSize">
-         <size>
-          <width>0</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>20</pointsize>
-         </font>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
         </property>
         <property name="text">
          <string/>
         </property>
         <property name="placeholderText">
-         <string>6311</string>
-        </property>
-        <property name="clearButtonEnabled">
-         <bool>true</bool>
+         <string>existing teacher id</string>
         </property>
        </widget>
       </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="lineEdit_2"/>
+      </item>
      </layout>
-    </widget>
-    <widget class="QLabel" name="label_11">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>20</y>
-       <width>749</width>
-       <height>45</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>                             Enter The Detail</string>
-     </property>
     </widget>
     <widget class="QWidget" name="horizontalLayoutWidget_5">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>320</y>
-       <width>681</width>
+       <x>60</x>
+       <y>260</y>
+       <width>581</width>
        <height>41</height>
       </rect>
      </property>
-     <layout class="QHBoxLayout" name="horizontalLayout_11">
-      <property name="spacing">
-       <number>200</number>
-      </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_10">
+      <item>
+       <widget class="QPushButton" name="home2_4">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string>HOME</string>
+        </property>
+       </widget>
+      </item>
       <item>
        <widget class="QPushButton" name="editback_4">
-        <property name="maximumSize">
-         <size>
-          <width>100</width>
-          <height>16777215</height>
-         </size>
-        </property>
         <property name="styleSheet">
-         <string notr="true">QPushButton{ align:center;}</string>
+         <string notr="true">color: rgb(0, 0, 0);</string>
         </property>
         <property name="text">
          <string>BACK</string>
@@ -1279,27 +993,11 @@ color:red;
       </item>
       <item>
        <widget class="QPushButton" name="sub_edit">
-        <property name="maximumSize">
-         <size>
-          <width>100</width>
-          <height>16777215</height>
-         </size>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
         </property>
         <property name="text">
-         <string>EDIT</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="home2_4">
-        <property name="maximumSize">
-         <size>
-          <width>100</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>HOME</string>
+         <string>UBDATE</string>
         </property>
        </widget>
       </item>
@@ -1307,144 +1005,75 @@ color:red;
     </widget>
    </widget>
    <widget class="QWidget" name="page3">
-    <widget class="QLabel" name="label_4">
+    <widget class="QLabel" name="label_33">
      <property name="geometry">
       <rect>
-       <x>150</x>
-       <y>70</y>
-       <width>421</width>
-       <height>51</height>
+       <x>200</x>
+       <y>0</y>
+       <width>301</width>
+       <height>91</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0, 0, 0);</string>
+     </property>
      <property name="text">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Please Select Teacher ID&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:20pt; font-weight:700;&quot;&gt;ADMIN PAGE&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_5">
+    <widget class="QWidget" name="formLayoutWidget_8">
      <property name="geometry">
       <rect>
-       <x>110</x>
-       <y>150</y>
-       <width>471</width>
-       <height>31</height>
+       <x>60</x>
+       <y>90</y>
+       <width>581</width>
+       <height>151</height>
       </rect>
      </property>
-     <property name="text">
-      <string>Whose Data You Want To Delete</string>
-     </property>
+     <layout class="QFormLayout" name="formLayout_8">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_35">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;CHOOSE TEACHER ID :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QComboBox" name="comboBox"/>
+      </item>
+     </layout>
     </widget>
-    <widget class="QPushButton" name="delet">
+    <widget class="QWidget" name="horizontalLayoutWidget_8">
      <property name="geometry">
       <rect>
-       <x>290</x>
-       <y>310</y>
-       <width>100</width>
+       <x>65</x>
+       <y>280</y>
+       <width>571</width>
        <height>41</height>
       </rect>
      </property>
-     <property name="maximumSize">
-      <size>
-       <width>100</width>
-       <height>16777215</height>
-      </size>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton{ align:center;}</string>
-     </property>
-     <property name="text">
-      <string>Delete</string>
-     </property>
-    </widget>
-    <widget class="QWidget" name="">
-     <property name="geometry">
-      <rect>
-       <x>220</x>
-       <y>380</y>
-       <width>231</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <layout class="QHBoxLayout" name="horizontalLayout_5">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QPushButton" name="home3">
+        <property name="text">
+         <string>HOME</string>
+        </property>
+       </widget>
+      </item>
       <item>
        <widget class="QPushButton" name="deletback">
-        <property name="maximumSize">
-         <size>
-          <width>100</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>12</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton{ align:center;}</string>
-        </property>
         <property name="text">
          <string>BACK</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="home3">
-        <property name="maximumSize">
-         <size>
-          <width>100</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>12</pointsize>
-         </font>
-        </property>
+       <widget class="QPushButton" name="delet">
         <property name="text">
-         <string>Home</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-    <widget class="QWidget" name="">
-     <property name="geometry">
-      <rect>
-       <x>120</x>
-       <y>230</y>
-       <width>431</width>
-       <height>44</height>
-      </rect>
-     </property>
-     <layout class="QHBoxLayout" name="horizontalLayout">
-      <item>
-       <widget class="QComboBox" name="comboBox1">
-        <property name="font">
-         <font>
-          <pointsize>15</pointsize>
-         </font>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="view5">
-        <property name="maximumSize">
-         <size>
-          <width>180</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>15</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>View Teacher ID</string>
+         <string>DELETE</string>
         </property>
        </widget>
       </item>

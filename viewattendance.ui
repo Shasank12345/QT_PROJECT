@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>AdminWindow</class>
- <widget class="QMainWindow" name="AdminWindow">
+ <class>VIEWATTENDANCE</class>
+ <widget class="QMainWindow" name="VIEWATTENDANCE">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>663</width>
-    <height>622</height>
+    <width>762</width>
+    <height>702</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,64 +17,30 @@
    <string notr="true">background-image: url(:/image/TECAHER.jpg);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="layoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>720</x>
-      <y>400</y>
-      <width>261</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout"/>
-   </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>60</y>
-      <width>401</width>
-      <height>61</height>
+      <x>160</x>
+      <y>0</y>
+      <width>441</width>
+      <height>81</height>
      </rect>
     </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(0, 0, 0);</string>
-    </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:20pt; font-weight:700;&quot;&gt;ADMIN PAGE&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:20pt; font-weight:700;&quot;&gt;ATTENDANCE SHEET&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QWidget" name="formLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>166</y>
-      <width>601</width>
-      <height>201</height>
+      <x>100</x>
+      <y>70</y>
+      <width>551</width>
+      <height>121</height>
      </rect>
     </property>
-    <layout class="QFormLayout" name="formLayout_2">
-     <item row="2" column="0">
-      <widget class="QLabel" name="label_3">
-       <property name="styleSheet">
-        <string notr="true">QLabel{
-color: black;
-   
-
-       font-size:20px;  
-       padding: 1px; 
-       font-weight: bold;  
-     text-align: center; 
-   
-}
-</string>
-       </property>
-       <property name="text">
-        <string>MANAGE STUDENT :</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="0">
+    <layout class="QFormLayout" name="formLayout">
+     <item row="0" column="0">
       <widget class="QLabel" name="label_2">
        <property name="styleSheet">
         <string notr="true">QLabel{
@@ -90,11 +56,34 @@ color: black;
 </string>
        </property>
        <property name="text">
-        <string>MANAGE TEACHER :</string>
+        <string>CHOOSE SUBJECT :</string>
        </property>
       </widget>
      </item>
-     <item row="3" column="0">
+     <item row="0" column="1">
+      <widget class="QComboBox" name="comboBox"/>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_3">
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+color: black;
+   
+
+       font-size:20px;  
+       padding: 1px; 
+       font-weight: bold;  
+     text-align: center; 
+   
+}
+</string>
+       </property>
+       <property name="text">
+        <string>CHOOSE DATE :</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
       <widget class="QLabel" name="label_4">
        <property name="styleSheet">
         <string notr="true">QLabel{
@@ -110,54 +99,43 @@ color: black;
 </string>
        </property>
        <property name="text">
-        <string>MANAGE ROUTINE :</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="1">
-      <widget class="QPushButton" name="pushButton4">
-       <property name="styleSheet">
-        <string notr="true">color: rgb(0, 0, 0);</string>
-       </property>
-       <property name="text">
-        <string>TEACHER</string>
+        <string>CHOOSE DAY   :</string>
        </property>
       </widget>
      </item>
      <item row="2" column="1">
-      <widget class="QPushButton" name="pushButton5">
-       <property name="styleSheet">
-        <string notr="true">color: rgb(0, 0, 0);</string>
-       </property>
-       <property name="text">
-        <string> STUDENT</string>
-       </property>
-      </widget>
+      <widget class="QComboBox" name="comboBox_3"/>
      </item>
-     <item row="3" column="1">
-      <widget class="QPushButton" name="pushButton6">
-       <property name="styleSheet">
-        <string notr="true">color: rgb(0, 0, 0);</string>
-       </property>
-       <property name="text">
-        <string> ROUTINE</string>
-       </property>
-      </widget>
+     <item row="3" column="0">
+      <layout class="QHBoxLayout" name="horizontalLayout"/>
+     </item>
+     <item row="1" column="1">
+      <widget class="QDateEdit" name="dateEdit"/>
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="horizontalLayoutWidget">
+   <widget class="QWidget" name="horizontalLayoutWidget_2">
     <property name="geometry">
      <rect>
-      <x>190</x>
-      <y>420</y>
-      <width>261</width>
-      <height>31</height>
+      <x>100</x>
+      <y>540</y>
+      <width>551</width>
+      <height>41</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
-      <widget class="QPushButton" name="home">
+      <widget class="QPushButton" name="pushButton_2">
+       <property name="styleSheet">
+        <string notr="true">color: rgb(0, 0, 0);</string>
+       </property>
+       <property name="text">
+        <string>BACK</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_3">
        <property name="styleSheet">
         <string notr="true">color: rgb(0, 0, 0);</string>
        </property>
@@ -167,17 +145,37 @@ color: black;
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="OK1">
+      <widget class="QPushButton" name="pushButton">
        <property name="styleSheet">
         <string notr="true">color: rgb(0, 0, 0);</string>
        </property>
        <property name="text">
-        <string>BACK</string>
+        <string>SUMBIT</string>
        </property>
       </widget>
      </item>
     </layout>
    </widget>
+   <widget class="QTableView" name="tableView">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>200</y>
+      <width>551</width>
+      <height>331</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>762</width>
+     <height>25</height>
+    </rect>
+   </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>

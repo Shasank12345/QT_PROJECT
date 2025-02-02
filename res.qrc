@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/image">
+        <file>TECAHER.jpg</file>
+        <file>logipage.jpg</file>
+    </qresource>
+</RCC>

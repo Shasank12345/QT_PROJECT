@@ -23,21 +23,6 @@ AdminWindow::~AdminWindow()
 
 
 
-void AdminWindow::on_OK1_clicked()
-{
-   if(ui->radioButton4->isChecked()){
-        adminTeacher_edit =new AdminTeacher_Edit(this);
-          adminTeacher_edit->show();
-    }
-    if(ui->radioButton5->isChecked()){
-        adminStudent_edit =new AdminStudent_Edit(this);
-       adminStudent_edit->show();
-    }
-    if(ui->radioButton6->isChecked()){
-        routinewindow =new RoutineWindow(this);
-        routinewindow->show();
-    }
-}
 
 
 
@@ -47,5 +32,41 @@ void AdminWindow::on_home_clicked()
 {
     MainWindow *mainWindow =new MainWindow();
     mainWindow->show();
+    this->hide();
+}
+
+
+void AdminWindow::on_pushButton4_clicked()
+{
+    adminTeacher_edit =new AdminTeacher_Edit(this);
+    adminTeacher_edit->show();
+    this->hide();
+
+
+}
+
+
+void AdminWindow::on_pushButton5_clicked()
+{
+    adminStudent_edit =new AdminStudent_Edit(this);
+    adminStudent_edit->show();
+    this->hide();
+}
+
+
+void AdminWindow::on_pushButton6_clicked()
+{
+    routinewindow =new RoutineWindow(this);
+    routinewindow->show();
+    this->hide();
+}
+
+
+void AdminWindow::on_OK1_clicked()
+{
+    MainWindow *mainWindow =new MainWindow();
+    mainWindow->show();
+    this->hide();
+
 }
 
