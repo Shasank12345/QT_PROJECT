@@ -6,6 +6,8 @@
 #include "adminwindow.h"
 #include "teacherwindow.h"
 #include "studentwindow.h"
+#include<QMessageBox>
+#include"qmessagebox.h"
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)

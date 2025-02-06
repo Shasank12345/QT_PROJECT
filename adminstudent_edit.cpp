@@ -92,6 +92,8 @@ void AdminStudent_Edit::on_edit_clicked()
 void AdminStudent_Edit::on_delet_3_clicked()
 {
     ui->stackedWidget->setCurrentIndex(8);
+    populatecombo1();
+
 }
 
 
@@ -138,6 +140,8 @@ void AdminStudent_Edit::on_home3_2_clicked()
 {
     MainWindow *mainWindow =new MainWindow();
     mainWindow->show();
+    this->hide();
+
 }
 
 
@@ -152,6 +156,8 @@ void AdminStudent_Edit::on_home4_clicked()
 {
     MainWindow *mainWindow =new MainWindow();
     mainWindow->show();
+    this->hide();
+
 }
 
 
@@ -167,6 +173,8 @@ void AdminStudent_Edit::on_home5_clicked()
 {
     MainWindow *mainWindow =new MainWindow();
     mainWindow->show();
+    this->hide();
+
 }
 
 
@@ -180,6 +188,8 @@ void AdminStudent_Edit::on_home6_clicked()
 {
     MainWindow *mainWindow =new MainWindow();
     mainWindow->show();
+    this->hide();
+
 }
 
 
@@ -207,6 +217,8 @@ void AdminStudent_Edit::on_home11_clicked()
 {
     MainWindow *mainWindow =new MainWindow();
     mainWindow->show();
+    this->hide();
+
 }
 
 
@@ -221,6 +233,8 @@ void AdminStudent_Edit::on_home9_clicked()
 {
     MainWindow *mainWindow =new MainWindow();
     mainWindow->show();
+    this->hide();
+
 }
 
 
@@ -238,6 +252,7 @@ void AdminStudent_Edit::on_home10_clicked()
 {
     MainWindow *mainWindow =new MainWindow();
     mainWindow->show();
+    this->hide();
 }
 
 void AdminStudent_Edit::populatecombo()

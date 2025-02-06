@@ -190,6 +190,21 @@
         </property>
        </widget>
       </item>
+      <item>
+       <widget class="QPushButton" name="save1_2">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string>SAVE</string>
+        </property>
+       </widget>
+      </item>
      </layout>
     </widget>
    </widget>
@@ -367,8 +382,8 @@
       <rect>
        <x>125</x>
        <y>380</y>
-       <width>551</width>
-       <height>33</height>
+       <width>560</width>
+       <height>224</height>
       </rect>
      </property>
      <property name="font">

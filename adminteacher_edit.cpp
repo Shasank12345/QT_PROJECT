@@ -65,6 +65,8 @@ void AdminTeacher_Edit::on_home0_clicked()
 {
     MainWindow *mainWindow =new MainWindow();
     mainWindow->show();
+    this->hide();
+
 }
 
 
@@ -72,6 +74,7 @@ void AdminTeacher_Edit::on_back_clicked()
 {
     AdminWindow *adminWindow =new AdminWindow();
     adminWindow->show();
+    this->hide();
 }
 
 
@@ -199,6 +202,8 @@ void AdminTeacher_Edit::on_home1_clicked()
 {
     MainWindow *mainWindow =new MainWindow();
     mainWindow->show();
+    this->hide();
+
 }
 
 
@@ -206,6 +211,8 @@ void AdminTeacher_Edit::on_home5_clicked()
 {
     MainWindow *mainWindow =new MainWindow();
     mainWindow->show();
+    this->hide();
+
 }
 
 
@@ -220,6 +227,8 @@ void AdminTeacher_Edit::on_home2_2_clicked()
 {
     MainWindow *mainWindow =new MainWindow();
     mainWindow->show();
+    this->hide();
+
 }
 
 
@@ -234,6 +243,8 @@ void AdminTeacher_Edit::on_home2_4_clicked()
 {
     MainWindow *mainWindow =new MainWindow();
     mainWindow->show();
+    this->hide();
+
 }
 
 
@@ -241,6 +252,8 @@ void AdminTeacher_Edit::on_home3_clicked()
 {
     MainWindow *mainWindow =new MainWindow();
     mainWindow->show();
+    this->hide();
+
 }
 
 
@@ -248,6 +261,7 @@ void AdminTeacher_Edit::on_home4_clicked()
 {
     MainWindow *mainWindow =new MainWindow();
     mainWindow->show();
+    this->hide();
 }
 
 
@@ -323,9 +337,9 @@ void AdminTeacher_Edit::on_ok_clicked()
         QMessageBox::warning(this, "Input Error", "Please select a valid Teacher ID.");
         return;
     }
-    if(select=="NONE SETECTED")
+    if(select=="NONE SELECTED")
     {
-        QMessageBox::warning(this, "Not Selected", "Please select ");
+        QMessageBox::warning(this, "Not Selected", "Please Select What You Want To Edit ");
     }
     if(select=="NAME")
     {
@@ -596,4 +610,10 @@ void AdminTeacher_Edit::on_show_clicked()
 
 
 
+
+
+void AdminTeacher_Edit::on_back_2_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+}
 
