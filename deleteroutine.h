@@ -13,7 +13,7 @@ class deleteroutine : public QDialog
 
 public:
     explicit deleteroutine(QWidget *parent = nullptr);
-    void name();
+    void adddata();
     void day();
     ~deleteroutine();
 
@@ -23,6 +23,14 @@ private slots:
     void on_pushButton_2_clicked();
 
     void on_pushButton_clicked();
+
+    void on_Delete_clicked();
+
+    void on_Home_clicked();
+
+    void on_Back_clicked();
+
+    void on_delete_2_clicked();
 
 private:
     Ui::deleteroutine *ui;

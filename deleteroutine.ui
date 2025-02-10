@@ -14,20 +14,130 @@
    <string>Dialog</string>
   </property>
   <property name="styleSheet">
-   <string notr="true"/>
+   <string notr="true">background-image: url(:/image/TECAHER.jpg);</string>
   </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>240</x>
-     <y>30</y>
-     <width>111</width>
+     <x>300</x>
+     <y>80</y>
+     <width>161</width>
      <height>41</height>
     </rect>
    </property>
-   <property name="text">
-    <string>delete routine</string>
+   <property name="styleSheet">
+    <string notr="true">QLabel{
+color: black;
+   
+
+       font-size:20px;  
+       padding: 1px; 
+       font-weight: bold;  
+     text-align: center; 
+   
+}
+
+
+</string>
    </property>
+   <property name="text">
+    <string> ROUTINE PAGE</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="formLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>120</y>
+     <width>361</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <layout class="QFormLayout" name="formLayout">
+    <item row="0" column="0">
+     <widget class="QLabel" name="label_2">
+      <property name="styleSheet">
+       <string notr="true">QLabel{
+color: black;
+   
+
+       font-size:20px;  
+       padding: 1px; 
+       font-weight: bold;  
+     text-align: center; 
+   
+}
+
+
+</string>
+      </property>
+      <property name="text">
+       <string>NAME</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QComboBox" name="comboBox"/>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="label_3">
+      <property name="styleSheet">
+       <string notr="true">QLabel{
+color: black;
+   
+
+       font-size:20px;  
+       padding: 1px; 
+       font-weight: bold;  
+     text-align: center; 
+   
+}
+
+
+</string>
+      </property>
+      <property name="text">
+       <string>DAY</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QComboBox" name="comboBox_2"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="formLayoutWidget_2">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>190</y>
+     <width>295</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QPushButton" name="Home">
+      <property name="text">
+       <string>HOME</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="delete_2">
+      <property name="text">
+       <string>DELETE</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="Back">
+      <property name="text">
+       <string>BACK</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
  </widget>
  <resources/>

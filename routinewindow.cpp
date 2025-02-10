@@ -50,6 +50,8 @@ void RoutineWindow::on_pushButton_clicked()
 void RoutineWindow::on_pushButton_3_clicked()
 {
     deleteroutine *del = new deleteroutine();
+    del->adddata();
+    del->day();
     del->show();
     this->hide();
 }
