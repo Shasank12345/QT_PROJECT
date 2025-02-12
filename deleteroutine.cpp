@@ -6,12 +6,14 @@
 #include <QMessageBox>
 #include <QSqlQuery>
 #include <QSqlError>
+#include"qmessagebox.h"
 
 deleteroutine::deleteroutine(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::deleteroutine)
 {
     ui->setupUi(this);
+    this->setFixedSize(this->size());
 }
 
 

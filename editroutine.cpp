@@ -6,6 +6,7 @@ EditRoutine::EditRoutine(QWidget *parent)
     , ui(new Ui::EditRoutine)
 {
     ui->setupUi(this);
+    this->setFixedSize(this->size());
 }
 
 EditRoutine::~EditRoutine()

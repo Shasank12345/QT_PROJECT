@@ -24,6 +24,7 @@ VIEWROUTINE::VIEWROUTINE(QWidget *parent)
     , ui(new Ui::VIEWROUTINE)
 {
     ui->setupUi(this);
+    this->setFixedSize(this->size());
 }
 
 void VIEWROUTINE::day()
