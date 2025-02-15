@@ -39,7 +39,7 @@
 </string>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="page0">
     <widget class="QLabel" name="label_20">
@@ -441,7 +441,7 @@ color: black;
        <x>0</x>
        <y>160</y>
        <width>611</width>
-       <height>123</height>
+       <height>125</height>
       </rect>
      </property>
      <layout class="QFormLayout" name="formLayout_3">
