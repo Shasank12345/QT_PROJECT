@@ -46,7 +46,7 @@
     <enum>QFrame::Shape::Box</enum>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>8</number>
    </property>
    <widget class="QWidget" name="page">
     <widget class="QLabel" name="label">
