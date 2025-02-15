@@ -11,6 +11,7 @@ AdminWindow::AdminWindow(QWidget *parent)
 {
 
     ui->setupUi(this);
+    this->setFixedSize(this->size());
 
 }
 

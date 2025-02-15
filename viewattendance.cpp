@@ -1,5 +1,7 @@
 #include "viewattendance.h"
 #include "ui_viewattendance.h"
+#include<QMessageBox>
+#include"qmessagebox.h"
 
 VIEWATTENDANCE::VIEWATTENDANCE(QWidget *parent)
     : QMainWindow(parent)
@@ -73,8 +75,8 @@ void VIEWATTENDANCE::fetchdata()
     // Set column headers
 
     model->setHeaderData(0, Qt::Horizontal, "STUDENT_ID");
-    model->setHeaderData(2, Qt::Horizontal, "STUDENT_NAME");
-    model->setHeaderData(1, Qt::Horizontal, "STATUS");
+    model->setHeaderData(1, Qt::Horizontal, "STUDENT_NAME");
+    model->setHeaderData(2, Qt::Horizontal, "STATUS");
     //model->setHeaderData(3, Qt::Horizontal, "Subject");
 
 

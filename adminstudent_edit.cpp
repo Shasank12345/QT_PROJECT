@@ -92,6 +92,8 @@ void AdminStudent_Edit::on_edit_clicked()
 void AdminStudent_Edit::on_delet_3_clicked()
 {
     ui->stackedWidget->setCurrentIndex(8);
+    populatecombo1();
+
 }
 
 
@@ -138,6 +140,8 @@ void AdminStudent_Edit::on_home3_2_clicked()
 {
     MainWindow *mainWindow =new MainWindow();
     mainWindow->show();
+    this->hide();
+
 }
 
 
@@ -152,6 +156,8 @@ void AdminStudent_Edit::on_home4_clicked()
 {
     MainWindow *mainWindow =new MainWindow();
     mainWindow->show();
+    this->hide();
+
 }
 
 
@@ -167,6 +173,8 @@ void AdminStudent_Edit::on_home5_clicked()
 {
     MainWindow *mainWindow =new MainWindow();
     mainWindow->show();
+    this->hide();
+
 }
 
 
@@ -180,6 +188,8 @@ void AdminStudent_Edit::on_home6_clicked()
 {
     MainWindow *mainWindow =new MainWindow();
     mainWindow->show();
+    this->hide();
+
 }
 
 
@@ -207,6 +217,8 @@ void AdminStudent_Edit::on_home11_clicked()
 {
     MainWindow *mainWindow =new MainWindow();
     mainWindow->show();
+    this->hide();
+
 }
 
 
@@ -221,6 +233,8 @@ void AdminStudent_Edit::on_home9_clicked()
 {
     MainWindow *mainWindow =new MainWindow();
     mainWindow->show();
+    this->hide();
+
 }
 
 
@@ -238,6 +252,7 @@ void AdminStudent_Edit::on_home10_clicked()
 {
     MainWindow *mainWindow =new MainWindow();
     mainWindow->show();
+    this->hide();
 }
 
 void AdminStudent_Edit::populatecombo()
@@ -280,10 +295,73 @@ void AdminStudent_Edit::populatecombo1()
 }
 
 
+void AdminStudent_Edit :: email(QString a)
+{
+    QString id = a;
+    ui->lineEdit_17->clear();
+    QSqlQuery query;
+    query.prepare("SELECT Email FROM STUDENT_ENTRY WHERE Student_id = :id");
+    query.bindValue(":id", id);
+
+    if (query.exec()) {
+        if (query.next()) {
+            QString Email = query.value(0).toString();
+            ui->lineEdit_17->setText(Email); // Replace with your widget for displaying Email
+        } else {
+            QMessageBox::information(this, "Not Found", "No email found for the given teacher.");
+        }
+    } else {
+        QMessageBox::critical(this,
+                              "Database Error",
+                              "Failed to retrieve Email: " + query.lastError().text());
+    }
+}
 
 
+void AdminStudent_Edit :: phn(QString a)
+{
+    QString id = a;
+    ui->lineEdit_11->clear();
+    QSqlQuery query;
+    query.prepare("SELECT Contact_no FROM STUDENT_ENTRY WHERE Student_id = :id");
+    query.bindValue(":id", id);
+
+    if (query.exec()) {
+        if (query.next()) {
+            QString Contact_no = query.value(0).toString();
+            ui->lineEdit_11->setText(Contact_no); // Replace with your widget for displaying Contact_no
+        } else {
+            QMessageBox::information(this, "Not Found", "No Contact_no found for the given teacher.");
+        }
+    } else {
+        QMessageBox::critical(this,
+                              "Database Error",
+                              "Failed to retrieve contact number: " + query.lastError().text());
+    }
+}
 
 
+void AdminStudent_Edit :: address(QString a)
+{
+    QString id = a;
+    ui->lineEdit_13->clear();
+    QSqlQuery query;
+    query.prepare("SELECT Address FROM STUDENT_ENTRY WHERE Student_id = :id");
+    query.bindValue(":id", id);
+
+    if (query.exec()) {
+        if (query.next()) {
+            QString Address = query.value(0).toString();
+            ui->lineEdit_13->setText(Address); // Replace with your widget for displaying Address
+        } else {
+            QMessageBox::information(this, "Not Found", "No Address found for the given teacher.");
+        }
+    } else {
+        QMessageBox::critical(this,
+                              "Database Error",
+                              "Failed to retrieve address: " + query.lastError().text());
+    }
+}
 
 void AdminStudent_Edit::on_save1_clicked()
 {
@@ -367,8 +445,10 @@ void AdminStudent_Edit::on_view1_clicked()
 void AdminStudent_Edit::on_summit_clicked()
 {
     QString var;
-    QString vare;
-    vare=ui->comboBox_2->currentText();
+    QString id;
+    QString name;
+    name=ui->lineEdit_6->text();
+    id=ui->comboBox_2->currentText();
     var=ui->comboBox->currentText();
     if (var=="NOT SELECTED")
     {        QMessageBox::warning(this, "Input Error", "Please Select What You Want To Edit.");
@@ -376,23 +456,30 @@ void AdminStudent_Edit::on_summit_clicked()
     }
     if(var=="NAME")
     {
-        ui->lineEdit_8->setText(vare);
+        ui->lineEdit_8->setText(id);
+        ui->lineEdit_9->setText(name);
         ui->stackedWidget->setCurrentIndex(4);
     }
     else if(var=="ADDRESS")
     {
-        ui->lineEdit_22->setText(vare);
+        ui->lineEdit_22->setText(id);
+        ui->lineEdit_12->setText(name);
+         address(id);
         ui->stackedWidget->setCurrentIndex(6);
     }
     else if(var=="CONTACT NUMBER")
     {
-        ui->lineEdit_15->setText(vare);
+        ui->lineEdit_15->setText(id);
+        ui->lineEdit_10->setText(name);
+         phn(id);
         ui->stackedWidget->setCurrentIndex(5);
     }
 
     else if(var=="EMAIL")
     {
-        ui->lineEdit_26->setText(vare);
+        ui->lineEdit_26->setText(id);
+        ui->lineEdit_14->setText(name);
+         email(id);
         ui->stackedWidget->setCurrentIndex(7);
     }
 }
@@ -616,4 +703,32 @@ void AdminStudent_Edit::on_delet1_clicked()
 
 
 
+
+
+void AdminStudent_Edit::on_pushButton_clicked()
+{
+    QString id = ui->comboBox_2->currentText();
+
+    if (id.isEmpty()) {
+        QMessageBox::warning(this, "Input Error", "Please Select Teacher ID");
+        return;
+    }
+
+    QSqlQuery query;
+    query.prepare("SELECT Name FROM STUDENT_ENTRY WHERE Student_id = :id");
+    query.bindValue(":id", id);
+
+    if (query.exec()) {
+        if (query.next()) {
+            QString Name = query.value(0).toString();
+            ui->lineEdit_6->setText(Name); // Replace with your widget for displaying Name
+        } else {
+            QMessageBox::information(this, "Not Found", "No Name found for the given teacher.");
+        }
+    } else {
+        QMessageBox::critical(this,
+                              "Database Error",
+                              "Failed to retrieve Name: " + query.lastError().text());
+    }
+}
 

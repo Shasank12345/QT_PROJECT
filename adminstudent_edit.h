@@ -87,6 +87,11 @@ private slots:
     void on_home10_clicked();
     void populatecombo();
     void populatecombo1();
+    void email(QString a);
+    void phn(QString a);
+    void address(QString a);
+
+    void on_pushButton_clicked();
 
 private:
     Ui::AdminStudent_Edit *ui;

@@ -11,8 +11,11 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    add_routine.cpp \
     adminstudent_edit.cpp \
     adminwindow.cpp \
+    deleteroutine.cpp \
+    editroutine.cpp \
     main.cpp \
     mainwindow.cpp \
     routinewindow.cpp \
@@ -24,8 +27,11 @@ SOURCES += \
     viewroutine.cpp
 
 HEADERS += \
+    add_routine.h \
     adminstudent_edit.h \
     adminwindow.h \
+    deleteroutine.h \
+    editroutine.h \
     mainwindow.h \
     routinewindow.h \
     studentwindow.h \
@@ -36,8 +42,11 @@ HEADERS += \
     viewroutine.h
 
 FORMS += \
+    add_routine.ui \
     adminstudent_edit.ui \
     adminwindow.ui \
+    deleteroutine.ui \
+    editroutine.ui \
     mainwindow.ui \
     routinewindow.ui \
     studentwindow.ui \

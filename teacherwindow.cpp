@@ -58,9 +58,9 @@ void TeacherWindow::on_pushButton_clicked()
 
 void TeacherWindow::on_pushButton_2_clicked()
 {
-    view->show();
+    view2->show();
+    view2->day();
     this->hide();
-
 
 }
 

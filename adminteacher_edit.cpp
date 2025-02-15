@@ -65,6 +65,8 @@ void AdminTeacher_Edit::on_home0_clicked()
 {
     MainWindow *mainWindow =new MainWindow();
     mainWindow->show();
+    this->hide();
+
 }
 
 
@@ -72,6 +74,7 @@ void AdminTeacher_Edit::on_back_clicked()
 {
     AdminWindow *adminWindow =new AdminWindow();
     adminWindow->show();
+    this->hide();
 }
 
 
@@ -104,7 +107,73 @@ void AdminTeacher_Edit::populatecomboboz()
     }
 
 }
+void AdminTeacher_Edit :: email(QString a)
+{
+    QString id = a;
+    ui->lineEdit_37->clear();
+    QSqlQuery query;
+    query.prepare("SELECT Email FROM teacher_data WHERE Teacher_Id = :id");
+    query.bindValue(":id", id);
 
+    if (query.exec()) {
+        if (query.next()) {
+            QString Email = query.value(0).toString();
+            ui->lineEdit_37->setText(Email); // Replace with your widget for displaying Email
+        } else {
+            QMessageBox::information(this, "Not Found", "No email found for the given teacher.");
+        }
+    } else {
+        QMessageBox::critical(this,
+                              "Database Error",
+                              "Failed to retrieve Email: " + query.lastError().text());
+    }
+}
+
+
+void AdminTeacher_Edit :: phn(QString a)
+{
+    QString id = a;
+    ui->lineEdit_42->clear();
+    QSqlQuery query;
+    query.prepare("SELECT Phone_Number FROM teacher_data WHERE Teacher_Id = :id");
+    query.bindValue(":id", id);
+
+    if (query.exec()) {
+        if (query.next()) {
+            QString Phone_Number = query.value(0).toString();
+            ui->lineEdit_42->setText(Phone_Number); // Replace with your widget for displaying Phone_Number
+        } else {
+            QMessageBox::information(this, "Not Found", "No Phone_Number found for the given teacher.");
+        }
+    } else {
+        QMessageBox::critical(this,
+                              "Database Error",
+                              "Failed to retrieve Phone Number: " + query.lastError().text());
+    }
+}
+
+
+void AdminTeacher_Edit :: subject(QString a)
+{
+    QString id = a;
+    ui->lineEdit_44->clear();
+    QSqlQuery query;
+    query.prepare("SELECT Subject FROM teacher_data WHERE Teacher_Id = :id");
+    query.bindValue(":id", id);
+
+    if (query.exec()) {
+        if (query.next()) {
+            QString Subject = query.value(0).toString();
+            ui->lineEdit_44->setText(Subject); // Replace with your widget for displaying Subject
+        } else {
+            QMessageBox::information(this, "Not Found", "No Subject found for the given teacher.");
+        }
+    } else {
+        QMessageBox::critical(this,
+                              "Database Error",
+                              "Failed to retrieve Subject" + query.lastError().text());
+    }
+}
 void AdminTeacher_Edit::populatecombox()
 {
     ui->comboBox->clear();
@@ -199,6 +268,8 @@ void AdminTeacher_Edit::on_home1_clicked()
 {
     MainWindow *mainWindow =new MainWindow();
     mainWindow->show();
+    this->hide();
+
 }
 
 
@@ -206,6 +277,8 @@ void AdminTeacher_Edit::on_home5_clicked()
 {
     MainWindow *mainWindow =new MainWindow();
     mainWindow->show();
+    this->hide();
+
 }
 
 
@@ -220,6 +293,8 @@ void AdminTeacher_Edit::on_home2_2_clicked()
 {
     MainWindow *mainWindow =new MainWindow();
     mainWindow->show();
+    this->hide();
+
 }
 
 
@@ -234,6 +309,8 @@ void AdminTeacher_Edit::on_home2_4_clicked()
 {
     MainWindow *mainWindow =new MainWindow();
     mainWindow->show();
+    this->hide();
+
 }
 
 
@@ -241,6 +318,8 @@ void AdminTeacher_Edit::on_home3_clicked()
 {
     MainWindow *mainWindow =new MainWindow();
     mainWindow->show();
+    this->hide();
+
 }
 
 
@@ -248,6 +327,7 @@ void AdminTeacher_Edit::on_home4_clicked()
 {
     MainWindow *mainWindow =new MainWindow();
     mainWindow->show();
+    this->hide();
 }
 
 
@@ -318,19 +398,21 @@ void AdminTeacher_Edit::on_ok_clicked()
     // Get the selected Teacher_ID from comboBox2
     QString selectedTeacherId = ui->comboBox2->currentText();
     QString select = ui->comboBox3->currentText();
+    QString name=ui->lineEdit_3->text();
     // Check if a valid Teacher_ID is selected
     if (selectedTeacherId.isEmpty()) {
         QMessageBox::warning(this, "Input Error", "Please select a valid Teacher ID.");
         return;
     }
-    if(select=="NONE SETECTED")
+    if(select=="NONE SELECTED")
     {
-        QMessageBox::warning(this, "Not Selected", "Please select ");
+        QMessageBox::warning(this, "Not Selected", "Please Select What You Want To Edit ");
     }
     if(select=="NAME")
     {
         // Set the selected Teacher_ID to the teacher_id field in the edit section
-        //ui->lineEdit_36->setText(selectedTeacherId);
+        ui->lineEdit_36->setText(selectedTeacherId);
+        ui->lineEdit_4->setText(name);
 
         // Switch to the edit section
         ui->stackedWidget->setCurrentIndex(3);
@@ -339,8 +421,9 @@ void AdminTeacher_Edit::on_ok_clicked()
     if(select=="EMAIL")
     {
         // Set the selected Teacher_ID to the teacher_id field in the edit section
-       // ui->lineEdit_35->setText(selectedTeacherId);
-
+       ui->lineEdit_35->setText(selectedTeacherId);
+        email(selectedTeacherId);
+       ui->lineEdit_40->setText(name);
         // Switch to the edit section
         ui->stackedWidget->setCurrentIndex(4);
     }
@@ -348,16 +431,18 @@ void AdminTeacher_Edit::on_ok_clicked()
     if(select=="PHONE NUMBER")
     {
         // Set the selected Teacher_ID to the teacher_id field in the edit section
-       // ui->lineEdit_38->setText(selectedTeacherId);
-
+       ui->lineEdit_20->setText(selectedTeacherId);
+        ui->lineEdit_41->setText(name);
+       phn(selectedTeacherId);
         // Switch to the edit section
         ui->stackedWidget->setCurrentIndex(5);
     }
     if(select=="SUBJECT")
     {
         // Set the selected Teacher_ID to the teacher_id field in the edit section
-       // ui->lineEdit_39->setText(selectedTeacherId);
-
+        ui->lineEdit_39->setText(selectedTeacherId);
+        ui->lineEdit_43->setText(name);
+        subject(selectedTeacherId);
         // Switch to the edit section
         ui->stackedWidget->setCurrentIndex(6);
     }
@@ -596,4 +681,38 @@ void AdminTeacher_Edit::on_show_clicked()
 
 
 
+
+
+void AdminTeacher_Edit::on_back_2_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+}
+
+
+void AdminTeacher_Edit::on_pushButton_clicked()
+{
+    QString id = ui->comboBox2->currentText();
+
+    if (id.isEmpty()) {
+        QMessageBox::warning(this, "Input Error", "Please Select Teacher ID");
+        return;
+    }
+
+    QSqlQuery query;
+    query.prepare("SELECT Name FROM teacher_data WHERE Teacher_Id = :id");
+    query.bindValue(":id", id);
+
+    if (query.exec()) {
+        if (query.next()) {
+            QString Name = query.value(0).toString();
+            ui->lineEdit_3->setText(Name); // Replace with your widget for displaying Name
+        } else {
+            QMessageBox::information(this, "Not Found", "No Name found for the given teacher.");
+        }
+    } else {
+        QMessageBox::critical(this,
+                              "Database Error",
+                              "Failed to retrieve Name: " + query.lastError().text());
+    }
+}
 

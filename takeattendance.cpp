@@ -3,7 +3,7 @@
 #include "ui_takeattendance.h"
 #include<QDateEdit>
 #include<QMessageBox>
-
+#include"qmessagebox.h"
 takeattendance::takeattendance(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::takeattendance)
@@ -116,4 +116,5 @@ void takeattendance::on_pushButton_2_clicked()
     t->show();
     this->hide();
 }
+
 

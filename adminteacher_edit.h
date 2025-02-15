@@ -86,6 +86,12 @@ private slots:
     void populatecomboboz();
     void populatecombox();
 
+    void on_back_2_clicked();
+
+    void on_pushButton_clicked();
+    void email(QString a);
+    void phn(QString a);
+    void subject(QString a);
 private:
     Ui::AdminTeacher_Edit *ui;
 };
