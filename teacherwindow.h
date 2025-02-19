@@ -28,29 +28,35 @@ class TeacherWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit TeacherWindow(QWidget *parent = nullptr);
+    explicit TeacherWindow(const QString &teacheremail,QWidget *parent = nullptr);
     ~TeacherWindow();
+
 
 private slots:
 
-    void on_pushButton_3_clicked();
+
 
     void on_pushButton_clicked();
 
     void on_pushButton_2_clicked();
 
-    void on_pushButton_5_clicked();
+   // void on_pushButton_5_clicked();
 
     void on_pushButton_6_clicked();
 
     void on_pushButton_4_clicked();
 
+    void on_pushButton_3_clicked();
+
 private:
     Ui::TeacherWindow *ui;
     MainWindow *main=new MainWindow;
-    takeattendance *take=new takeattendance;
-    VIEWATTENDANCE *view=new VIEWATTENDANCE;
+    //takeattendance *take=new takeattendance;
+    //VIEWATTENDANCE *view=new VIEWATTENDANCE;
     VIEWROUTINE *view2=new VIEWROUTINE;
+    QString teacheremail;
+    QString teacherSubject;
+    void loadTeacherSubject();
     //QSqlQueryModel *model;
 };
 

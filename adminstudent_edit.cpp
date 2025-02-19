@@ -294,8 +294,7 @@ void AdminStudent_Edit::populatecombo1()
 
 }
 
-
-void AdminStudent_Edit :: email(QString a)
+void AdminStudent_Edit::email(QString a)
 {
     QString id = a;
     ui->lineEdit_17->clear();
@@ -316,6 +315,9 @@ void AdminStudent_Edit :: email(QString a)
                               "Failed to retrieve Email: " + query.lastError().text());
     }
 }
+
+
+
 
 
 void AdminStudent_Edit :: phn(QString a)

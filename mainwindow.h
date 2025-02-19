@@ -1,12 +1,14 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include "loginWindow.h"
 #include <QMainWindow>
 #include <QtSql/QSqlDatabase>
 #include <QtSql/QSqlQuery>
 #include <QtSql/QSqlError>
 #include <QDebug>
 #include<QMessageBox>
+#include<QObject>
 
 //#include <QSqlDatabase>
 //#include <QSqlQuery>
@@ -18,7 +20,6 @@ QT_END_NAMESPACE
 class adminwindow;
 class teacherwindow;
 class studentwindow;
-class crwindow;
 
 class MainWindow : public QMainWindow
 {
@@ -27,25 +28,21 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-
-    void openRoleWindow(const QString &role);
 private slots:
+
+
+
     void on_pushButton_clicked();
 
-    void on_radioButton_toggled(bool checked);
+    void on_pushButton_2_clicked();
 
-    void on_radioButton_2_toggled(bool checked);
-
-    void on_radioButton_3_toggled(bool checked);
-
-
+    void on_pushButton_3_clicked();
 
 
 private:
-
-    QString getSelectedRole();
 private:
     Ui::MainWindow *ui;
+    LOGINWINDOW *loginwindow;
 
 };
 #endif // MAINWINDOW_H

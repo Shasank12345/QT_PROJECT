@@ -35,7 +35,7 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-image: url(:/image/TECAHER.jpg);
+   <string notr="true">background-image: url(:/image/book.jpg);
 QLabel{
 color: black;
    
@@ -214,16 +214,6 @@ color: black;
        </property>
        <property name="text">
         <string>HOME</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="pushButton_5">
-       <property name="styleSheet">
-        <string notr="true">color: rgb(0, 0, 0);</string>
-       </property>
-       <property name="text">
-        <string>BACK</string>
        </property>
       </widget>
      </item>

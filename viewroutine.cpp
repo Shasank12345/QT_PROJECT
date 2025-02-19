@@ -1,13 +1,11 @@
 #include "viewroutine.h"
 #include "ui_viewroutine.h"
-#include "adminwindow.h"
 #include "mainwindow.h"
 #include <QSqlDatabase>
 #include <QSqlQuery>
 #include <QSqlTableModel>
 #include <QMessageBox>
 #include"qmessagebox.h"
-#include"routinewindow.h"
 #include"mainwindow.h"
 #include<Qstring>
 #include<QPixmap>

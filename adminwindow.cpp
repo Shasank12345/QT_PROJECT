@@ -5,10 +5,14 @@
 #include<QHBoxLayout>
 #include<QMessageBox>
 #include"mainwindow.h"
+#include<loginWindow.h>
+
+
 AdminWindow::AdminWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::AdminWindow)
 {
+    //connect(ui->OK1, &QPushButton::clicked, this, &AdminWindow::on_OK1_clicked);
 
     ui->setupUi(this);
     this->setFixedSize(this->size());
@@ -63,11 +67,12 @@ void AdminWindow::on_pushButton6_clicked()
 }
 
 
-void AdminWindow::on_OK1_clicked()
-{
-    MainWindow *mainWindow =new MainWindow();
-    mainWindow->show();
-    this->hide();
 
+
+
+void AdminWindow::on_LOGOUT_clicked()
+{
+    LOGINWINDOW *login=new LOGINWINDOW("");
+    login->show();
 }
 

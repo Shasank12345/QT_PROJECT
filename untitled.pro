@@ -16,6 +16,7 @@ SOURCES += \
     adminwindow.cpp \
     deleteroutine.cpp \
     editroutine.cpp \
+    loginwindow.cpp \
     main.cpp \
     mainwindow.cpp \
     routinewindow.cpp \
@@ -32,6 +33,7 @@ HEADERS += \
     adminwindow.h \
     deleteroutine.h \
     editroutine.h \
+    loginwindow.h \
     mainwindow.h \
     routinewindow.h \
     studentwindow.h \
@@ -47,6 +49,7 @@ FORMS += \
     adminwindow.ui \
     deleteroutine.ui \
     editroutine.ui \
+    loginwindow.ui \
     mainwindow.ui \
     routinewindow.ui \
     studentwindow.ui \

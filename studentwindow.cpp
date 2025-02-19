@@ -41,11 +41,11 @@ void StudentWindow::on_pushButton_4_clicked()
 }
 
 
-void StudentWindow::on_pushButton_2_clicked()
+/*void StudentWindow::on_pushButton_2_clicked()
 {
     VIEWATTENDANCE *Attendance=new VIEWATTENDANCE();
     Attendance->show();
     this->hide();
 
 }
-
+*/

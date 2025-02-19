@@ -40,7 +40,7 @@
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-image: url(:/image/TECAHER.jpg);</string>
+    <string notr="true">background-image: url(:/image/book.jpg);</string>
    </property>
    <property name="frameShape">
     <enum>QFrame::Shape::Box</enum>
@@ -561,7 +561,7 @@
        <x>120</x>
        <y>180</y>
        <width>511</width>
-       <height>113</height>
+       <height>115</height>
       </rect>
      </property>
      <layout class="QFormLayout" name="formLayout_2">
@@ -777,7 +777,7 @@
        <x>130</x>
        <y>150</y>
        <width>511</width>
-       <height>124</height>
+       <height>128</height>
       </rect>
      </property>
      <layout class="QFormLayout" name="formLayout_3">
@@ -924,7 +924,7 @@
        <x>90</x>
        <y>130</y>
        <width>561</width>
-       <height>162</height>
+       <height>170</height>
       </rect>
      </property>
      <layout class="QFormLayout" name="formLayout_7">
@@ -1161,7 +1161,7 @@
        <x>100</x>
        <y>120</y>
        <width>571</width>
-       <height>162</height>
+       <height>170</height>
       </rect>
      </property>
      <layout class="QFormLayout" name="formLayout_11">

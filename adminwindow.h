@@ -7,6 +7,9 @@
 #include"routinewindow.h"
 namespace Ui {
 class AdminWindow;
+class RoutineWindow;
+class AdminTeacher_Edit;
+class AdminStudent_Edit;
 }
 
 
@@ -29,13 +32,16 @@ private slots:
 
     void on_pushButton6_clicked();
 
-    void on_OK1_clicked();
+
+
+    void on_LOGOUT_clicked();
 
 private:
     Ui::AdminWindow *ui;
     AdminTeacher_Edit *adminTeacher_edit;
     AdminStudent_Edit *adminStudent_edit;
     RoutineWindow *routinewindow;
+
 };
 
 #endif // ADMINWINDOW_H

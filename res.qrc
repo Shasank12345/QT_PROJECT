@@ -2,5 +2,9 @@
     <qresource prefix="/image">
         <file>TECAHER.jpg</file>
         <file>logipage.jpg</file>
+        <file>backbackback.jpg</file>
+        <file>book.jpg</file>
+        <file>lala.jpg</file>
+        <file>logg.jpg</file>
     </qresource>
 </RCC>

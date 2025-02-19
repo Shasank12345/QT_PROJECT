@@ -13,8 +13,6 @@ class deleteroutine : public QDialog
 
 public:
     explicit deleteroutine(QWidget *parent = nullptr);
-    void adddata();
-    void day();
     ~deleteroutine();
 
 private slots:
@@ -34,6 +32,9 @@ private slots:
 
 private:
     Ui::deleteroutine *ui;
+public:
+    void adddata();
+    void day();
 };
 
 #endif // DELETEROUTINE_H

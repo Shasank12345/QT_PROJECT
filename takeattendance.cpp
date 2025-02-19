@@ -1,14 +1,22 @@
 #include "takeattendance.h"
-#include "teacherwindow.h"
 #include "ui_takeattendance.h"
 #include<QDateEdit>
 #include<QMessageBox>
 #include"qmessagebox.h"
-takeattendance::takeattendance(QWidget *parent)
+takeattendance::takeattendance(const QString &teacherEmail, const QString &teacherSubject,QWidget *parent)
     : QMainWindow(parent)
-    , ui(new Ui::takeattendance)
+    , teacherEmail(teacherEmail)
+    ,teacherSubject(teacherSubject)
+    ,ui(new Ui::takeattendance)
 {
+   // connect(ui->pushButton_2, &QPushButton::clicked, this, &takeattendance::on_pushButton_2_clicked);
     ui->setupUi(this);
+    this->setWindowTitle(" Attendance of- " + teacherSubject);
+
+    ui->comboBox_3->clear();
+
+    ui->comboBox_3->addItem(teacherSubject);
+
 }
 
 void takeattendance::populatecombox1()
@@ -24,31 +32,14 @@ void takeattendance::populatecombox1()
 
 }
 
-void takeattendance::populatecombox2()
+
+
+/*void takeattendance::populatecombo3()
 {
-    QSqlQuery query;
-    if (query.exec("SELECT Student_id FROM STUDENT_ENTRY")) {
-        while (query.next()) {
-            ui->comboBox_2->addItem(query.value(0).toString());
-        }
-    } else {
-        qDebug() << "Error loading data:" << query.lastError().text();
-    }
 
-}
+}*/
 
-void takeattendance::populatecombo3()
-{
-    QSqlQuery query;
-    if (query.exec("SELECT Subject FROM Teacher_data")) {
-        while (query.next()) {
-            ui->comboBox_3->addItem(query.value(0).toString());
-        }
-    } else {
-        qDebug() << "Error loading data:" << query.lastError().text();
-    }
 
-}
 
 void takeattendance::populatecombo4()
 {
@@ -80,7 +71,15 @@ void takeattendance::on_pushButton_clicked()
 
         // Check if all required fields are filled
         if (studentName.isEmpty() || studentId.isEmpty() || subject.isEmpty() || day.isEmpty() || status.isEmpty()) {
-               QMessageBox::warning(this, "Error", "fill all fields :");
+              // QMessageBox::warning(this, "Error", "fill all fields :");
+            QMessageBox msgBox(this);
+            msgBox.setIcon(QMessageBox::Warning);
+            msgBox.setWindowTitle("INPUT ERROR");
+            msgBox.setText("PLEASE FILL ALL FIELDS");
+            // Apply a stylesheet to change text color in QLabel (which displays the text)
+            msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
+            msgBox.exec();
+            return;
 
             return;
         }
@@ -99,22 +98,81 @@ void takeattendance::on_pushButton_clicked()
         query.bindValue(":status", status);
 
         if (query.exec()) {
-          QMessageBox::warning(this, "Sucess", "Attendance taken sucessfully :");
+         // QMessageBox::warning(this, "Sucess", "Attendance taken sucessfully :");
+            QMessageBox msgBox(this);
+            msgBox.setIcon(QMessageBox::Warning);
+            msgBox.setWindowTitle("SUCESS");
+            msgBox.setText("ATTENDANCE TAKEN SUCESSFULLY");
+
+            msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
+            msgBox.exec();
+            return;
 
 
         } else {
-            QMessageBox::warning(this, "Error", "Failed to Save Data :"+ query.lastError().text());
+           // QMessageBox::warning(this, "Error", "Failed to Save Data :"+ query.lastError().text());
+            QMessageBox msgBox(this);
+            msgBox.setIcon(QMessageBox::Warning);
+            msgBox.setWindowTitle("ERROR");
+            msgBox.setText("FAILED TO SAVE DATA"+ query.lastError().text());
+
+            msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
+            msgBox.exec();
+            return;
 
             qDebug() << "Insert failed:" << query.lastError().text();
         }
 }
 
 
-void takeattendance::on_pushButton_2_clicked()
+/*void takeattendance::on_pushButton_2_clicked()
 {
     TeacherWindow *t=new TeacherWindow;
     t->show();
     this->hide();
 }
+*/
 
+
+
+
+
+void takeattendance::on_comboBox_currentTextChanged(const QString &Name)
+{
+    ui->comboBox_2->clear();
+
+    // Prepare query to retrieve the student ID corresponding to the selected name
+    QSqlQuery query;
+    query.prepare("SELECT Student_id FROM STUDENT_ENTRY WHERE Name = :Name");
+    query.bindValue(":Name", Name);
+
+    if(query.exec()) {
+        // If multiple IDs exist (unlikely for unique names), they will all be added
+        while(query.next()) {
+            QString studentId = query.value(0).toString();
+            ui->comboBox_2->addItem(studentId);
+        }
+        // Optionally, check if no IDs were returned
+        if(ui->comboBox_2->count() == 0) {
+            ui->comboBox_2->addItem("No ID found");
+        }
+    } else {
+        qDebug() << "Error retrieving student ID:" << query.lastError().text();
+        QMessageBox::warning(this, "Database Error", "Failed to load student ID: " + query.lastError().text());
+    }
+
+
+}
+
+
+
+void takeattendance::on_pushButton_2_clicked()
+{
+    qDebug()<<"BACK CLICKED";
+    // Option 2: If you had hidden the TeacherWindow, you can also re-show it:
+   //if (QWidget *parent = this->parentWidget()) {
+      //  parent->show();
+   //}
+   // this->close();
+}
 

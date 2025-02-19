@@ -20,10 +20,21 @@ class takeattendance : public QMainWindow
 
 public:
 
-    explicit takeattendance(QWidget *parent = nullptr);
+    explicit takeattendance(const QString &teacherEmail, const QString &teacherSubject,QWidget *parent = nullptr);
     void populatecombox1();
-    void populatecombox2();
-    void populatecombo3();
+  /*  void populatecombox2()
+    {
+        QSqlQuery query;
+        if (query.exec("SELECT Student_id FROM STUDENT_ENTRY")) {
+            while (query.next()) {
+                ui->comboBox_2->addItem(query.value(0).toString());
+            }
+        } else {
+            qDebug() << "Error loading data:" << query.lastError().text();
+        }
+
+    }*/
+      void populatecombo3();
     void populatecombo4();
     ~takeattendance();
 
@@ -34,10 +45,17 @@ private slots:
 
     void on_pushButton_2_clicked();
 
-    void on_comboBox_activated(int index);
+  //  void on_comboBox_activated(int index);
+
+   // void on_comboBox_3_activated(int index);
+
+    void on_comboBox_currentTextChanged(const QString &name);
 
 private:
     MainWindow *main=new MainWindow;
+    QString teacherEmail;
+    QString teacherSubject;
+   // void loadAttendanceData();
 
     Ui::takeattendance *ui;
 };

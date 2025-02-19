@@ -20,31 +20,31 @@ private slots:
 
     void on_back_clicked();
 
-    void on_ok_clicked();
+  // void on_ok_clicked();
 
-    void on_back1_clicked();
+   // void on_back1_clicked();
 
-    void on_home1_clicked();
+   // void on_home1_clicked();
 
-    void on_Load_clicked();
+    //void on_Load_clicked();
 
-    void on_Save_clicked();
+  //  void on_Save_clicked();
 
-    void on_back4_clicked();
+  // void on_back4_clicked();
 
-    void on_home4_clicked();
+   //void on_home4_clicked();
 
-    void on_show_clicked();
+   // void on_show_clicked();
 
-    //void on_load_clicked();
+   // void on_load_clicked();
 
-    void on_load1_clicked();
+    //void on_load1_clicked();
 
-    void on_back4_2_clicked();
+   // void on_back4_2_clicked();
 
-    void on_home4_2_clicked();
+   // void on_home4_2_clicked();
 
-    void on_del_clicked();
+    //void on_del_clicked();
 
     void on_pushButton_clicked();
 

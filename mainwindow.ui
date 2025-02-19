@@ -26,8 +26,7 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-image: url(:/image/TECAHER.jpg);
-</string>
+   <string notr="true">background-image: url(:/image/book.jpg);</string>
   </property>
   <property name="toolButtonStyle">
    <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
@@ -42,302 +41,49 @@
    <bool>true</bool>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>100</y>
+      <width>701</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{
+color: black;
+   
+
+
+       font-weight: bold;  
+
+   
+}
+</string>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt; font-weight:700;&quot;&gt;WELCOME TO FACULTY MANAGEMENT SYSTEM&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
    <widget class="QWidget" name="formLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>100</x>
-      <y>-190</y>
-      <width>581</width>
-      <height>671</height>
+      <x>70</x>
+      <y>220</y>
+      <width>681</width>
+      <height>151</height>
      </rect>
     </property>
-    <layout class="QFormLayout" name="formlayout">
-     <property name="sizeConstraint">
-      <enum>QLayout::SizeConstraint::SetMaximumSize</enum>
-     </property>
-     <property name="fieldGrowthPolicy">
-      <enum>QFormLayout::FieldGrowthPolicy::ExpandingFieldsGrow</enum>
-     </property>
-     <property name="rowWrapPolicy">
-      <enum>QFormLayout::RowWrapPolicy::WrapLongRows</enum>
-     </property>
-     <property name="horizontalSpacing">
-      <number>8</number>
-     </property>
-     <property name="verticalSpacing">
-      <number>6</number>
-     </property>
-     <property name="leftMargin">
-      <number>4</number>
-     </property>
-     <property name="topMargin">
-      <number>4</number>
-     </property>
-     <property name="rightMargin">
-      <number>4</number>
-     </property>
-     <property name="bottomMargin">
-      <number>3</number>
-     </property>
+    <layout class="QFormLayout" name="formLayout">
      <item row="0" column="0">
-      <spacer name="verticalSpacer">
-       <property name="orientation">
-        <enum>Qt::Orientation::Vertical</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>0</width>
-         <height>0</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item row="10" column="1">
-      <widget class="QLabel" name="label">
-       <property name="styleSheet">
-        <string notr="true">QLabel{
-color: black;
- 
-
-       font-size: 50 px;  
-       padding: 0px; 
-       font-weight: bold;  
-     text-align: center; 
-   
-}
-</string>
-       </property>
-       <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:24pt;&quot;&gt;LOGIN PAGE&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-       </property>
-       <property name="textFormat">
-        <enum>Qt::TextFormat::RichText</enum>
-       </property>
-      </widget>
-     </item>
-     <item row="38" column="0">
-      <widget class="QPushButton" name="pushButton">
-       <property name="enabled">
-        <bool>true</bool>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>29</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(255, 178, 102, 255), stop:0.55 rgba(235, 148, 61, 255), stop:0.98 rgba(0, 0, 0, 255), stop:1 rgba(0, 0, 0, 0));
-color: rgb(0, 0, 0);</string>
-       </property>
-       <property name="text">
-        <string>LOGIN</string>
-       </property>
-      </widget>
-     </item>
-     <item row="32" column="1">
-      <widget class="QRadioButton" name="radioButton">
-       <property name="font">
-        <font>
-         <family>Times New Roman</family>
-        </font>
-       </property>
-       <property name="cursor">
-        <cursorShape>PointingHandCursor</cursorShape>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: rgb(0, 0, 0);
-background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(255, 178, 102, 255), stop:0.55 rgba(235, 148, 61, 255), stop:0.98 rgba(0, 0, 0, 255), stop:1 rgba(0, 0, 0, 0));</string>
-       </property>
-       <property name="text">
-        <string>TEACHER</string>
-       </property>
-      </widget>
-     </item>
-     <item row="31" column="1">
-      <widget class="QRadioButton" name="radioButton_3">
-       <property name="font">
-        <font>
-         <family>Times New Roman</family>
-        </font>
-       </property>
-       <property name="cursor">
-        <cursorShape>PointingHandCursor</cursorShape>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: rgb(0, 0, 0);
-background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(255, 178, 102, 255), stop:0.55 rgba(235, 148, 61, 255), stop:0.98 rgba(0, 0, 0, 255), stop:1 rgba(0, 0, 0, 0));</string>
-       </property>
-       <property name="text">
-        <string>STUDENT</string>
-       </property>
-      </widget>
-     </item>
-     <item row="30" column="1">
-      <widget class="QRadioButton" name="radioButton_2">
-       <property name="font">
-        <font>
-         <family>Times New Roman</family>
-        </font>
-       </property>
-       <property name="cursor">
-        <cursorShape>PointingHandCursor</cursorShape>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: rgb(0, 0, 0);
-background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(255, 178, 102, 255), stop:0.55 rgba(235, 148, 61, 255), stop:0.98 rgba(0, 0, 0, 255), stop:1 rgba(0, 0, 0, 0));</string>
-       </property>
-       <property name="text">
-        <string>ADMIN</string>
-       </property>
-      </widget>
-     </item>
-     <item row="29" column="1">
-      <widget class="QLabel" name="label_4">
-       <property name="styleSheet">
-        <string notr="true">QLabel{
-color: black;
-     
-	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(255, 178, 102, 255), stop:0.55 rgba(235, 148, 61, 255), stop:0.98 rgba(0, 0, 0, 255), stop:1 rgba(0, 0, 0, 0));
-      // border: 2px solid black; 
-    //   border-radius: 9px; 
-       font-size: 8px;  
-       padding: 1px; 
-       font-weight: bold;  
-     text-align: center; 
-   
-}
-</string>
-       </property>
-       <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:700; color:#aa0000;&quot;&gt;NONE SELECTED:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-       </property>
-       <property name="textFormat">
-        <enum>Qt::TextFormat::RichText</enum>
-       </property>
-      </widget>
-     </item>
-     <item row="29" column="0">
-      <widget class="QLabel" name="label_5">
-       <property name="styleSheet">
-        <string notr="true">QLabel{
-color: black;
-
-       font-size: 8px;  
-       padding: 1px; 
-       font-weight: bold;  
-     text-align: center; 
-   
-}
-</string>
-       </property>
-       <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:700; color:#aa0000;&quot;&gt;STATUS:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-       </property>
-       <property name="textFormat">
-        <enum>Qt::TextFormat::RichText</enum>
-       </property>
-      </widget>
-     </item>
-     <item row="27" column="1">
-      <widget class="QLineEdit" name="lineEdit_2">
-       <property name="cursor">
-        <cursorShape>ArrowCursor</cursorShape>
-       </property>
-       <property name="tabletTracking">
-        <bool>true</bool>
-       </property>
-       <property name="autoFillBackground">
-        <bool>false</bool>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QLineEdit::placeholder {
-    color: red; /* Change this to your desired color */
-}</string>
-       </property>
-       <property name="echoMode">
-        <enum>QLineEdit::EchoMode::Password</enum>
-       </property>
-       <property name="dragEnabled">
-        <bool>true</bool>
-       </property>
-       <property name="readOnly">
-        <bool>false</bool>
-       </property>
-       <property name="placeholderText">
-        <string>CANT BE BLANK</string>
-       </property>
-       <property name="cursorMoveStyle">
-        <enum>Qt::CursorMoveStyle::VisualMoveStyle</enum>
-       </property>
-       <property name="clearButtonEnabled">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-     <item row="27" column="0">
-      <widget class="QLabel" name="label_3">
-       <property name="styleSheet">
-        <string notr="true">QLabel{
-color: black;
- 
-       font-size: 11px;  
-       padding: 1px; 
-       font-weight: bold;  
-     text-align: center; 
-   
-}
-</string>
-       </property>
-       <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:700;&quot;&gt;PASSWORD:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-       </property>
-       <property name="textFormat">
-        <enum>Qt::TextFormat::RichText</enum>
-       </property>
-      </widget>
-     </item>
-     <item row="24" column="1">
-      <widget class="QLineEdit" name="lineEdit_1">
-       <property name="cursor">
-        <cursorShape>ArrowCursor</cursorShape>
-       </property>
-       <property name="tabletTracking">
-        <bool>true</bool>
-       </property>
-       <property name="autoFillBackground">
-        <bool>false</bool>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QLineEdit::placeholder {
-    color: red; /* Change this to your desired color */
-}</string>
-       </property>
-       <property name="dragEnabled">
-        <bool>true</bool>
-       </property>
-       <property name="readOnly">
-        <bool>false</bool>
-       </property>
-       <property name="placeholderText">
-        <string>example@role.ku.edu.np</string>
-       </property>
-       <property name="cursorMoveStyle">
-        <enum>Qt::CursorMoveStyle::VisualMoveStyle</enum>
-       </property>
-       <property name="clearButtonEnabled">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-     <item row="24" column="0">
       <widget class="QLabel" name="label_2">
        <property name="styleSheet">
         <string notr="true">QLabel{
 color: black;
    
 
-       font-size:11px;  
+       font-size:20px;  
        padding: 1px; 
        font-weight: bold;  
      text-align: center; 
@@ -346,10 +92,87 @@ color: black;
 </string>
        </property>
        <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;       EMAIL :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string>LOGIN AS ADMIN :</string>
        </property>
-       <property name="textFormat">
-        <enum>Qt::TextFormat::RichText</enum>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="label_3">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QPushButton" name="pushButton">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(0, 0, 0);
+color: rgb(0, 0, 0);</string>
+       </property>
+       <property name="text">
+        <string>ADMIN</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_5">
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+color: black;
+   
+
+       font-size:20px;  
+       padding: 1px; 
+       font-weight: bold;  
+     text-align: center; 
+   
+}
+</string>
+       </property>
+       <property name="text">
+        <string>LOGIN AS TEACHER : </string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_4">
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+color: black;
+   
+
+       font-size:20px;  
+       padding: 1px; 
+       font-weight: bold;  
+     text-align: center; 
+   
+}
+</string>
+       </property>
+       <property name="text">
+        <string>LOGIN AS STUDENT :</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QPushButton" name="pushButton_2">
+       <property name="styleSheet">
+        <string notr="true">color: rgb(0, 0, 0);
+background-color: rgb(0, 0, 0);</string>
+       </property>
+       <property name="text">
+        <string>TEACHER</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QPushButton" name="pushButton_3">
+       <property name="styleSheet">
+        <string notr="true">color: rgb(0, 0, 0);
+background-color: rgb(0, 0, 0);</string>
+       </property>
+       <property name="text">
+        <string>STUDENT</string>
        </property>
       </widget>
      </item>

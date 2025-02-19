@@ -338,12 +338,16 @@ void AdminTeacher_Edit::on_save_clicked()
     QString teacher_id;
     QString phn_no;
     QString subject;
+    QString PASSWORD;
+    QString EMAIL;
+    EMAIL=ui->lineEdit_33->text();
 
     name=ui->lineEdit_16->text();
     email=ui->lineEdit_33->text();
     teacher_id = ui->lineEdit_31->text();
     phn_no=ui->lineEdit_32->text();
     subject=ui->lineEdit->text();
+    PASSWORD=ui->pass->text();
     if (name.isEmpty() ){
         QMessageBox::warning(this, "Input Error", "Please enter Name.");
         return;
@@ -360,9 +364,14 @@ void AdminTeacher_Edit::on_save_clicked()
         QMessageBox::warning(this, "Input Error", "Please enter Phone Number.");
         return;
     }
-    else if (subject=="Not_Selected" ){
-        QMessageBox::warning(this, "Input Error", "Please Select Subject.");
+    else if (subject.isEmpty() ){
+        QMessageBox::warning(this, "Input Error", "Please Enter Subject.");
         return;
+    }
+    else if(PASSWORD.isEmpty()){
+        QMessageBox::warning(this, "Input Error", "Please Enter Password.");
+        return;
+
     }
 
     // Prepare the SQL query for insertion
@@ -387,6 +396,18 @@ void AdminTeacher_Edit::on_save_clicked()
     } else {
         QMessageBox::critical(this, "Database Error", "Failed to save teacher information: " + qry.lastError().text());
     }
+    QSqlQuery q;
+    q.prepare("INSERT INTO LOGINTEACHER (EMAIL, PASSWORD)"
+              "VALUES(:email, :password)");
+    q.bindValue(":email", EMAIL);
+    q.bindValue(":password", PASSWORD);
+    if(q.exec()){
+         QMessageBox::information(this, "Success", "Teacher login information saved successfully.");
+
+    } else {
+        QMessageBox::critical(this, "Database Error", "Failed to save teacher information: " + qry.lastError().text());
+    }
+
 }
 
 

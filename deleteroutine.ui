@@ -14,7 +14,7 @@
    <string>Dialog</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-image: url(:/image/TECAHER.jpg);</string>
+   <string notr="true">background-image: url(:/image/book.jpg);</string>
   </property>
   <widget class="QLabel" name="label">
    <property name="geometry">

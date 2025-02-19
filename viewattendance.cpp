@@ -3,24 +3,23 @@
 #include<QMessageBox>
 #include"qmessagebox.h"
 
-VIEWATTENDANCE::VIEWATTENDANCE(QWidget *parent)
+VIEWATTENDANCE::VIEWATTENDANCE(const QString &teacherEmail, const QString &teacherSubject,QWidget *parent)
     : QMainWindow(parent)
+    ,teacherEmail(teacherEmail)
+    ,teacherSubject(teacherSubject)
     , ui(new Ui::VIEWATTENDANCE)
+
 {
     ui->setupUi(this);
+    this->setWindowTitle(" Attendance of- " + teacherSubject);
+
+    ui->comboBox->clear();
+
+    ui->comboBox->addItem(teacherSubject);
+
 }
 
-void VIEWATTENDANCE::populatecombo1()
-{
-    QSqlQuery query;
-    if (query.exec("SELECT Subject FROM Teacher_data")) {
-        while (query.next()) {
-            ui->comboBox->addItem(query.value(0).toString());
-        }
-    } else {
-        qDebug() << "Error loading data:" << query.lastError().text();
-    }
-}
+
 
 void VIEWATTENDANCE::populatecombo2()
 {
@@ -55,7 +54,16 @@ void VIEWATTENDANCE::fetchdata()
     query.addBindValue(date);
 
     if (!query.exec()) {
-        QMessageBox::critical(nullptr, "Query Error", "Failed to execute query: " + query.lastError().text());
+        //QMessageBox::critical(nullptr, "Query Error", "Failed to execute query: " + query.lastError().text());
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Warning);
+        msgBox.setWindowTitle("ERROR");
+        msgBox.setText("FAILED TO EXCEUTE QUERY"+ query.lastError().text());
+
+        msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
+        msgBox.exec();
+        return;
+
         qDebug() << "Query Error:" << query.lastError().text();
         return;
     }
@@ -67,7 +75,16 @@ void VIEWATTENDANCE::fetchdata()
 
     // Debugging: Check if data exists
     if (model->rowCount() == 0) {
-        QMessageBox::warning(nullptr, "No Data", "No records found for the selected criteria.");
+       //QMessageBox::warning(nullptr, "No Data", "No records found for the selected criteria.");
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Warning);
+        msgBox.setWindowTitle("NO DATA");
+        msgBox.setText("NO RECORDS FOUND FOR THE SELECTED CRITERIA");
+
+        msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
+        msgBox.exec();
+        return;
+
         qDebug() << "No data found!";
         return;
     }
@@ -82,7 +99,16 @@ void VIEWATTENDANCE::fetchdata()
 
     // Ensure tableView is not NULL
     if (!ui->tableView) {
-        QMessageBox::critical(nullptr, "Error", "TableView is not initialized!");
+       // QMessageBox::critical(nullptr, "Error", "TableView is not initialized!");
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Warning);
+        msgBox.setWindowTitle("ERROR");
+        msgBox.setText("TABLEVIEW IS NOT INITIALIZED");
+
+        msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
+        msgBox.exec();
+        return;
+
         return;
     }
 
@@ -117,19 +143,21 @@ void VIEWATTENDANCE::fetchdata()
     //qDebug() << "Rows Retrieved:" << model->rowCount();
 
     // Show success message
-    QMessageBox::information(nullptr, "Success", "Data retrieved and displayed successfully!");
-}
+   // QMessageBox::information(nullptr, "Success", "Data retrieved and displayed successfully!");
+    QMessageBox msgBox(this);
+    msgBox.setIcon(QMessageBox::Information);
+    msgBox.setWindowTitle("ERROR");
+    msgBox.setText("SUCESS, DATA RETRIEVED AND DISPLAYED SUCESFULLY");
 
-
-
-
-void VIEWATTENDANCE::on_pushButton_clicked()
-{
-    fetchdata();
-
-
+    msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
+    msgBox.exec();
+    return;
 
 }
+
+
+
+
 
 
 void VIEWATTENDANCE::on_pushButton_3_clicked()
@@ -140,9 +168,22 @@ void VIEWATTENDANCE::on_pushButton_3_clicked()
 }
 
 
-void VIEWATTENDANCE::on_pushButton_2_clicked()
+/*void VIEWATTENDANCE::on_pushButton_2_clicked()
 {
     take->show();
     this->hide();
+}
+*/
+
+void VIEWATTENDANCE::on_pushButton_clicked()
+{
+    qDebug() << "Submit button clicked!";
+    fetchdata();
+    qDebug() << "Fetch data executed!";
+    //this->show();
+    qDebug() << "Window Visibility: " << this->isVisible();
+    //fetchdata();
+  //  this->raise(); // Brings the window to the front
+    this->activateWindow();
 }
 

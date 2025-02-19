@@ -10,8 +10,8 @@
 #include <QWidget>
 #include <Qstring>
 #include "QMessageBox"
-#include "routinewindow.h"
-#include "mainwindow.h"
+#include <routinewindow.h>
+#include <mainwindow.h>
 #include <qmessagebox.h>
 #include<QTime>
 Add_routine::Add_routine(QWidget *parent)

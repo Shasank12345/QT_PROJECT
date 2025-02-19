@@ -40,9 +40,10 @@ void RoutineWindow::on_back_clicked()
 void RoutineWindow::on_pushButton_clicked()
 {
     Add_routine *add =new Add_routine();
-    add->adddata();
-    add->day();
     add->show();
+    //add->adddata();
+    //add->day();
+
     this->hide();
 }
 
@@ -50,9 +51,10 @@ void RoutineWindow::on_pushButton_clicked()
 void RoutineWindow::on_pushButton_3_clicked()
 {
     deleteroutine *del = new deleteroutine();
-    del->adddata();
-    del->day();
-    del->show();
+     del->show();
+    //del->adddata();
+    //del->day();
+
     this->hide();
 }
 
@@ -60,8 +62,9 @@ void RoutineWindow::on_pushButton_3_clicked()
 void RoutineWindow::on_pushButton_2_clicked()
 {
     VIEWROUTINE *view= new VIEWROUTINE();
-    view->day();
     view->show();
+   // view->day();
+
     this->hide();
 }
 
@@ -70,7 +73,7 @@ void RoutineWindow::on_pushButton_4_clicked()
 {
     EditRoutine *edit= new EditRoutine();
     edit->show();
-     this->hide();
+      this->hide();
 }
 
 

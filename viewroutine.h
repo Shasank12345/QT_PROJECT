@@ -2,6 +2,7 @@
 #define VIEWROUTINE_H
 
 #include <QMainWindow>
+#include<QObject>
 
 namespace Ui {
 class VIEWROUTINE;

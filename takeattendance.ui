@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-image: url(:/image/TECAHER.jpg);</string>
+   <string notr="true">background-image: url(:/image/book.jpg);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="label">
@@ -63,7 +63,7 @@ color: black;
      <item row="0" column="1">
       <widget class="QComboBox" name="comboBox">
        <property name="styleSheet">
-        <string notr="true">color: rgb(0, 0, 0);</string>
+        <string notr="true">color: rgb(255, 255, 255);</string>
        </property>
       </widget>
      </item>
@@ -103,7 +103,7 @@ color: black;
 </string>
        </property>
        <property name="text">
-        <string>CHOOSE SUBJECT :</string>
+        <string> SUBJECT :</string>
        </property>
       </widget>
      </item>
@@ -224,14 +224,14 @@ color: black;
      <item row="1" column="1">
       <widget class="QComboBox" name="comboBox_2">
        <property name="styleSheet">
-        <string notr="true">color: rgb(0, 0, 0);</string>
+        <string notr="true">color: rgb(255, 255, 255);</string>
        </property>
       </widget>
      </item>
      <item row="2" column="1">
       <widget class="QComboBox" name="comboBox_3">
        <property name="styleSheet">
-        <string notr="true">color: rgb(0, 0, 0);</string>
+        <string notr="true">color: rgb(255, 255, 255);</string>
        </property>
       </widget>
      </item>
@@ -241,7 +241,7 @@ color: black;
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>390</y>
+      <y>420</y>
       <width>711</width>
       <height>80</height>
      </rect>
@@ -261,8 +261,8 @@ color: rgb(0, 0, 0);</string>
      <item>
       <widget class="QPushButton" name="pushButton_2">
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(0, 0, 0);
-color: rgb(0, 0, 0);</string>
+        <string notr="true">color: rgb(0, 0, 0);
+background-color: rgb(0, 0, 0);</string>
        </property>
        <property name="text">
         <string>BACK</string>
@@ -289,7 +289,7 @@ color: rgb(0, 0, 0);</string>
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>26</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>

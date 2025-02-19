@@ -14,7 +14,7 @@
    <string>RoutineWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-image: url(:/image/TECAHER.jpg);</string>
+   <string notr="true">background-image: url(:/image/logipage.jpg);</string>
   </property>
   <widget class="QWidget" name="formLayoutWidget">
    <property name="geometry">
@@ -207,14 +207,14 @@ color: black;
     <item>
      <widget class="QPushButton" name="home">
       <property name="text">
-       <string>Home</string>
+       <string>HOME</string>
       </property>
      </widget>
     </item>
     <item>
      <widget class="QPushButton" name="back">
       <property name="text">
-       <string>Back</string>
+       <string>BACK</string>
       </property>
      </widget>
     </item>

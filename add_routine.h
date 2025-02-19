@@ -2,6 +2,9 @@
 #define ADD_ROUTINE_H
 
 #include <QDialog>
+#include<QObject>
+
+
 
 namespace Ui {
 class Add_routine;

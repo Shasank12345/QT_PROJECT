@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-image: url(:/image/TECAHER.jpg);</string>
+   <string notr="true">background-image: url(:/image/book.jpg);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QWidget" name="formLayoutWidget">
@@ -118,7 +118,7 @@ color: black;
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">image: url(:/image/TECAHER.jpg);</string>
+     <string notr="true">color: rgb(0, 0, 0);</string>
     </property>
     <property name="text">
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;ROUTINE PAGE&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;&lt;br/&gt;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -131,7 +131,7 @@ color: black;
      <x>0</x>
      <y>0</y>
      <width>755</width>
-     <height>26</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>
