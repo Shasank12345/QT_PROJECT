@@ -63,7 +63,17 @@ color: black;
      <item row="0" column="1">
       <widget class="QComboBox" name="comboBox">
        <property name="styleSheet">
-        <string notr="true">color: rgb(255, 255, 255);</string>
+        <string notr="true">QLabel{
+color: black;
+   
+
+       font-size:20px;  
+       padding: 1px; 
+       font-weight: bold;  
+     text-align: center; 
+   
+}
+color: rgb(255, 255, 255);</string>
        </property>
       </widget>
      </item>
@@ -224,14 +234,35 @@ color: black;
      <item row="1" column="1">
       <widget class="QComboBox" name="comboBox_2">
        <property name="styleSheet">
-        <string notr="true">color: rgb(255, 255, 255);</string>
+        <string notr="true">QLabel{
+color: black;
+   
+
+       font-size:20px;  
+       padding: 1px; 
+       font-weight: bold;  
+     text-align: center; 
+   
+}
+color: rgb(255, 255, 255);</string>
        </property>
       </widget>
      </item>
      <item row="2" column="1">
       <widget class="QComboBox" name="comboBox_3">
        <property name="styleSheet">
-        <string notr="true">color: rgb(255, 255, 255);</string>
+        <string notr="true">QLabel{
+color: black;
+   
+
+       font-size:20px;  
+       padding: 1px; 
+       font-weight: bold;  
+     text-align: center; 
+   
+}
+
+color: rgb(255, 255, 255);</string>
        </property>
       </widget>
      </item>
@@ -289,7 +320,7 @@ color: rgb(0, 0, 0);</string>
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>25</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>

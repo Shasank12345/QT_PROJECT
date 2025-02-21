@@ -39,7 +39,7 @@
 </string>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="page0">
     <widget class="QLabel" name="label_20">
@@ -586,27 +586,6 @@ color: black;
           </property>
          </widget>
         </item>
-        <item>
-         <widget class="QPushButton" name="pushButton">
-          <property name="maximumSize">
-           <size>
-            <width>85</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>14</pointsize>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">color: rgb(0, 0, 0);</string>
-          </property>
-          <property name="text">
-           <string>SEARCH</string>
-          </property>
-         </widget>
-        </item>
        </layout>
       </item>
      </layout>
@@ -794,7 +773,7 @@ color: black;
          <string notr="true">color: rgb(0, 0, 0);</string>
         </property>
         <property name="text">
-         <string>UBDATE</string>
+         <string>UPDATE</string>
         </property>
        </widget>
       </item>
@@ -958,7 +937,7 @@ color: black;
          <string notr="true">color: rgb(0, 0, 0);</string>
         </property>
         <property name="text">
-         <string>UBDATE</string>
+         <string>UPDATE</string>
         </property>
        </widget>
       </item>
@@ -1122,7 +1101,7 @@ color: black;
          <string notr="true">color: rgb(0, 0, 0);</string>
         </property>
         <property name="text">
-         <string>UBDATE</string>
+         <string>UPDATE</string>
         </property>
        </widget>
       </item>
@@ -1325,7 +1304,32 @@ color: black;
        </widget>
       </item>
       <item row="0" column="1">
-       <widget class="QComboBox" name="comboBox"/>
+       <widget class="QComboBox" name="comboBox">
+        <property name="font">
+         <font>
+          <pointsize>14</pointsize>
+         </font>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="lineEdit_85">
+        <property name="font">
+         <font>
+          <pointsize>14</pointsize>
+         </font>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_153">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;TEACHER NAME :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
       </item>
      </layout>
     </widget>

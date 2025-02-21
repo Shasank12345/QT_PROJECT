@@ -190,3 +190,26 @@ void Add_routine::on_Save_clicked()
     }
 }
 
+
+void Add_routine::on_comboBox_currentTextChanged(const QString &Name)
+{
+    ui->lineEdit_2->clear();
+
+    // Prepare query to retrieve the teacher name  corresponding to the selected id
+    QSqlQuery query;
+    query.prepare("SELECT Subject FROM Teacher_data WHERE Name = :Name");
+    query.bindValue(":Name", Name);
+
+    if(query.exec()) {
+        // If multiple IDs exist (unlikely for unique names), they will all be added
+        while(query.next()) {
+            QString Name = query.value(0).toString();
+            ui->lineEdit_2->setText(Name);
+        }
+    } else {
+        qDebug() << "Error retrieving student ID:" << query.lastError().text();
+        QMessageBox::warning(this, "Database Error", "Failed to load student ID: " + query.lastError().text());
+
+}
+}
+

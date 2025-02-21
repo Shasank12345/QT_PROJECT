@@ -734,3 +734,47 @@ void AdminStudent_Edit::on_pushButton_clicked()
     }
 }
 
+
+void AdminStudent_Edit::on_comboBox_2_currentTextChanged(const QString &Student_id)
+{
+    ui->lineEdit_6->clear();
+
+    // Prepare query to retrieve the teacher name  corresponding to the selected id
+    QSqlQuery query;
+    query.prepare("SELECT Name FROM STUDENT_ENTRY WHERE Student_id = :Student_id");
+    query.bindValue(":Student_id", Student_id);
+
+    if(query.exec()) {
+        // If multiple IDs exist (unlikely for unique names), they will all be added
+        while(query.next()) {
+            QString Name = query.value(0).toString();
+            ui->lineEdit_6->setText(Name);
+        }
+    } else {
+        qDebug() << "Error retrieving student ID:" << query.lastError().text();
+        QMessageBox::warning(this, "Database Error", "Failed to load student ID: " + query.lastError().text());
+    }
+}
+
+
+void AdminStudent_Edit::on_comboBox1_currentTextChanged(const QString &Student_id)
+{
+    ui->lineEdit_18->clear();
+
+    // Prepare query to retrieve the teacher name  corresponding to the selected id
+    QSqlQuery query;
+    query.prepare("SELECT Name FROM STUDENT_ENTRY WHERE Student_id = :Student_id");
+    query.bindValue(":Student_id", Student_id);
+
+    if(query.exec()) {
+        // If multiple IDs exist (unlikely for unique names), they will all be added
+        while(query.next()) {
+            QString Name = query.value(0).toString();
+            ui->lineEdit_18->setText(Name);
+        }
+    } else {
+        qDebug() << "Error retrieving student ID:" << query.lastError().text();
+        QMessageBox::warning(this, "Database Error", "Failed to load student ID: " + query.lastError().text());
+    }
+}
+
