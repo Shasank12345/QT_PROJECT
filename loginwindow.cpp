@@ -6,6 +6,7 @@
 #include<studentwindow.h>
 #include<adminwindow.h>
 #include <QCryptographicHash>
+#include<qmessagebox.h>
 
 
 LOGINWINDOW::LOGINWINDOW(QString role,QWidget *parent)

@@ -82,6 +82,16 @@ color: black;
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
+      <widget class="QPushButton" name="pushButton_2">
+       <property name="styleSheet">
+        <string notr="true">color: rgb(0, 0, 0);</string>
+       </property>
+       <property name="text">
+        <string>BACK</string>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QPushButton" name="pushButton_3">
        <property name="styleSheet">
         <string notr="true">color: rgb(0, 0, 0);</string>

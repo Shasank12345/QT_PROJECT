@@ -166,15 +166,6 @@ void VIEWATTENDANCE::on_pushButton_3_clicked()
     this->hide();
 
 }
-
-
-/*void VIEWATTENDANCE::on_pushButton_2_clicked()
-{
-    take->show();
-    this->hide();
-}
-*/
-
 void VIEWATTENDANCE::on_pushButton_clicked()
 {
     qDebug() << "Submit button clicked!";
@@ -185,5 +176,14 @@ void VIEWATTENDANCE::on_pushButton_clicked()
     //fetchdata();
   //  this->raise(); // Brings the window to the front
     this->activateWindow();
+}
+
+
+void VIEWATTENDANCE::on_pushButton_2_clicked()
+{
+    if (QWidget *parent = this->parentWidget()) {
+        parent->show();
+    }
+    this->hide();
 }
 

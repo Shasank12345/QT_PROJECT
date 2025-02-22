@@ -41,8 +41,8 @@ void RoutineWindow::on_pushButton_clicked()
 {
     Add_routine *add =new Add_routine();
     add->show();
-    //add->adddata();
-    //add->day();
+    add->adddata();
+    add->day();
 
     this->hide();
 }
@@ -52,8 +52,8 @@ void RoutineWindow::on_pushButton_3_clicked()
 {
     deleteroutine *del = new deleteroutine();
      del->show();
-    //del->adddata();
-    //del->day();
+    del->adddata();
+    del->day();
 
     this->hide();
 }
@@ -63,7 +63,7 @@ void RoutineWindow::on_pushButton_2_clicked()
 {
     VIEWROUTINE *view= new VIEWROUTINE();
     view->show();
-   // view->day();
+   view->day();
 
     this->hide();
 }

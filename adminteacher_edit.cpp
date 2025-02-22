@@ -562,7 +562,7 @@ void AdminTeacher_Edit::on_phn_edit_clicked()
 
 
     phn_no=ui->lineEdit_38->text();
-    teacher_id = ui->lineEdit_38->text();
+    teacher_id = ui->lineEdit_20->text();
 
 
     QSqlQuery qry;
@@ -644,7 +644,7 @@ void AdminTeacher_Edit::on_delet_clicked()
 
     // Get the selected Teacher_ID from the combobox
     QString teacher_id = ui->comboBox->currentText();
-
+    QString name=ui->lineEdit_85->text();
     // Check if a valid Teacher_ID is selected
     if (teacher_id.isEmpty()) {
         QMessageBox::warning(this, "Input Error", "Please select a valid Teacher ID to delete.");
@@ -654,7 +654,7 @@ void AdminTeacher_Edit::on_delet_clicked()
     // Confirm deletion with the user
     QMessageBox::StandardButton reply = QMessageBox::question(
         this, "Delete Confirmation",
-        "Are you sure you want to delete Teacher ID: " + teacher_id + "?",
+        "Are you sure you want to delete " + name + " detail ?",
         QMessageBox::Yes | QMessageBox::No
         );
 
@@ -734,6 +734,52 @@ void AdminTeacher_Edit::on_pushButton_clicked()
         QMessageBox::critical(this,
                               "Database Error",
                               "Failed to retrieve Name: " + query.lastError().text());
+    }
+}
+
+
+
+
+void AdminTeacher_Edit::on_comboBox2_currentTextChanged(const QString &Teacher_Id)
+{
+    ui->lineEdit_3->clear();
+
+    // Prepare query to retrieve the teacher name  corresponding to the selected id
+    QSqlQuery query;
+    query.prepare("SELECT Name FROM Teacher_data WHERE Teacher_Id = :Teacher_Id");
+    query.bindValue(":Teacher_Id", Teacher_Id);
+
+    if(query.exec()) {
+        // If multiple IDs exist (unlikely for unique names), they will all be added
+        while(query.next()) {
+            QString Name = query.value(0).toString();
+            ui->lineEdit_3->setText(Name);
+        }
+    } else {
+        qDebug() << "Error retrieving student ID:" << query.lastError().text();
+        QMessageBox::warning(this, "Database Error", "Failed to load student ID: " + query.lastError().text());
+    }
+}
+
+
+void AdminTeacher_Edit::on_comboBox_currentTextChanged(const QString &Teacher_Id)
+{
+    ui->lineEdit_85->clear();
+
+    // Prepare query to retrieve the teacher name  corresponding to the selected id
+    QSqlQuery query;
+    query.prepare("SELECT Name FROM Teacher_data WHERE Teacher_Id = :Teacher_Id");
+    query.bindValue(":Teacher_Id", Teacher_Id);
+
+    if(query.exec()) {
+        // If multiple IDs exist (unlikely for unique names), they will all be added
+        while(query.next()) {
+            QString Name = query.value(0).toString();
+            ui->lineEdit_85->setText(Name);
+        }
+    } else {
+        qDebug() << "Error retrieving student ID:" << query.lastError().text();
+        QMessageBox::warning(this, "Database Error", "Failed to load student ID: " + query.lastError().text());
     }
 }
 

@@ -373,12 +373,14 @@ void AdminStudent_Edit::on_save1_clicked()
     QString phn_no;
     QString dept;
     QString address;
+    QString password;
 
     name=ui->lineEdit->text();
     email=ui->lineEdit_3->text();
     student_id = ui->lineEdit_2->text();
     phn_no=ui->lineEdit_5->text();
     address=ui->lineEdit_4->text();
+    password=ui->lineEdit_19->text();
     if (name.isEmpty() ){
         QMessageBox::warning(this, "Input Error", "Please enter Name.");
         return;
@@ -396,7 +398,11 @@ void AdminStudent_Edit::on_save1_clicked()
         return;
     }
     else if (address.isEmpty() ){
-        QMessageBox::warning(this, "Input Error", "Please enter  address.");
+        QMessageBox::warning(this, "Input Error", "Please enter  address.");    
+        return;
+    }
+    else if(password.isEmpty() ){
+        QMessageBox::warning(this,"Input Error","plese enter password");
         return;
     }
 
@@ -411,7 +417,8 @@ void AdminStudent_Edit::on_save1_clicked()
     qry.bindValue(":address", address);
     // Execute the query and check for success
     if (qry.exec()) {
-        QMessageBox::information(this, "Success", "Student information saved successfully.");
+        QMessageBox::information(this, "Success", "Student information saved successfully."); 
+
 
         // Clear the input fields after saving
         ui->lineEdit->clear();
@@ -419,11 +426,25 @@ void AdminStudent_Edit::on_save1_clicked()
         ui->lineEdit_3->clear();
         ui->lineEdit_4->clear();
         ui->lineEdit_5->clear();
+        ui->lineEdit_19->clear();
+    } else {
+        QMessageBox::critical(this, "Database Error", "Failed to save student information: " + qry.lastError().text());
+    }
+    QSqlQuery q;
+    q.prepare("INSERT INTO LOGINSTUDENT (EMAIL, PASSWORD)"
+              "VALUES(:email, :password)");
+    q.bindValue(":email", email);
+    q.bindValue(":password", password);
+    if(q.exec()){
+        QMessageBox::information(this, "Success", "student login information saved successfully.");
+
     } else {
         QMessageBox::critical(this, "Database Error", "Failed to save student information: " + qry.lastError().text());
     }
 
 }
+
+
 
 
 void AdminStudent_Edit::on_view1_clicked()
@@ -732,5 +753,56 @@ void AdminStudent_Edit::on_pushButton_clicked()
                               "Database Error",
                               "Failed to retrieve Name: " + query.lastError().text());
     }
+}
+
+
+void AdminStudent_Edit::on_comboBox_2_currentTextChanged(const QString &Student_id)
+{
+    ui->lineEdit_6->clear();
+
+    // Prepare query to retrieve the teacher name  corresponding to the selected id
+    QSqlQuery query;
+    query.prepare("SELECT Name FROM STUDENT_ENTRY WHERE Student_id = :Student_id");
+    query.bindValue(":Student_id", Student_id);
+
+    if(query.exec()) {
+        // If multiple IDs exist (unlikely for unique names), they will all be added
+        while(query.next()) {
+            QString Name = query.value(0).toString();
+            ui->lineEdit_6->setText(Name);
+        }
+    } else {
+        qDebug() << "Error retrieving student ID:" << query.lastError().text();
+        QMessageBox::warning(this, "Database Error", "Failed to load student ID: " + query.lastError().text());
+    }
+}
+
+
+void AdminStudent_Edit::on_comboBox1_currentTextChanged(const QString &Student_id)
+{
+    ui->lineEdit_18->clear();
+
+    // Prepare query to retrieve the teacher name  corresponding to the selected id
+    QSqlQuery query;
+    query.prepare("SELECT Name FROM STUDENT_ENTRY WHERE Student_id = :Student_id");
+    query.bindValue(":Student_id", Student_id);
+
+    if(query.exec()) {
+        // If multiple IDs exist (unlikely for unique names), they will all be added
+        while(query.next()) {
+            QString Name = query.value(0).toString();
+            ui->lineEdit_18->setText(Name);
+        }
+    } else {
+        qDebug() << "Error retrieving student ID:" << query.lastError().text();
+        QMessageBox::warning(this, "Database Error", "Failed to load student ID: " + query.lastError().text());
+    }
+}
+
+
+
+void AdminStudent_Edit::on_lineEdit_19_cursorPositionChanged(int arg1, int arg2)
+{
+
 }
 

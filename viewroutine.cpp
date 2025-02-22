@@ -122,3 +122,13 @@ void VIEWROUTINE::on_pushButton_3_clicked()
     this->hide();
 }
 
+
+void VIEWROUTINE::on_pushButton_2_clicked()
+{
+    qDebug()<<"BACK CLIICKED";
+    if (QWidget *parent = this->parentWidget()) {
+        parent->show();
+    }
+    this->hide();
+}
+

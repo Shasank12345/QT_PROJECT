@@ -12,6 +12,7 @@ takeattendance::takeattendance(const QString &teacherEmail, const QString &teach
    // connect(ui->pushButton_2, &QPushButton::clicked, this, &takeattendance::on_pushButton_2_clicked);
     ui->setupUi(this);
     this->setWindowTitle(" Attendance of- " + teacherSubject);
+     ui->dateEdit->setDate(QDate::currentDate());
 
     ui->comboBox_3->clear();
 
@@ -62,10 +63,13 @@ void takeattendance::on_pushButton_3_clicked()
 
 void takeattendance::on_pushButton_clicked()
 {
+   //ui->dateEdit->setDisplayFormat("yyyy-MM-dd");  // Show only the date
+   // ui->dateEdit->setDate(QDate::currentDate());
  QString studentName = ui->comboBox->currentText();
         QString studentId =ui->comboBox_2->currentText();
         QString subject =ui->comboBox_3->currentText();
         QString date =ui->dateEdit->date().toString("yyyy-MM-dd");
+
         QString day = ui->comboBox_4->currentText();
         QString status =ui->radioButton->isChecked() ? "Absent" :ui->radioButton_2->isChecked() ? "Present" : "";
 
@@ -169,10 +173,11 @@ void takeattendance::on_comboBox_currentTextChanged(const QString &Name)
 void takeattendance::on_pushButton_2_clicked()
 {
     qDebug()<<"BACK CLICKED";
-    // Option 2: If you had hidden the TeacherWindow, you can also re-show it:
-   //if (QWidget *parent = this->parentWidget()) {
-      //  parent->show();
-   //}
-   // this->close();
+
+   if (QWidget *parent = this->parentWidget()) {
+        parent->show();
+   }
+    this->hide();
 }
+
 

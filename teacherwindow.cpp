@@ -8,6 +8,7 @@
 #include<loginWindow.h>
 #include <QStandardItemModel>
 #include<takeattendance.h>
+#include<qmessagebox.h>
 TeacherWindow::TeacherWindow(const QString &EMAIL,QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::TeacherWindow),

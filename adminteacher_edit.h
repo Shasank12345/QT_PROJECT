@@ -92,6 +92,12 @@ private slots:
     void email(QString a);
     void phn(QString a);
     void subject(QString a);
+
+
+    void on_comboBox2_currentTextChanged(const QString &arg1);
+
+    void on_comboBox_currentTextChanged(const QString &arg1);
+
 private:
     Ui::AdminTeacher_Edit *ui;
 };
