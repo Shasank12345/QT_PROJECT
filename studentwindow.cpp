@@ -2,7 +2,7 @@
 #include "ui_studentwindow.h"
 #include "mainwindow.h"
 #include "viewroutine.h"
-#include "viewattendance.h"
+#include"studentattendanceview.h"
 
 StudentWindow::StudentWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -49,3 +49,16 @@ void StudentWindow::on_pushButton_4_clicked()
 
 }
 */
+
+
+
+
+
+
+void StudentWindow::on_pushButton_2_clicked()
+{
+    Studentattendanceview *std= new Studentattendanceview();
+    std->show();
+    this->hide();
+}
+

@@ -99,6 +99,10 @@ private slots:
 
     void on_comboBox1_currentTextChanged(const QString &arg1);
 
+    void on_stackedWidget_currentChanged(int arg1);
+
+    void on_lineEdit_19_cursorPositionChanged(int arg1, int arg2);
+
 private:
     Ui::AdminStudent_Edit *ui;
 };

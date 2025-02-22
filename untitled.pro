@@ -20,6 +20,7 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     routinewindow.cpp \
+    studentattendanceview.cpp \
     studentwindow.cpp \
     adminteacher_edit.cpp \
     takeattendance.cpp \
@@ -36,6 +37,7 @@ HEADERS += \
     loginwindow.h \
     mainwindow.h \
     routinewindow.h \
+    studentattendanceview.h \
     studentwindow.h \
     adminteacher_edit.h \
     takeattendance.h \
@@ -52,6 +54,7 @@ FORMS += \
     loginwindow.ui \
     mainwindow.ui \
     routinewindow.ui \
+    studentattendanceview.ui \
     studentwindow.ui \
     adminteacher_edit.ui \
     takeattendance.ui \
