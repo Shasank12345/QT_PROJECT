@@ -34,6 +34,7 @@ private slots:
 
     //void on_comboBox_2_activated(int index);
 
+
 private:
     Ui::deleteroutine *ui;
 public:

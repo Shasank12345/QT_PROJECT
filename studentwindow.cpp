@@ -19,6 +19,7 @@ StudentWindow::~StudentWindow()
 void StudentWindow::on_pushButton_clicked()
 {
     VIEWROUTINE *Routine=new VIEWROUTINE();
+
     Routine->show();
     this->hide();
 

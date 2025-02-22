@@ -16,6 +16,8 @@ TeacherWindow::TeacherWindow(const QString &EMAIL,QWidget *parent)
 {
     ui->setupUi(this);
     this->setFixedSize(this->size());
+
+
     loadTeacherSubject();
 
 }

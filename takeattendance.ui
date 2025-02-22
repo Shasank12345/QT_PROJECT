@@ -73,6 +73,7 @@ color: black;
      text-align: center; 
    
 }
+
 QComboBox QAbstractItemView {
     color: black; /* Color of items in dropdown */
 }</string>
