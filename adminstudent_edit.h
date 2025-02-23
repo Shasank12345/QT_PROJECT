@@ -103,6 +103,14 @@ private slots:
 
     void on_lineEdit_19_cursorPositionChanged(int arg1, int arg2);
 
+     void oldpassword( QString a);
+
+    void on_home222_clicked();
+
+     void on_back99_clicked();
+
+    void on_update100_clicked();
+
 private:
     Ui::AdminStudent_Edit *ui;
 };

@@ -58,6 +58,8 @@ AdminStudent_Edit::AdminStudent_Edit(QWidget *parent)
     connect(ui->home10, &QPushButton::clicked, this, &AdminStudent_Edit::on_home10_clicked);
     connect(ui->delet1, &QPushButton::clicked, this, &AdminStudent_Edit::on_delet1_clicked);
     connect(ui->home11, &QPushButton::clicked, this, &AdminStudent_Edit::on_home11_clicked);
+    //
+    //Connect(ui->home11, &QPushButton::clicked, this, &AdminStudent_Edit::on_home11_clicked)
    // connect(ui->pushButton_3, &QPushButton::clicked, this, &AdminStudent_Edit::on_pushButton_3_clicked);
 
 }
@@ -270,7 +272,15 @@ void AdminStudent_Edit::populatecombo()
             ui->comboBox_2->addItem(Student_id);
         }
     } else {
-        QMessageBox::critical(this, "Database Error", "Failed to retrieve Student IDs: " + qry.lastError().text());
+
+
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Critical);
+        msgBox.setWindowTitle("Database Error");
+        msgBox.setText("Failed to retrieve Student IDs: " + qry.lastError().text());
+        msgBox.setStyleSheet("QLabel { color: black; }");
+        msgBox.exec();
+        return;
     }
 }
 
@@ -289,7 +299,14 @@ void AdminStudent_Edit::populatecombo1()
             ui->comboBox1->addItem(Student_id);
         }
     } else {
-        QMessageBox::critical(this, "Database Error", "Failed to retrieve Student IDs: " + qry.lastError().text());
+
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Critical);
+        msgBox.setWindowTitle("Database Error");
+        msgBox.setText("Failed to retrieve Student IDs: " + qry.lastError().text());
+        msgBox.setStyleSheet("QLabel { color: black; }");
+        msgBox.exec();
+        return;
     }
 
 }
@@ -307,17 +324,58 @@ void AdminStudent_Edit::email(QString a)
             QString Email = query.value(0).toString();
             ui->lineEdit_17->setText(Email); // Replace with your widget for displaying Email
         } else {
-            QMessageBox::information(this, "Not Found", "No email found for the given teacher.");
+
+            QMessageBox msgBox(this);
+            msgBox.setIcon(QMessageBox::Information);
+            msgBox.setWindowTitle("Not found");
+            msgBox.setText("No email found for the given student: ");
+            msgBox.setStyleSheet("QLabel { color: black; }");
+            msgBox.exec();
+            return;
         }
     } else {
-        QMessageBox::critical(this,
-                              "Database Error",
-                              "Failed to retrieve Email: " + query.lastError().text());
+
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Critical);
+        msgBox.setWindowTitle("Database Error");
+        msgBox.setText("Failed to retrieve Email: " + query.lastError().text());
+        msgBox.setStyleSheet("QLabel { color: black; }");
+        msgBox.exec();
+        return;
+
     }
 }
+        void AdminStudent_Edit ::oldpassword(QString a)
+    {
+        QString id = a;
+        ui->lineEdit102->clear();
+        QSqlQuery query;
+        query.prepare("SELECT PASSWORD FROM LOGINSTUDENT WHERE ID = :id");
+        query.bindValue(":id", id);
 
-
-
+        if (query.exec()) {
+            if (query.next()) {
+                QString pass = query.value(0).toString();
+                ui->lineEdit102->setText(pass);
+            } else {
+                QMessageBox msgBox(this);
+                msgBox.setIcon(QMessageBox::Warning);
+                msgBox.setWindowTitle("Not Found");
+                msgBox.setText("No Password found for the given student ID.");
+                msgBox.setStyleSheet("QLabel { color: black; }");
+                msgBox.exec();
+                return;
+            }
+        } else {
+            QMessageBox msgBox(this);
+            msgBox.setIcon(QMessageBox::Warning);
+            msgBox.setWindowTitle("Database Error");
+            msgBox.setText("Failed to retrieve Password: " + query.lastError().text());
+            msgBox.setStyleSheet("QLabel { color: black; }");
+            msgBox.exec();
+            return;
+        }
+    }
 
 
 void AdminStudent_Edit :: phn(QString a)
@@ -333,12 +391,24 @@ void AdminStudent_Edit :: phn(QString a)
             QString Contact_no = query.value(0).toString();
             ui->lineEdit_11->setText(Contact_no); // Replace with your widget for displaying Contact_no
         } else {
-            QMessageBox::information(this, "Not Found", "No Contact_no found for the given teacher.");
+
+            QMessageBox msgBox(this);
+            msgBox.setIcon(QMessageBox::Information);
+            msgBox.setWindowTitle("Not found");
+            msgBox.setText("No contact found for the given student: ");
+            msgBox.setStyleSheet("QLabel { color: black; }");
+            msgBox.exec();
+            return;
         }
     } else {
-        QMessageBox::critical(this,
-                              "Database Error",
-                              "Failed to retrieve contact number: " + query.lastError().text());
+
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Critical);
+        msgBox.setWindowTitle("Database Error");
+        msgBox.setText("Failed to retrive contact number:"+query.lastError().text() );
+        msgBox.setStyleSheet("QLabel { color: black; }");
+        msgBox.exec();
+        return;
     }
 }
 
@@ -356,17 +426,31 @@ void AdminStudent_Edit :: address(QString a)
             QString Address = query.value(0).toString();
             ui->lineEdit_13->setText(Address); // Replace with your widget for displaying Address
         } else {
-            QMessageBox::information(this, "Not Found", "No Address found for the given teacher.");
+
+            QMessageBox msgBox(this);
+            msgBox.setIcon(QMessageBox::Information);
+            msgBox.setWindowTitle("Not found");
+            msgBox.setText("No address found for the given studdent:");
+            msgBox.setStyleSheet("QLabel { color: black; }");
+            msgBox.exec();
+            return;
         }
     } else {
-        QMessageBox::critical(this,
-                              "Database Error",
-                              "Failed to retrieve address: " + query.lastError().text());
+
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Critical);
+        msgBox.setWindowTitle("Database Error");
+        msgBox.setText("Failed to retrive address:"+query.lastError().text() );
+        msgBox.setStyleSheet("QLabel { color: black; }");
+        msgBox.exec();
+        return;
+
     }
 }
 
 void AdminStudent_Edit::on_save1_clicked()
 {
+
     QString name;
     QString email;
     QString student_id;
@@ -381,28 +465,66 @@ void AdminStudent_Edit::on_save1_clicked()
     phn_no=ui->lineEdit_5->text();
     address=ui->lineEdit_4->text();
     password=ui->lineEdit_19->text();
+    QString id=student_id;
+    QString EMAIL=email;
     if (name.isEmpty() ){
-        QMessageBox::warning(this, "Input Error", "Please enter Name.");
+
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Warning);
+        msgBox.setWindowTitle("Input Error");
+        msgBox.setText("Please enter name:");
+        msgBox.setStyleSheet("QLabel { color: black; }");
+        msgBox.exec();
         return;
     }
     else if (email.isEmpty() ){
-        QMessageBox::warning(this, "Input Error", "Please enter Email.");
+
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Warning);
+        msgBox.setWindowTitle("Input Error");
+        msgBox.setText("Please enter email:");
+        msgBox.setStyleSheet("QLabel { color: black; }");
+        msgBox.exec();
         return;
     }
     else if (student_id.isEmpty() ){
-        QMessageBox::warning(this, "Input Error", "Please enter Teacher Id.");
+
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Warning);
+        msgBox.setWindowTitle("Input Error");
+        msgBox.setText("Please enter Student Id:");
+        msgBox.setStyleSheet("QLabel { color: black; }");
+        msgBox.exec();
         return;
     }
     else if (phn_no.isEmpty() ){
-        QMessageBox::warning(this, "Input Error", "Please enter Phone Number.");
+
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Warning);
+        msgBox.setWindowTitle("Input Error");
+        msgBox.setText("Please phone number:");
+        msgBox.setStyleSheet("QLabel { color: black; }");
+        msgBox.exec();
         return;
     }
     else if (address.isEmpty() ){
-        QMessageBox::warning(this, "Input Error", "Please enter  address.");    
+
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Warning);
+        msgBox.setWindowTitle("Input Error");
+        msgBox.setText("Please enter address:");
+        msgBox.setStyleSheet("QLabel { color: black; }");
+        msgBox.exec();
         return;
     }
     else if(password.isEmpty() ){
-        QMessageBox::warning(this,"Input Error","plese enter password");
+
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Warning);
+        msgBox.setWindowTitle("Input Error");
+        msgBox.setText("Please enter password:");
+        msgBox.setStyleSheet("QLabel { color: black; }");
+        msgBox.exec();
         return;
     }
 
@@ -416,8 +538,7 @@ void AdminStudent_Edit::on_save1_clicked()
     qry.bindValue(":email", email);
     qry.bindValue(":address", address);
     // Execute the query and check for success
-    if (qry.exec()) {
-        QMessageBox::information(this, "Success", "Student information saved successfully."); 
+
 
 
         // Clear the input fields after saving
@@ -427,22 +548,24 @@ void AdminStudent_Edit::on_save1_clicked()
         ui->lineEdit_4->clear();
         ui->lineEdit_5->clear();
         ui->lineEdit_19->clear();
-    } else {
-        QMessageBox::critical(this, "Database Error", "Failed to save student information: " + qry.lastError().text());
-    }
+
     QSqlQuery q;
-    q.prepare("INSERT INTO LOGINSTUDENT (EMAIL, PASSWORD)"
-              "VALUES(:email, :password)");
-    q.bindValue(":email", email);
+    q.prepare("INSERT INTO LOGINSTUDENT (EMAIL, PASSWORD,ID)"
+              "VALUES(:EMAIL, :password,:id)");
+    q.bindValue(":EMAIL", EMAIL);
     q.bindValue(":password", password);
-    if(q.exec()){
-        QMessageBox::information(this, "Success", "student login information saved successfully.");
+    q.bindValue(":id", id);
+    if(q.exec()&& qry.exec()){
+        QMessageBox::information(this, "Success", "student information saved successfully on both table.");
 
     } else {
         QMessageBox::critical(this, "Database Error", "Failed to save student information: " + qry.lastError().text());
     }
 
 }
+
+
+
 
 
 
@@ -467,30 +590,37 @@ void AdminStudent_Edit::on_view1_clicked()
 
 void AdminStudent_Edit::on_summit_clicked()
 {
-    QString var;
+    QString choose;
     QString id;
     QString name;
     name=ui->lineEdit_6->text();
     id=ui->comboBox_2->currentText();
-    var=ui->comboBox->currentText();
-    if (var=="NOT SELECTED")
-    {        QMessageBox::warning(this, "Input Error", "Please Select What You Want To Edit.");
+    choose=ui->comboBox->currentText();
+    if (choose=="NOT SELECTED")
+    {
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Warning);
+        msgBox.setWindowTitle("input Error");
+        msgBox.setText("please select what do you want to edit:");
+        msgBox.setStyleSheet("QLabel { color: black; }");
+        msgBox.exec();
         return;
+
     }
-    if(var=="NAME")
+    if(choose=="NAME")
     {
         ui->lineEdit_8->setText(id);
         ui->lineEdit_9->setText(name);
         ui->stackedWidget->setCurrentIndex(4);
     }
-    else if(var=="ADDRESS")
+    else if(choose=="ADDRESS")
     {
         ui->lineEdit_22->setText(id);
         ui->lineEdit_12->setText(name);
          address(id);
         ui->stackedWidget->setCurrentIndex(6);
     }
-    else if(var=="CONTACT NUMBER")
+    else if(choose=="CONTACT NUMBER")
     {
         ui->lineEdit_15->setText(id);
         ui->lineEdit_10->setText(name);
@@ -498,13 +628,22 @@ void AdminStudent_Edit::on_summit_clicked()
         ui->stackedWidget->setCurrentIndex(5);
     }
 
-    else if(var=="EMAIL")
+    else if(choose=="EMAIL")
     {
         ui->lineEdit_26->setText(id);
         ui->lineEdit_14->setText(name);
          email(id);
         ui->stackedWidget->setCurrentIndex(7);
     }
+    if(choose=="PASSWORD")
+    {
+        ui->lineEdit102->clear();
+        ui->LINEEDIT100->setText(id);
+        ui->lineEdit101->setText(name);
+        oldpassword(id);
+        ui->stackedWidget->setCurrentIndex(9);
+    }
+
 }
 
 
@@ -525,7 +664,13 @@ void AdminStudent_Edit::on_save2_clicked()
 
 
     if (!qry.exec()) {
-        QMessageBox::critical(this, "Database Error", "Failed to execute query: " + qry.lastError().text());
+
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Critical);
+        msgBox.setWindowTitle("Database Error");
+        msgBox.setText("Failed to execute query:"+qry.lastError().text() );
+        msgBox.setStyleSheet("QLabel { color: black; }");
+        msgBox.exec();
         return;
     }
 
@@ -537,12 +682,33 @@ void AdminStudent_Edit::on_save2_clicked()
 
 
         if (qry.exec()) {
-            QMessageBox::information(this, "Success", "name updated successfully.");
+
+            QMessageBox msgBox(this);
+            msgBox.setIcon(QMessageBox::Information);
+            msgBox.setWindowTitle("Success");
+            msgBox.setText("Name updated successfully:");
+            msgBox.setStyleSheet("QLabel { color: black; }");
+            msgBox.exec();
+            return;
         } else {
-            QMessageBox::warning(this, "Update Failed", "Could not update the record: " + qry.lastError().text());
+
+            QMessageBox msgBox(this);
+            msgBox.setIcon(QMessageBox::Warning);
+            msgBox.setWindowTitle("Update failed");
+            msgBox.setText("could not update the record:"+qry.lastError().text() );
+            msgBox.setStyleSheet("QLabel { color: black; }");
+            msgBox.exec();
+            return;
         }
     } else {
-        QMessageBox::warning(this, "No Match Found", "No record found with the given Stuent id.");
+
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Warning);
+        msgBox.setWindowTitle("No match found");
+        msgBox.setText("No record found with the given student id.:");
+        msgBox.setStyleSheet("QLabel { color: black; }");
+        msgBox.exec();
+        return;
     }
 }
 
@@ -564,7 +730,14 @@ void AdminStudent_Edit::on_save3_clicked()
 
 
     if (!qry.exec()) {
-        QMessageBox::critical(this, "Database Error", "Failed to execute query: " + qry.lastError().text());
+
+
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Critical);
+        msgBox.setWindowTitle("Database Error");
+        msgBox.setText("Failed to execute query:"+qry.lastError().text() );
+        msgBox.setStyleSheet("QLabel { color: black; }");
+        msgBox.exec();
         return;
     }
 
@@ -576,12 +749,33 @@ void AdminStudent_Edit::on_save3_clicked()
 
 
         if (qry.exec()) {
-            QMessageBox::information(this, "Success", "contact updated successfully.");
+
+            QMessageBox msgBox(this);
+            msgBox.setIcon(QMessageBox::Information);
+            msgBox.setWindowTitle("Success");
+            msgBox.setText("Contact updated successfully:");
+            msgBox.setStyleSheet("QLabel { color: black; }");
+            msgBox.exec();
+            return;
         } else {
-            QMessageBox::warning(this, "Update Failed", "Could not update the record: " + qry.lastError().text());
+
+            QMessageBox msgBox(this);
+            msgBox.setIcon(QMessageBox::Warning);
+            msgBox.setWindowTitle("Update failed");
+            msgBox.setText("could not update the record:"+qry.lastError().text() );
+            msgBox.setStyleSheet("QLabel { color: black; }");
+            msgBox.exec();
+            return;
         }
     } else {
-        QMessageBox::warning(this, "No Match Found", "No record found with the given Stuent id.");
+
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Warning);
+        msgBox.setWindowTitle("No match found");
+        msgBox.setText("No record found with the given student id.:");
+        msgBox.setStyleSheet("QLabel { color: black; }");
+        msgBox.exec();
+        return;
     }
 }
 
@@ -605,7 +799,13 @@ void AdminStudent_Edit::on_save5_clicked()
 
 
     if (!qry.exec()) {
-        QMessageBox::critical(this, "Database Error", "Failed to execute query: " + qry.lastError().text());
+
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Critical);
+        msgBox.setWindowTitle("Database Error");
+        msgBox.setText("Failed to execute query:"+qry.lastError().text() );
+        msgBox.setStyleSheet("QLabel { color: black; }");
+        msgBox.exec();
         return;
     }
 
@@ -617,12 +817,33 @@ void AdminStudent_Edit::on_save5_clicked()
 
 
         if (qry.exec()) {
-            QMessageBox::information(this, "Success", "address updated successfully.");
+
+            QMessageBox msgBox(this);
+            msgBox.setIcon(QMessageBox::Information);
+            msgBox.setWindowTitle("Success");
+            msgBox.setText("address updated successfully:");
+            msgBox.setStyleSheet("QLabel { color: black; }");
+            msgBox.exec();
+            return;
         } else {
-            QMessageBox::warning(this, "Update Failed", "Could not update the record: " + qry.lastError().text());
+
+            QMessageBox msgBox(this);
+            msgBox.setIcon(QMessageBox::Warning);
+            msgBox.setWindowTitle("Update failed");
+            msgBox.setText("couldnot update the record:"+qry.lastError().text() );
+            msgBox.setStyleSheet("QLabel { color: black; }");
+            msgBox.exec();
+            return;
         }
     } else {
-        QMessageBox::warning(this, "No Match Found", "No record found with the given Stuent id.");
+
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Warning);
+        msgBox.setWindowTitle("No match found");
+        msgBox.setText("No record found with the given student id:");
+        msgBox.setStyleSheet("QLabel { color: black; }");
+        msgBox.exec();
+        return;
     }
 }
 
@@ -644,7 +865,13 @@ void AdminStudent_Edit::on_save6_clicked()
 
 
     if (!qry.exec()) {
-        QMessageBox::critical(this, "Database Error", "Failed to execute query: " + qry.lastError().text());
+
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Critical);
+        msgBox.setWindowTitle("Database Error");
+        msgBox.setText("Failed to execute query:"+qry.lastError().text() );
+        msgBox.setStyleSheet("QLabel { color: black; }");
+        msgBox.exec();
         return;
     }
 
@@ -656,12 +883,33 @@ void AdminStudent_Edit::on_save6_clicked()
 
 
         if (qry.exec()) {
-            QMessageBox::information(this, "Success", "email updated successfully.");
+
+            QMessageBox msgBox(this);
+            msgBox.setIcon(QMessageBox::Warning);
+            msgBox.setWindowTitle("Success");
+            msgBox.setText("Email updated successfully:");
+            msgBox.setStyleSheet("QLabel { color: black; }");
+            msgBox.exec();
+            return;
         } else {
-            QMessageBox::warning(this, "Update Failed", "Could not update the record: " + qry.lastError().text());
+            
+            QMessageBox msgBox(this);
+            msgBox.setIcon(QMessageBox::Warning);
+            msgBox.setWindowTitle("Update Failed");
+            msgBox.setText("Could not update the record:"+qry.lastError().text() );
+            msgBox.setStyleSheet("QLabel { color: black; }");
+            msgBox.exec();
+            return;
         }
     } else {
-        QMessageBox::warning(this, "No Match Found", "No record found with the given Stuent id.");
+
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Warning);
+        msgBox.setWindowTitle("No match found");
+        msgBox.setText("No record with the given student id:");
+        msgBox.setStyleSheet("QLabel { color: black; }");
+        msgBox.exec();
+        return;
     }
 }
 
@@ -681,7 +929,14 @@ void AdminStudent_Edit::on_view5_2_clicked()
             ui->comboBox1->addItem(Student_id);
         }
     } else {
-        QMessageBox::critical(this, "Database Error", "Failed to retrieve Student IDs: " + qry.lastError().text());
+
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Critical);
+        msgBox.setWindowTitle("Database Error");
+        msgBox.setText("Failed to retrive student Ids:"+qry.lastError().text() );
+        msgBox.setStyleSheet("QLabel { color: black; }");
+        msgBox.exec();
+        return;
     }
 }
 
@@ -690,10 +945,16 @@ void AdminStudent_Edit::on_delet1_clicked()
 {
     // Get the selected student_id from the combobox
     QString student_id = ui->comboBox1->currentText();
-
+    QString id=student_id;
     // Check if a valid student_id is selected
     if (student_id.isEmpty()) {
-        QMessageBox::warning(this, "Input Error", "Please select a valid Student ID to delete.");
+
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Warning);
+        msgBox.setWindowTitle("Input Error");
+        msgBox.setText("Please select a valid student Id to delete:");
+        msgBox.setStyleSheet("QLabel { color: black; }");
+        msgBox.exec();
         return;
     }
 
@@ -712,14 +973,30 @@ void AdminStudent_Edit::on_delet1_clicked()
     QSqlQuery qry;
     qry.prepare("DELETE FROM STUDENT_ENTRY WHERE Student_id = :student_id");
     qry.bindValue(":student_id", student_id);
-
+    QSqlQuery qry1;
+    qry1.prepare("DELETE FROM LOGINSTUDENT WHERE ID = :id");
+    qry1.bindValue(":id", id);
     // Execute the query
-    if (qry.exec()) {
-        QMessageBox::information(this, "Success", "Student record deleted successfully.");
+    if (qry.exec()&& qry1.exec()) {
+
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Information);
+        msgBox.setWindowTitle("Success");
+        msgBox.setText("Student record deleted successfully:");
+        msgBox.setStyleSheet("QLabel { color: black; }");
+        msgBox.exec();
+        return;
 
         // Refresh the combobox to reflect changes
     } else {
-        QMessageBox::critical(this, "Database Error", "Failed to delete the Student record: " + qry.lastError().text());
+
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Critical);
+        msgBox.setWindowTitle("Database Error");
+        msgBox.setText("Failed to Delete the student record:"+qry.lastError().text() );
+        msgBox.setStyleSheet("QLabel { color: black; }");
+        msgBox.exec();
+        return;
     }
 }
 
@@ -733,7 +1010,13 @@ void AdminStudent_Edit::on_pushButton_clicked()
     QString id = ui->comboBox_2->currentText();
 
     if (id.isEmpty()) {
-        QMessageBox::warning(this, "Input Error", "Please Select Teacher ID");
+
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Warning);
+        msgBox.setWindowTitle("Input Error");
+        msgBox.setText("Please select Student Id:");
+        msgBox.setStyleSheet("QLabel { color: black; }");
+        msgBox.exec();
         return;
     }
 
@@ -746,12 +1029,24 @@ void AdminStudent_Edit::on_pushButton_clicked()
             QString Name = query.value(0).toString();
             ui->lineEdit_6->setText(Name); // Replace with your widget for displaying Name
         } else {
-            QMessageBox::information(this, "Not Found", "No Name found for the given teacher.");
+
+            QMessageBox msgBox(this);
+            msgBox.setIcon(QMessageBox::Information);
+            msgBox.setWindowTitle("Not found");
+            msgBox.setText("No name foud for the given student:"+query.lastError().text() );
+            msgBox.setStyleSheet("QLabel { color: black; }");
+            msgBox.exec();
+            return;
         }
     } else {
-        QMessageBox::critical(this,
-                              "Database Error",
-                              "Failed to retrieve Name: " + query.lastError().text());
+
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Critical);
+        msgBox.setWindowTitle("Database Error");
+        msgBox.setText("Failed to retrive Name:"+query.lastError().text() );
+        msgBox.setStyleSheet("QLabel { color: black; }");
+        msgBox.exec();
+        return;
     }
 }
 
@@ -773,7 +1068,14 @@ void AdminStudent_Edit::on_comboBox_2_currentTextChanged(const QString &Student_
         }
     } else {
         qDebug() << "Error retrieving student ID:" << query.lastError().text();
-        QMessageBox::warning(this, "Database Error", "Failed to load student ID: " + query.lastError().text());
+
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Warning);
+        msgBox.setWindowTitle("Database Error");
+        msgBox.setText("Failed to load student Id.:"+query.lastError().text() );
+        msgBox.setStyleSheet("QLabel { color: black; }");
+        msgBox.exec();
+        return;
     }
 }
 
@@ -795,10 +1097,93 @@ void AdminStudent_Edit::on_comboBox1_currentTextChanged(const QString &Student_i
         }
     } else {
         qDebug() << "Error retrieving student ID:" << query.lastError().text();
-        QMessageBox::warning(this, "Database Error", "Failed to load student ID: " + query.lastError().text());
+
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Warning);
+        msgBox.setWindowTitle("Database Error");
+        msgBox.setText("Failed to load:"+query.lastError().text() );
+        msgBox.setStyleSheet("QLabel { color: black; }");
+        msgBox.exec();
+        return;
     }
 }
 
 
 
+
+
+void AdminStudent_Edit::on_home222_clicked()
+{
+    MainWindow *mainWindow =new MainWindow();
+    mainWindow->show();
+    this->hide();
+}
+
+
+void AdminStudent_Edit::on_back99_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+}
+
+
+void AdminStudent_Edit::on_update100_clicked()
+{
+    QString old;
+    QString id;
+
+
+    old=ui->lineEdit105->text();
+    id = ui->LINEEDIT100->text();
+
+
+    QSqlQuery qry;
+
+    qry.prepare("SELECT * FROM LOGINSTUDENT WHERE ID = :id ");
+    qry.bindValue(":id", id);
+
+
+    if (!qry.exec()) {
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Warning);
+        msgBox.setWindowTitle("Database Error");
+        msgBox.setText("Failed to execute query:  " + qry.lastError().text());
+        msgBox.setStyleSheet("QLabel { color: black; }");
+        msgBox.exec();
+        return;
+    }
+
+    if (qry.next()) {
+        qry.prepare("UPDATE LOGINSTUDENT SET PASSWORD = :old WHERE ID = :id");
+        qry.bindValue(":old", old);
+        qry.bindValue(":id", id);
+
+
+        if (qry.exec()) {
+            QMessageBox msgBox(this);
+            msgBox.setIcon(QMessageBox::Information);
+            msgBox.setWindowTitle("  Success");
+            msgBox.setText("Password updated successfully.");
+            msgBox.setStyleSheet("QLabel { color: black; }");
+            msgBox.exec();
+            return;
+
+        } else {
+            QMessageBox msgBox(this);
+            msgBox.setIcon(QMessageBox::Warning);
+            msgBox.setWindowTitle(" Update Failed");
+            msgBox.setText("Could not update the record:  " + qry.lastError().text());
+            msgBox.setStyleSheet("QLabel { color: black; }");
+            msgBox.exec();
+            return;
+        }
+    } else {
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Warning);
+        msgBox.setWindowTitle(" No Match Found");
+        msgBox.setText("No record found with the given STUDENT ID.  " + qry.lastError().text());
+        msgBox.setStyleSheet("QLabel { color: black; }");
+        msgBox.exec();
+        return;
+    }
+}
 

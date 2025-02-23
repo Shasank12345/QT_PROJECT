@@ -39,7 +39,7 @@
 </string>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>4</number>
    </property>
    <widget class="QWidget" name="page0">
     <widget class="QLabel" name="label_20">
@@ -1264,7 +1264,7 @@ color: black;
          <string notr="true">color: rgb(0, 0, 0);</string>
         </property>
         <property name="text">
-         <string>UBDATE</string>
+         <string>UPDATE</string>
         </property>
        </widget>
       </item>
@@ -1590,7 +1590,7 @@ color: rgb(0, 0, 0);</string>
          <string notr="true">color: rgb(0, 0, 0);</string>
         </property>
         <property name="text">
-         <string>UBDATE</string>
+         <string>UPDATE</string>
         </property>
        </widget>
       </item>

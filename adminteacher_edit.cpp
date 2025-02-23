@@ -108,6 +108,7 @@ void AdminTeacher_Edit::populatecomboboz()
         msgBox.setText("Failed to retrieve Teacher IDs: " + qry.lastError().text());
         msgBox.setStyleSheet("QLabel { color: black; }");
         msgBox.exec();
+        return;
     }
 
 }
@@ -961,7 +962,7 @@ void AdminTeacher_Edit::on_delet_clicked()
         QMessageBox msgBox(this);
        msgBox.setIcon(QMessageBox::Warning);
        msgBox.setWindowTitle("Database Error");
-       msgBox.setText("CFailed to delete the teacher record: " + qry.lastError().text()+ qry1.lastError().text());
+       msgBox.setText("Failed to delete the teacher record: " + qry.lastError().text()+ qry1.lastError().text());
        msgBox.setStyleSheet("QLabel { color: black; }");
        msgBox.exec();
        return;
@@ -1156,7 +1157,7 @@ void AdminTeacher_Edit::on_sub_edit_2_clicked()
         QMessageBox msgBox(this);
         msgBox.setIcon(QMessageBox::Warning);
         msgBox.setWindowTitle(" No Match Found");
-        msgBox.setText("No record found with the given Teacher ID.  " + qry.lastError().text());
+        msgBox.setText("No record found with the given TEACHER ID.  " + qry.lastError().text());
         msgBox.setStyleSheet("QLabel { color: black; }");
         msgBox.exec();
         return;
