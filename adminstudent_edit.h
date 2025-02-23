@@ -111,7 +111,17 @@ private slots:
 
     void on_update100_clicked();
 
-private:
+     void on_pushButton_4_clicked();
+
+    void on_pushButton_2_clicked();
+
+     void on_emailupdate_clicked();
+
+    void on_emailhome_clicked();
+
+     void on_emailback_clicked();
+
+ private:
     Ui::AdminStudent_Edit *ui;
 };
 
