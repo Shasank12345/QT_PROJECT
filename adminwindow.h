@@ -2,9 +2,7 @@
 #define ADMINWINDOW_H
 
 #include <QMainWindow>
-#include"adminstudent_edit.h"
-#include"adminteacher_edit.h"
-#include"routinewindow.h"
+
 namespace Ui {
 class AdminWindow;
 class RoutineWindow;
@@ -38,9 +36,6 @@ private slots:
 
 private:
     Ui::AdminWindow *ui;
-    AdminTeacher_Edit *adminTeacher_edit;
-    AdminStudent_Edit *adminStudent_edit;
-    RoutineWindow *routinewindow;
 
 };
 

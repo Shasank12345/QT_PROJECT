@@ -1,5 +1,6 @@
 #ifndef ROUTINEWINDOW_H
 #define ROUTINEWINDOW_H
+#include"mainwindow.h"
 
 #include <QDialog>
 
@@ -50,12 +51,22 @@ private slots:
 
     void on_pushButton_3_clicked();
 
-    void on_pushButton_2_clicked();
+    //void on_pushButton_2_clicked();
 
     void on_pushButton_4_clicked();
 
+    void on_pushButton_2_clicked();
+    void day();
+
+    void on_pushButton_5_clicked();
+
+    void on_pushButton_6_clicked();
+
+    void on_pushButton_7_clicked();
+
 private:
     Ui::RoutineWindow *ui;
+    MainWindow *mainWindow =new MainWindow();
 };
 
 #endif // ROUTINEWINDOW_H

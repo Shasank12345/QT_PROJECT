@@ -10,7 +10,6 @@
 #include<Qstring>
 #include<QPixmap>
 #include<QPalette>
-#include <QSqlTableModel>
 #include <QVBoxLayout>
 #include <QWidget>
 #include <QTableView>

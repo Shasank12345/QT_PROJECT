@@ -801,8 +801,4 @@ void AdminStudent_Edit::on_comboBox1_currentTextChanged(const QString &Student_i
 
 
 
-void AdminStudent_Edit::on_lineEdit_19_cursorPositionChanged(int arg1, int arg2)
-{
-
-}
 

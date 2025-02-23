@@ -1,6 +1,7 @@
 #ifndef ADMINTEACHER_EDIT_H
 #define ADMINTEACHER_EDIT_H
-
+#include"mainwindow.h"
+#include"adminwindow.h"
 #include <QDialog>
 
 namespace Ui {
@@ -85,6 +86,7 @@ private slots:
     void on_view1_clicked();
     void populatecomboboz();
     void populatecombox();
+    void oldpassword( QString a);
 
     void on_back_2_clicked();
 
@@ -98,8 +100,15 @@ private slots:
 
     void on_comboBox_currentTextChanged(const QString &arg1);
 
+    void on_editback_5_clicked();
+
+    void on_sub_edit_2_clicked();
+
 private:
     Ui::AdminTeacher_Edit *ui;
+     MainWindow *mainWindow =new MainWindow();
+
+
 };
 
 #endif // ADMINTEACHER_EDIT_H

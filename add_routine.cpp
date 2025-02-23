@@ -34,9 +34,13 @@ void Add_routine::adddata()
             ui->comboBox->addItem(name);
         }
     } else {
-        QMessageBox::critical(this,
-                              "Database Error",
-                              "Failed to retrieve Teacher IDs: " + qry.lastError().text());
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Warning);
+        msgBox.setWindowTitle(" Database Error  ");
+        msgBox.setText("Failed to retrieve Teacher IDs:  " + qry.lastError().text());
+        msgBox.setStyleSheet("QLabel { color: black; }");
+        msgBox.exec();
+        return;
     }
 }
 
@@ -70,7 +74,7 @@ void Add_routine::on_home1_clicked()
 
 void Add_routine::on_search_clicked()
 {
-    QString teacherName = ui->comboBox->currentText(); // Replace with your widget for teacher name input
+    QString teacherName = ui->comboBox->currentText();
 
     if (teacherName.isEmpty()) {
         QMessageBox::warning(this, "Input Error", "Please enter a teacher's name.");
@@ -84,14 +88,18 @@ void Add_routine::on_search_clicked()
     if (query.exec()) {
         if (query.next()) {
             QString subject = query.value(0).toString();
-            ui->lineEdit_2->setText(subject); // Replace with your widget for displaying subject
+            ui->lineEdit_2->setText(subject);
         } else {
             QMessageBox::information(this, "Not Found", "No subject found for the given teacher.");
         }
     } else {
-        QMessageBox::critical(this,
-                              "Database Error",
-                              "Failed to retrieve subject: " + query.lastError().text());
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Warning);
+        msgBox.setWindowTitle(" Database Error  ");
+        msgBox.setText("Failed to retrieve Teacher IDs:  " + query.lastError().text());
+        msgBox.setStyleSheet("QLabel { color: black; }");
+        msgBox.exec();
+        return;
     }
 }
 
@@ -115,21 +123,41 @@ void Add_routine::on_Save_clicked()
     end = endTime.toString("hh:mm");
 
     if (subject=="Not_Selected" ){
-        QMessageBox::warning(this, "Input Error", "Please Select Subject.");
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Warning);
+        msgBox.setWindowTitle("  Input Error ");
+        msgBox.setText( "Please Select Subject.");
+        msgBox.setStyleSheet("QLabel { color: black; }");
+        msgBox.exec();
         return;
     }
 
     else if (day=="Not_Selected" ){
-        QMessageBox::warning(this, "Input Error", "Please Select Day.");
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Warning);
+        msgBox.setWindowTitle("  Input Error ");
+        msgBox.setText( "Please Select Day.");
+        msgBox.setStyleSheet("QLabel { color: black; }");
+        msgBox.exec();
         return;
     }
     else if (start.isEmpty()){
-        QMessageBox::warning(this, "Input Error", "Please Select Class Start time.");
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Warning);
+        msgBox.setWindowTitle("  Input Error ");
+        msgBox.setText( "Please Select Class Start Time.");
+        msgBox.setStyleSheet("QLabel { color: black; }");
+        msgBox.exec();
         return;
     }
 
     else if (end.isEmpty()){
-        QMessageBox::warning(this, "Input Error", "Please Select Class End Time.");
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Warning);
+        msgBox.setWindowTitle("  Input Error ");
+        msgBox.setText( "Please Select Class end Time.");
+        msgBox.setStyleSheet("QLabel { color: black; }");
+        msgBox.exec();
         return;
     }
 
@@ -145,11 +173,23 @@ void Add_routine::on_Save_clicked()
     if (checkClassTime.exec() && checkClassTime.next()) {
         int count = checkClassTime.value(0).toInt();
         if (count > 0) {
-            QMessageBox::warning(this, "Conflict", "This time slot is already occupied on " + day + ".");
+            QMessageBox msgBox(this);
+            msgBox.setIcon(QMessageBox::Critical);
+            msgBox.setWindowTitle("  Conflict  ");
+            msgBox.setText( "This time slot is already occupied on " + day + ".");
+            msgBox.setStyleSheet("QLabel { color: black; }");
+            msgBox.exec();
             return;
         }
     } else {
         QMessageBox::critical(this, "Database Error", "Failed to check schedule conflicts: " + checkClassTime.lastError().text());
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Critical);
+        msgBox.setWindowTitle(" Database Error  ");
+        msgBox.setText("Failed to check schedule conflicts: " + checkClassTime.lastError().text());
+        msgBox.setStyleSheet("QLabel { color: black; }");
+        msgBox.exec();
+        return;
         return;
     }
 
@@ -164,15 +204,24 @@ void Add_routine::on_Save_clicked()
     if (checkmultipleclass.exec() && checkmultipleclass.next()) {
         int count = checkmultipleclass.value(0).toInt();
         if (count > 0) {
-            QMessageBox::warning(this, "Conflict", name+"has class on "+day);
+            QMessageBox msgBox(this);
+            msgBox.setIcon(QMessageBox::Critical);
+            msgBox.setWindowTitle("  Conflict  ");
+            msgBox.setText( name +"has class on "+ day);
+            msgBox.setStyleSheet("QLabel { color: black; }");
+            msgBox.exec();
             return;
         }
     } else {
-        QMessageBox::critical(this, "Database Error", "Failed to check for schedule conflicts: " + checkmultipleclass.lastError().text());
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Critical);
+        msgBox.setWindowTitle(" Database Error  ");
+        msgBox.setText("Failed to check for schedule conflicts: " + checkmultipleclass.lastError().text());
+        msgBox.setStyleSheet("QLabel { color: black; }");
+        msgBox.exec();
         return;
     }
 
-    // inserting the routine on database
     QSqlQuery insert;
     insert.prepare("INSERT INTO routine (Teacher_Name, Subject,Day,Class_start,Class_end) "
                       "VALUES (:name, :subject, :day, :start,:end)");
@@ -181,12 +230,24 @@ void Add_routine::on_Save_clicked()
     insert.bindValue(":day",day );
     insert.bindValue(":start", start);
     insert.bindValue(":end", end);
-    // Execute the query and check for success
+
     if (insert.exec()) {
-        QMessageBox::information(this, "Success", "Teacher information saved successfully.");
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Information);
+        msgBox.setWindowTitle("  Success");
+        msgBox.setText("Teacher Routine saved successfully.");
+        msgBox.setStyleSheet("QLabel { color: black; }");
+        msgBox.exec();
+        return;
 
     } else {
-        QMessageBox::critical(this, "Database Error", "Failed to save teacher information: " + insert.lastError().text());
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Critical);
+        msgBox.setWindowTitle(" Database Error  ");
+        msgBox.setText("Failed to save teacher information: " + insert.lastError().text());
+        msgBox.setStyleSheet("QLabel { color: black; }");
+        msgBox.exec();
+        return;
     }
 }
 
@@ -195,20 +256,24 @@ void Add_routine::on_comboBox_currentTextChanged(const QString &Name)
 {
     ui->lineEdit_2->clear();
 
-    // Prepare query to retrieve the teacher name  corresponding to the selected id
     QSqlQuery query;
     query.prepare("SELECT Subject FROM Teacher_data WHERE Name = :Name");
     query.bindValue(":Name", Name);
 
     if(query.exec()) {
-        // If multiple IDs exist (unlikely for unique names), they will all be added
         while(query.next()) {
             QString Name = query.value(0).toString();
             ui->lineEdit_2->setText(Name);
         }
     } else {
         qDebug() << "Error retrieving student ID:" << query.lastError().text();
-        QMessageBox::warning(this, "Database Error", "Failed to load student ID: " + query.lastError().text());
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Critical);
+        msgBox.setWindowTitle(" Database Error  ");
+        msgBox.setText("Failed to load student ID: " + query.lastError().text());
+        msgBox.setStyleSheet("QLabel { color: black; }");
+        msgBox.exec();
+        return;
 
 }
 }

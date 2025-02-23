@@ -6,7 +6,9 @@
 #include<QMessageBox>
 #include"mainwindow.h"
 #include<loginWindow.h>
-
+#include"adminstudent_edit.h"
+#include"adminteacher_edit.h"
+#include"routinewindow.h"
 
 AdminWindow::AdminWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -43,9 +45,10 @@ void AdminWindow::on_home_clicked()
 
 void AdminWindow::on_pushButton4_clicked()
 {
-    adminTeacher_edit =new AdminTeacher_Edit(this);
+    AdminTeacher_Edit *adminTeacher_edit =new AdminTeacher_Edit(this);
     adminTeacher_edit->show();
     this->hide();
+
 
 
 }
@@ -53,7 +56,7 @@ void AdminWindow::on_pushButton4_clicked()
 
 void AdminWindow::on_pushButton5_clicked()
 {
-    adminStudent_edit =new AdminStudent_Edit(this);
+    AdminStudent_Edit *adminStudent_edit =new AdminStudent_Edit(this);
     adminStudent_edit->show();
     this->hide();
 }
@@ -61,7 +64,7 @@ void AdminWindow::on_pushButton5_clicked()
 
 void AdminWindow::on_pushButton6_clicked()
 {
-    routinewindow =new RoutineWindow(this);
+    RoutineWindow *routinewindow =new RoutineWindow(this);
     routinewindow->show();
     this->hide();
 }
