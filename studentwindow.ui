@@ -125,7 +125,7 @@ color: black;
     <property name="geometry">
      <rect>
       <x>170</x>
-      <y>170</y>
+      <y>190</y>
       <width>351</width>
       <height>41</height>
      </rect>
@@ -160,7 +160,7 @@ color: black;
      <x>0</x>
      <y>0</y>
      <width>620</width>
-     <height>26</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>
