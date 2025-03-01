@@ -71,7 +71,7 @@ void VIEWATTENDANCE::fetchdata()
         QMessageBox::information(nullptr, "Query Sucess", "SUCESFULLY EXECUTED QUERY");
 
     }
-    model->setQuery(query);
+    //model->setQuery(query);
 
     // Debugging: Check if data exists
     if (model->rowCount() == 0) {
@@ -186,4 +186,6 @@ void VIEWATTENDANCE::on_pushButton_2_clicked()
     }
     this->hide();
 }
+
+
 

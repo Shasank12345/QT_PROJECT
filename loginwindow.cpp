@@ -120,7 +120,7 @@ void LOGINWINDOW::on_pushButton_clicked()
                 teacherWindow->setAttribute(Qt::WA_DeleteOnClose);
                 this->hide();
             } else if (userRole == "student") {
-                StudentWindow *studentWindow = new StudentWindow();
+                StudentWindow *studentWindow = new StudentWindow(EMAIL);
                 qDebug() << "OPENING STUDENT WINDOW";
                 studentWindow->show();
                 studentWindow->setAttribute(Qt::WA_DeleteOnClose);

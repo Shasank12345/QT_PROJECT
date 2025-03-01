@@ -15,6 +15,9 @@ public:
     explicit EditRoutine(QWidget *parent = nullptr);
     ~EditRoutine();
 
+private slots:
+    void on_EditRoutine_iconSizeChanged(const QSize &iconSize);
+
 private:
     Ui::EditRoutine *ui;
 };

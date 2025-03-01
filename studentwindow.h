@@ -1,7 +1,8 @@
 #ifndef STUDENTWINDOW_H
 #define STUDENTWINDOW_H
-
 #include <QMainWindow>
+#include<viewroutinestudent.h>
+#include"mainwindow.h"
 
 namespace Ui {
 class StudentWindow;
@@ -12,7 +13,7 @@ class StudentWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit StudentWindow(QWidget *parent = nullptr);
+    explicit StudentWindow(const QString &studentemail, QWidget *parent = nullptr);
     ~StudentWindow();
 
 private slots:
@@ -28,6 +29,10 @@ private slots:
 
 private:
     Ui::StudentWindow *ui;
+    MainWindow *main=new MainWindow;
+    QString Studentemail;
+    QString studentname;
+    void loadstudentname();
 };
 
 #endif // STUDENTWINDOW_H

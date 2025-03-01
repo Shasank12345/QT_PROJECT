@@ -1,6 +1,5 @@
 #ifndef TEACHERWINDOW_H
 #define TEACHERWINDOW_H
-
 #include <QMainWindow>
 #include<QStackedWidget>
 #include <QtSql/QSqlDatabase>

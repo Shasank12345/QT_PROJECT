@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>StudentWindow</class>
- <widget class="QMainWindow" name="StudentWindow">
+ <class>viewroutinestudent</class>
+ <widget class="QMainWindow" name="viewroutinestudent">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>620</width>
-    <height>373</height>
+    <width>800</width>
+    <height>721</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,46 +17,31 @@
    <string notr="true">background-image: url(:/image/book.jpg);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="label">
+   <widget class="QTableView" name="tableView">
     <property name="geometry">
      <rect>
-      <x>270</x>
-      <y>-10</y>
-      <width>171</width>
-      <height>61</height>
+      <x>40</x>
+      <y>140</y>
+      <width>721</width>
+      <height>401</height>
      </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QLabel{
-color: black;
-   
-
-       font-size:20px;  
-       padding: 1px; 
-       font-weight: bold;  
-     text-align: center; 
-   
-}
-
-
-</string>
-    </property>
-    <property name="text">
-     <string>STUDENT PAGE</string>
     </property>
    </widget>
    <widget class="QWidget" name="formLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>60</y>
-      <width>411</width>
-      <height>141</height>
+      <x>40</x>
+      <y>80</y>
+      <width>721</width>
+      <height>50</height>
      </rect>
     </property>
     <layout class="QFormLayout" name="formLayout">
+     <item row="1" column="0">
+      <layout class="QHBoxLayout" name="horizontalLayout"/>
+     </item>
      <item row="0" column="0">
-      <widget class="QLabel" name="label_2">
+      <widget class="QLabel" name="label_4">
        <property name="styleSheet">
         <string notr="true">QLabel{
 color: black;
@@ -68,69 +53,65 @@ color: black;
      text-align: center; 
    
 }
-
-
 </string>
        </property>
        <property name="text">
-        <string>VIEW ROUTINE</string>
+        <string>CHOOSE DAY   :</string>
        </property>
       </widget>
      </item>
      <item row="0" column="1">
-      <widget class="QPushButton" name="pushButton">
-       <property name="styleSheet">
-        <string notr="true">color: rgb(0, 0, 0);</string>
-       </property>
-       <property name="text">
-        <string>SEE ROUTINE</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="0">
-      <widget class="QLabel" name="label_3">
-       <property name="styleSheet">
-        <string notr="true">QLabel{
-color: black;
-   
-
-       font-size:20px;  
-       padding: 1px; 
-       font-weight: bold;  
-     text-align: center; 
-   
-}
-
-
-</string>
-       </property>
-       <property name="text">
-        <string>VIEW ATTENDANCE</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="1">
-      <widget class="QPushButton" name="pushButton_2">
-       <property name="styleSheet">
-        <string notr="true">color: rgb(0, 0, 0);</string>
-       </property>
-       <property name="text">
-        <string>SEE ATTENDANCE</string>
+      <widget class="QComboBox" name="comboBox_3">
+       <property name="font">
+        <font>
+         <pointsize>15</pointsize>
+        </font>
        </property>
       </widget>
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="layoutWidget">
+   <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>220</y>
-      <width>351</width>
-      <height>41</height>
+      <x>270</x>
+      <y>30</y>
+      <width>331</width>
+      <height>31</height>
      </rect>
     </property>
-    <layout class="QHBoxLayout" name="horizontalLayout">
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0, 0, 0);</string>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;STUDENT ROUTINE  PAGE&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;&lt;br/&gt;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="horizontalLayoutWidget_2">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>550</y>
+      <width>721</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QPushButton" name="pushButton_2">
+       <property name="styleSheet">
+        <string notr="true">color: rgb(0, 0, 0);</string>
+       </property>
+       <property name="text">
+        <string>BACK</string>
+       </property>
+      </widget>
+     </item>
      <item>
       <widget class="QPushButton" name="pushButton_3">
        <property name="styleSheet">
@@ -142,12 +123,12 @@ color: black;
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_4">
+      <widget class="QPushButton" name="pushButton">
        <property name="styleSheet">
         <string notr="true">color: rgb(0, 0, 0);</string>
        </property>
        <property name="text">
-        <string>BACK</string>
+        <string>SUMBIT</string>
        </property>
       </widget>
      </item>
@@ -159,7 +140,7 @@ color: black;
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>620</width>
+     <width>800</width>
      <height>26</height>
     </rect>
    </property>

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>559</width>
-    <height>284</height>
+    <height>413</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -50,7 +50,7 @@ color: black;
      <x>50</x>
      <y>90</y>
      <width>431</width>
-     <height>91</height>
+     <height>101</height>
     </rect>
    </property>
    <layout class="QFormLayout" name="formLayout">
@@ -135,7 +135,7 @@ color: black;
      <x>80</x>
      <y>190</y>
      <width>391</width>
-     <height>51</height>
+     <height>101</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout">

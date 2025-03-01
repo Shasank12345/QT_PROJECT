@@ -26,7 +26,8 @@ SOURCES += \
     takeattendance.cpp \
     teacherwindow.cpp \
     viewattendance.cpp \
-    viewroutine.cpp
+    viewroutine.cpp \
+    viewroutinestudent.cpp
 
 HEADERS += \
     add_routine.h \
@@ -43,7 +44,8 @@ HEADERS += \
     takeattendance.h \
     teacherwindow.h \
     viewattendance.h \
-    viewroutine.h
+    viewroutine.h \
+    viewroutinestudent.h
 
 FORMS += \
     add_routine.ui \
@@ -60,7 +62,8 @@ FORMS += \
     takeattendance.ui \
     teacherwindow.ui \
     viewattendance.ui \
-    viewroutine.ui
+    viewroutine.ui \
+    viewroutinestudent.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

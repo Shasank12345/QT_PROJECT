@@ -11,8 +11,8 @@
 #include<qmessagebox.h>
 TeacherWindow::TeacherWindow(const QString &EMAIL,QWidget *parent)
     : QMainWindow(parent)
-    , ui(new Ui::TeacherWindow),
-    teacheremail(EMAIL)
+    , ui(new Ui::TeacherWindow)
+    ,teacheremail(EMAIL)
 {
     ui->setupUi(this);
     this->setFixedSize(this->size());
@@ -27,15 +27,23 @@ TeacherWindow::~TeacherWindow()
     delete ui;
 }
 
-
-
-
-
-
-
-
-
-
+void TeacherWindow::loadTeacherSubject()
+{
+    QSqlQuery query;
+    query.prepare("SELECT subject FROM Teacher_data WHERE email = :email");
+    query.bindValue(":email", teacheremail);
+    if (query.exec() && query.next()) {
+        teacherSubject = query.value(0).toString();
+        qDebug() << "Teacher subject loaded:" << teacherSubject;
+    } else {
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Warning);
+        msgBox.setWindowTitle("Error");
+        msgBox.setText("Failed to load teacher subject: " + query.lastError().text());
+        msgBox.setStyleSheet("QLabel { color: black; }");
+        msgBox.exec();
+    }
+}
 
 
 void TeacherWindow::on_pushButton_clicked()
@@ -75,27 +83,6 @@ void TeacherWindow::on_pushButton_4_clicked()
 {
 
 }
-
-void TeacherWindow::loadTeacherSubject()
-{
-    QSqlQuery query;
-    query.prepare("SELECT subject FROM Teacher_data WHERE email = :email");
-    query.bindValue(":email", teacheremail);
-    if (query.exec() && query.next()) {
-        teacherSubject = query.value(0).toString();
-        qDebug() << "Teacher subject loaded:" << teacherSubject;
-    } else {
-        QMessageBox msgBox(this);
-        msgBox.setIcon(QMessageBox::Warning);
-        msgBox.setWindowTitle("Error");
-        msgBox.setText("Failed to load teacher subject: " + query.lastError().text());
-        msgBox.setStyleSheet("QLabel { color: black; }");
-        msgBox.exec();
-    }
-}
-
-
-
 
 void TeacherWindow::on_pushButton_3_clicked()
 {

@@ -104,6 +104,8 @@ private slots:
 
     void on_sub_edit_2_clicked();
 
+    void on_tableView_activated(const QModelIndex &index);
+
 private:
     Ui::AdminTeacher_Edit *ui;
      MainWindow *mainWindow =new MainWindow();

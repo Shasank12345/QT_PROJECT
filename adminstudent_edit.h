@@ -121,7 +121,9 @@ private slots:
 
      void on_emailback_clicked();
 
- private:
+    void on_tableView_activated(const QModelIndex &index);
+
+private:
     Ui::AdminStudent_Edit *ui;
 };
 
