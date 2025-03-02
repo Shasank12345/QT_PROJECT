@@ -21,6 +21,11 @@ StudentWindow::StudentWindow(const QString &email, QWidget *parent)
 {
     ui->setupUi(this);
     this->setFixedSize(this->size());
+    this->setWindowTitle("WELCOME  " +Studentemail);
+    loadstudentname();
+
+
+
 }
 
 StudentWindow::~StudentWindow()
@@ -31,9 +36,10 @@ StudentWindow::~StudentWindow()
 void StudentWindow:: loadstudentname()
 {
     QSqlQuery query;
-    query.prepare("SELECT subject FROM student_data WHERE email = :email");
-    query.bindValue(":email", Studentemail);
-    if (query.exec() && query.next()) {
+
+    query.prepare("SELECT Name FROM STUDENT_ENTRY WHERE Email = :Smail");
+    query.bindValue(":Smail", Studentemail);
+    if (query.exec() && query.next()){
         studentname = query.value(0).toString();
         qDebug() << "student name loaded:" << studentname;
     } else {
@@ -49,7 +55,7 @@ void StudentWindow:: loadstudentname()
 
 void StudentWindow::on_pushButton_clicked()
 {
-    VIEWROUTINE *Routine=new VIEWROUTINE();
+    viewroutinestudent *Routine= new viewroutinestudent(this);
     Routine->show();
     this->hide();
 
@@ -88,6 +94,7 @@ void StudentWindow::on_pushButton_2_clicked()
     next->show();
     next->populatecombo2();
     next->days();
+    next->subject();
     this->hide();
 
 }

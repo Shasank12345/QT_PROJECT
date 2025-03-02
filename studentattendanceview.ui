@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>821</width>
-    <height>734</height>
+    <width>830</width>
+    <height>731</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -118,7 +118,9 @@ color: black;
      <item row="1" column="1">
       <widget class="QComboBox" name="comboBox_2">
        <property name="styleSheet">
-        <string notr="true">color: rgb(0, 0, 0);</string>
+        <string notr="true">QComboBox QAbstractItemView {
+    color: black; /* Color of items in dropdown */
+}</string>
        </property>
       </widget>
      </item>
@@ -196,7 +198,13 @@ color: black;
       </widget>
      </item>
      <item row="0" column="1">
-      <widget class="QComboBox" name="comboBox"/>
+      <widget class="QComboBox" name="comboBox">
+       <property name="styleSheet">
+        <string notr="true">QComboBox QAbstractItemView {
+    color: black; /* Color of items in dropdown */
+}</string>
+       </property>
+      </widget>
      </item>
     </layout>
    </widget>
@@ -206,8 +214,8 @@ color: black;
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>821</width>
-     <height>26</height>
+     <width>830</width>
+     <height>25</height>
     </rect>
    </property>
   </widget>

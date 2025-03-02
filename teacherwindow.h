@@ -52,7 +52,7 @@ private:
     MainWindow *main=new MainWindow;
     //takeattendance *take=new takeattendance;
     //VIEWATTENDANCE *view=new VIEWATTENDANCE;
-    VIEWROUTINE *view2=new VIEWROUTINE;
+   // VIEWROUTINE *view2=new VIEWROUTINE;
     QString teacheremail;
     QString teacherSubject;
     void loadTeacherSubject();

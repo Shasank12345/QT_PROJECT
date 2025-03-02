@@ -52,6 +52,8 @@ private slots:
     void on_comboBox_currentTextChanged(const QString &name);
 
 
+    void on_comboBox_activated(int index);
+
 private:
     MainWindow *main=new MainWindow;
     QString teacherEmail;

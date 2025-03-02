@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>620</width>
-    <height>373</height>
+    <width>617</width>
+    <height>396</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,9 +20,9 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>270</x>
+      <x>130</x>
       <y>-10</y>
-      <width>171</width>
+      <width>321</width>
       <height>61</height>
      </rect>
     </property>
@@ -42,14 +42,14 @@ color: black;
 </string>
     </property>
     <property name="text">
-     <string>STUDENT PAGE</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:24pt;&quot;&gt;STUDENT PAGE&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QWidget" name="formLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>60</y>
+      <x>90</x>
+      <y>90</y>
       <width>411</width>
       <height>141</height>
      </rect>
@@ -73,7 +73,7 @@ color: black;
 </string>
        </property>
        <property name="text">
-        <string>VIEW ROUTINE</string>
+        <string>VIEW ROUTINE :</string>
        </property>
       </widget>
      </item>
@@ -105,7 +105,7 @@ color: black;
 </string>
        </property>
        <property name="text">
-        <string>VIEW ATTENDANCE</string>
+        <string>VIEW ATTENDANCE :</string>
        </property>
       </widget>
      </item>
@@ -124,8 +124,8 @@ color: black;
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>220</y>
+      <x>120</x>
+      <y>260</y>
       <width>351</width>
       <height>41</height>
      </rect>
@@ -137,7 +137,7 @@ color: black;
         <string notr="true">color: rgb(0, 0, 0);</string>
        </property>
        <property name="text">
-        <string>HOME</string>
+        <string>LOG OUT</string>
        </property>
       </widget>
      </item>
@@ -159,8 +159,8 @@ color: black;
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>620</width>
-     <height>26</height>
+     <width>617</width>
+     <height>25</height>
     </rect>
    </property>
   </widget>

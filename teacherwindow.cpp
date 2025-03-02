@@ -64,6 +64,8 @@ void TeacherWindow::on_pushButton_clicked()
 
 void TeacherWindow::on_pushButton_2_clicked()
 {
+    VIEWROUTINE *view2=new VIEWROUTINE(teacheremail,teacherSubject,this);
+    view2->setAttribute(Qt::WA_DeleteOnClose,false);
     view2->show();
     view2->day();
     this->hide();

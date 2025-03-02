@@ -13,17 +13,12 @@ class VIEWROUTINE : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit VIEWROUTINE(QWidget *parent = nullptr);
+    explicit VIEWROUTINE(QString t,QString s,QWidget *parent = nullptr);
     void day();
-    void shows();
+   // void shows();
     ~VIEWROUTINE();
 
 private slots:
-    void on_back4_clicked();
-
-    void on_home4_clicked();
-
-    void on_show_clicked();
 
     void on_pushButton_2_clicked();
 
@@ -33,6 +28,8 @@ private slots:
 
 private:
     Ui::VIEWROUTINE *ui;
+    QString teacher;
+    QString Subject;
 };
 
 #endif // VIEWROUTINE_H

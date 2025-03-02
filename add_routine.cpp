@@ -266,11 +266,11 @@ void Add_routine::on_comboBox_currentTextChanged(const QString &Name)
             ui->lineEdit_2->setText(Name);
         }
     } else {
-        qDebug() << "Error retrieving student ID:" << query.lastError().text();
+        qDebug() << "Error retriveing subject:" << query.lastError().text();
         QMessageBox msgBox(this);
         msgBox.setIcon(QMessageBox::Critical);
         msgBox.setWindowTitle(" Database Error  ");
-        msgBox.setText("Failed to load student ID: " + query.lastError().text());
+        msgBox.setText("Failed to retrive subject: " + query.lastError().text());
         msgBox.setStyleSheet("QLabel { color: black; }");
         msgBox.exec();
         return;

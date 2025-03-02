@@ -16,12 +16,17 @@
 #include <QSqlDatabase>
 #include <QDebug>
 
-VIEWROUTINE::VIEWROUTINE(QWidget *parent)
+VIEWROUTINE::VIEWROUTINE(QString t,QString s,QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::VIEWROUTINE)
+    ,teacher(t)
+    ,Subject(s)
+
 {
     ui->setupUi(this);
+    this->setWindowTitle("ROUTINE OF "+Subject);
     this->setFixedSize(this->size());
+    qDebug()<<Subject;
 }
 
 void VIEWROUTINE::day()
@@ -44,38 +49,49 @@ VIEWROUTINE::~VIEWROUTINE()
 
 void VIEWROUTINE::on_pushButton_clicked()
 {
+
+
     QString day;
+    QString s=Subject.trimmed();
+    qDebug()<<s;
+
     day=ui->comboBox_3->currentText().trimmed();
     QSqlQueryModel *model = new QSqlQueryModel();
     QSqlQuery query(QSqlDatabase::database());
 
     // Prepare SQL query with the correct number of placeholders
-    QString sql = "SELECT Teacher_Name,Subject,Class_start,Class_end FROM routine WHERE  DAY = ? ";
+    QString sql = "SELECT Teacher_Name,Subject,Class_start,Class_end FROM routine WHERE DAY = ? ";
     query.prepare(sql);
-
+    //query.addBindValue(s);
     query.addBindValue(day);
 
     if (!query.exec()) {
-        QMessageBox::critical(nullptr, "Query Error", "Failed to execute query: " + query.lastError().text());
-        qDebug() << "Query Error:" << query.lastError().text();
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Critical);
+        msgBox.setWindowTitle(" Database Error  ");
+        msgBox.setText("Failed to execute query: " + query.lastError().text());
+        msgBox.setStyleSheet("QLabel { color: black; }");
+        msgBox.exec();
         return;
-    }
-    else{
-        QMessageBox::information(nullptr, "Query Sucess", "SUCESFULLY EXECUTED QUERY");
-
     }
 
     model->setQuery(query);
 
     // Debugging: Check if data exists
     if (model->rowCount() == 0) {
-        QMessageBox::warning(nullptr, "No Data", "No records found for the selected criteria.");
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Warning);
+        msgBox.setWindowTitle("No Data");
+        msgBox.setText("No records found for the selected criteria.");
+        msgBox.setStyleSheet("QLabel { color: black; }");
+        msgBox.exec();
+        return;
         qDebug() << "No data found!";
         return;
     }
 
     model->setHeaderData(0, Qt::Horizontal, "Teacher_Name");
-    model->setHeaderData(1, Qt::Horizontal, "Subject");
+   model->setHeaderData(1, Qt::Horizontal, "Subject");
     model->setHeaderData(2, Qt::Horizontal, "Class_start");
     model->setHeaderData(3, Qt::Horizontal, "Class_end");
 
@@ -100,19 +116,21 @@ void VIEWROUTINE::on_pushButton_clicked()
     // Set grid style for a clean look
     ui->tableView->setStyleSheet("QTableView { gridline-color: Black; }");
 
-    // Hide vertical header (optional, for cleaner UI)
-    // ui-> tableView->verticalHeader()->setVisible(false);
 
 
     ui->tableView->setFont(QFont("Times New Roman", 10));
 
-    // Debugging: Print row count
-    //qDebug() << "Rows Retrieved:" << model->rowCount();
 
     // Show success message
-    QMessageBox::information(nullptr, "Success", "Data retrieved and displayed successfully!");
+    QMessageBox msgBox(this);
+    msgBox.setIcon(QMessageBox::Information);
+    msgBox.setWindowTitle("  Success");
+    msgBox.setText("Data retrieved and displayed successfully!");
+    msgBox.setStyleSheet("QLabel { color: black; }");
+    msgBox.exec();
+    return;
+       QMessageBox::information(this, "Success", "Data retrieved and displayed successfully!");
 }
-
 
 void VIEWROUTINE::on_pushButton_3_clicked()
 {
