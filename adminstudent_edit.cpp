@@ -19,48 +19,6 @@ AdminStudent_Edit::AdminStudent_Edit(QWidget *parent)
     , ui(new Ui::AdminStudent_Edit)
 {
     ui->setupUi(this);
-    //connecting data base;
-  /*  QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-    db.setDatabaseName("../../DATABASE/FACULTY.db");
-    if (!db.open()) {
-        QMessageBox::critical(this, "Database Error", "Failed to connect to database: " + db.lastError().text());
-    }*/
-    //connecting the push button
-    connect(ui->add, &QPushButton::clicked, this, &AdminStudent_Edit::on_add_clicked);
-    connect(ui->view, &QPushButton::clicked, this, &AdminStudent_Edit::on_view_clicked);
-    connect(ui->edit, &QPushButton::clicked, this, &AdminStudent_Edit::on_edit_clicked);
-    connect(ui->delet_3, &QPushButton::clicked, this, &AdminStudent_Edit::on_delet_3_clicked);
-    connect(ui->back1, &QPushButton::clicked, this, &AdminStudent_Edit::on_back1_clicked);
-    connect(ui->home1, &QPushButton::clicked, this, &AdminStudent_Edit::on_home1_clicked);
-    connect(ui->save1, &QPushButton::clicked, this, &AdminStudent_Edit::on_save1_clicked);
-    connect(ui->back2, &QPushButton::clicked, this, &AdminStudent_Edit::on_back2_clicked);
-    connect(ui->home2, &QPushButton::clicked, this, &AdminStudent_Edit::on_home2_clicked);
-    connect(ui->back3, &QPushButton::clicked, this, &AdminStudent_Edit::on_back3_clicked);
-    connect(ui->view1, &QPushButton::clicked, this, &AdminStudent_Edit::on_view1_clicked);
-    connect(ui->home3_2, &QPushButton::clicked, this, &AdminStudent_Edit::on_home3_2_clicked);
-    connect(ui->back3_2, &QPushButton::clicked, this, &AdminStudent_Edit::on_back3_2_clicked);
-    connect(ui->summit, &QPushButton::clicked, this, &AdminStudent_Edit::on_summit_clicked);
-    connect(ui->home4, &QPushButton::clicked, this, &AdminStudent_Edit::on_home4_clicked);
-    connect(ui->back4, &QPushButton::clicked, this, &AdminStudent_Edit::on_back4_clicked);
-    connect(ui->save2, &QPushButton::clicked, this, &AdminStudent_Edit::on_save2_clicked);
-    connect(ui->home5, &QPushButton::clicked, this, &AdminStudent_Edit::on_home5_clicked);
-    connect(ui->back5, &QPushButton::clicked, this, &AdminStudent_Edit::on_back5_clicked);
-   // connect(ui->bak6, &QPushButton::clicked, this, &AdminStudent_Edit::on_bak6_clicked);
-    connect(ui->back7, &QPushButton::clicked, this, &AdminStudent_Edit::on_back7_clicked);
-    connect(ui->back8_2, &QPushButton::clicked, this, &AdminStudent_Edit::on_back8_2_clicked);
-    connect(ui->save3, &QPushButton::clicked, this, &AdminStudent_Edit::on_save3_clicked);
-    connect(ui->save5, &QPushButton::clicked, this, &AdminStudent_Edit::on_save5_clicked);
-    connect(ui->save6, &QPushButton::clicked, this, &AdminStudent_Edit::on_save6_clicked);
-   // connect(ui->save4, &QPushButton::clicked, this, &AdminStudent_Edit::on_save4_clicked);
-    connect(ui->home6, &QPushButton::clicked, this, &AdminStudent_Edit::on_home6_clicked);
-  //  connect(ui->home7, &QPushButton::clicked, this, &AdminStudent_Edit::on_home7_clicked);
-    connect(ui->home9, &QPushButton::clicked, this, &AdminStudent_Edit::on_home9_clicked);
-    connect(ui->home10, &QPushButton::clicked, this, &AdminStudent_Edit::on_home10_clicked);
-    connect(ui->delet1, &QPushButton::clicked, this, &AdminStudent_Edit::on_delet1_clicked);
-    connect(ui->home11, &QPushButton::clicked, this, &AdminStudent_Edit::on_home11_clicked);
-    //
-    //Connect(ui->home11, &QPushButton::clicked, this, &AdminStudent_Edit::on_home11_clicked)
-   // connect(ui->pushButton_3, &QPushButton::clicked, this, &AdminStudent_Edit::on_pushButton_3_clicked);
 
 }
 
