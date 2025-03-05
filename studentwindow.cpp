@@ -1,4 +1,5 @@
 #include "studentwindow.h"
+#include "routinewindow.h"
 #include "ui_studentwindow.h"
 #include "mainwindow.h"
 #include "viewroutine.h"
@@ -55,7 +56,11 @@ void StudentWindow:: loadstudentname()
 
 void StudentWindow::on_pushButton_clicked()
 {
-    viewroutinestudent *Routine= new viewroutinestudent(this);
+    viewroutinestudent *Routine= new viewroutinestudent(studentname,this);
+    Routine->setAttribute(Qt::WA_DeleteOnClose,false);
+    Routine->populatecombo();
+
+
     Routine->show();
     this->hide();
 
@@ -66,7 +71,7 @@ void StudentWindow::on_pushButton_3_clicked()
 {
     MainWindow *Home=new MainWindow();
     Home->show();
-    this->show();
+    this->hide();
 }
 
 
@@ -74,18 +79,10 @@ void StudentWindow::on_pushButton_4_clicked()
 {
     MainWindow *Home=new MainWindow();
     Home->show();
-    this->show();
-}
-
-
-/*void StudentWindow::on_pushButton_2_clicked()
-{
-    VIEWATTENDANCE *Attendance=new VIEWATTENDANCE();
-    Attendance->show();
     this->hide();
-
 }
-*/
+
+
 
 void StudentWindow::on_pushButton_2_clicked()
 {

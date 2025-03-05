@@ -5,7 +5,7 @@
 #include<teacherwindow.h>
 #include<studentwindow.h>
 #include<adminwindow.h>
-#include <QCryptographicHash>
+//#include <QCryptographicHash>
 #include<qmessagebox.h>
 
 
@@ -16,6 +16,7 @@ LOGINWINDOW::LOGINWINDOW(QString role,QWidget *parent)
 {
     ui->setupUi(this);
      this->setFixedSize(this->size());
+    this->setWindowTitle("LOGIN AS : "+role);
     QString connectionName = "connection_" + QString::number(QDateTime::currentMSecsSinceEpoch());
     db = QSqlDatabase::addDatabase("QSQLITE", connectionName);
     db.setDatabaseName("../../FACULTY.db");

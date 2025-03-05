@@ -75,6 +75,7 @@ void RoutineWindow::on_pushButton_4_clicked()
 {
     EditRoutine *edit= new EditRoutine();
     edit->show();
+    edit->popu();
       this->hide();
 }
 

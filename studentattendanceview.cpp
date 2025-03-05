@@ -17,9 +17,7 @@ Studentattendanceview::Studentattendanceview(const QString &studentemail,const Q
       this->setFixedSize(this->size());
     this->setWindowTitle("ATTENTANCE RECORD OF :" + studentname);
 
-   // ui->dateEdit_2->setDate(QDate::currentDate());
-   // ui->comboBox->clear();
-   // ui->comboBox->addItem(studentname);
+
 
 }
 
