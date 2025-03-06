@@ -25,7 +25,11 @@ public:
     ~EditRoutine();
 
 private slots:
-    void on_EditRoutine_iconSizeChanged(const QSize &iconSize);
+
+    void on_comboBox_currentTextChanged(const QString &arg1);
+
+    void on_pushButton_4_clicked();
+
 public:
     void popu();
 

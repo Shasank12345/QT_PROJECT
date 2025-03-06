@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>724</height>
+    <width>795</width>
+    <height>502</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -26,6 +26,9 @@
       <height>61</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0, 0, 0);</string>
+    </property>
     <property name="text">
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:20pt; font-weight:700;&quot;&gt;ROUTINE PAGE&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
@@ -36,67 +39,156 @@
       <x>80</x>
       <y>100</y>
       <width>621</width>
-      <height>199</height>
+      <height>295</height>
      </rect>
     </property>
     <layout class="QFormLayout" name="formLayout">
      <item row="0" column="0">
       <widget class="QLabel" name="label_2">
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+color: black;
+   
+
+       font-size:20px;  
+       padding: 1px; 
+       font-weight: bold;  
+     text-align: center; 
+   
+}
+</string>
+       </property>
        <property name="text">
-        <string>TTEACHER  NAME :l</string>
+        <string>TEACHER  NAME :</string>
        </property>
       </widget>
      </item>
      <item row="0" column="1">
-      <widget class="QComboBox" name="comboBox"/>
-     </item>
-     <item row="3" column="1">
-      <widget class="QComboBox" name="comboBox_2"/>
+      <widget class="QComboBox" name="comboBox">
+       <property name="styleSheet">
+        <string notr="true">QComboBox QAbstract View{
+rgb(0, 0, 0)
+}</string>
+       </property>
+      </widget>
      </item>
      <item row="1" column="0">
       <widget class="QLabel" name="label_3">
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+color: black;
+   
+
+       font-size:20px;  
+       padding: 1px; 
+       font-weight: bold;  
+     text-align: center; 
+   
+}
+</string>
+       </property>
        <property name="text">
         <string>TEACHER SUBJECT :</string>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="0">
-      <widget class="QLabel" name="label_4">
-       <property name="text">
-        <string> SELECT DAY :l</string>
-       </property>
-      </widget>
-     </item>
-     <item row="5" column="1">
-      <widget class="QLineEdit" name="lineEdit"/>
-     </item>
-     <item row="4" column="1">
-      <widget class="QLineEdit" name="lineEdit_2"/>
-     </item>
-     <item row="4" column="0">
-      <widget class="QLabel" name="label_5">
-       <property name="text">
-        <string>TCLASS STARTS :l</string>
-       </property>
-      </widget>
-     </item>
-     <item row="5" column="0">
-      <widget class="QLabel" name="label_6">
-       <property name="text">
-        <string>CLASS END :</string>
        </property>
       </widget>
      </item>
      <item row="1" column="1">
       <widget class="QComboBox" name="comboBox_3"/>
      </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_4">
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+color: black;
+   
+
+       font-size:20px;  
+       padding: 1px; 
+       font-weight: bold;  
+     text-align: center; 
+   
+}
+</string>
+       </property>
+       <property name="text">
+        <string> SELECT DAY :</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QComboBox" name="comboBox_2"/>
+     </item>
+     <item row="5" column="1">
+      <widget class="QPushButton" name="pushButton_4">
+       <property name="styleSheet">
+        <string notr="true">color: rgb(0, 0, 0);</string>
+       </property>
+       <property name="text">
+        <string>TIME</string>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="0">
+      <widget class="QLabel" name="label_6">
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+color: black;
+   
+
+       font-size:20px;  
+       padding: 1px; 
+       font-weight: bold;  
+     text-align: center; 
+   
+}
+</string>
+       </property>
+       <property name="text">
+        <string>CLASS END :</string>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="1">
+      <widget class="QLineEdit" name="lineEdit_2">
+       <property name="styleSheet">
+        <string notr="true">color: rgb(0, 0, 0);</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="0">
+      <widget class="QLabel" name="label_5">
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+color: black;
+   
+
+       font-size:20px;  
+       padding: 1px; 
+       font-weight: bold;  
+     text-align: center; 
+   
+}
+</string>
+       </property>
+       <property name="text">
+        <string>CLASS STARTS :</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="1">
+      <widget class="QLineEdit" name="lineEdit">
+       <property name="styleSheet">
+        <string notr="true">color: rgb(0, 0, 0);</string>
+       </property>
+      </widget>
+     </item>
     </layout>
    </widget>
    <widget class="QWidget" name="horizontalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>290</y>
+      <x>90</x>
+      <y>410</y>
       <width>621</width>
       <height>31</height>
      </rect>
@@ -104,22 +196,31 @@
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
       <widget class="QPushButton" name="pushButton_2">
+       <property name="styleSheet">
+        <string notr="true">color: rgb(0, 0, 0);</string>
+       </property>
        <property name="text">
         <string>BACK</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_3">
+      <widget class="QPushButton" name="pushButton">
+       <property name="styleSheet">
+        <string notr="true">color: rgb(0, 0, 0);</string>
+       </property>
        <property name="text">
-        <string>LOGOUT</string>
+        <string>HOME</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="pushButton_3">
+       <property name="styleSheet">
+        <string notr="true">color: rgb(0, 0, 0);</string>
+       </property>
        <property name="text">
-        <string>HOME</string>
+        <string>LOGOUT</string>
        </property>
       </widget>
      </item>
@@ -131,7 +232,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>795</width>
      <height>25</height>
     </rect>
    </property>

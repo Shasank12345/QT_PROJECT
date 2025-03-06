@@ -236,8 +236,8 @@ color: black;
        </item>
       </layout>
      </item>
-     <item row="1" column="1">
-      <widget class="QComboBox" name="comboBox_2">
+     <item row="2" column="1">
+      <widget class="QComboBox" name="comboBox_3">
        <property name="styleSheet">
         <string notr="true">QComboBox QAbstractItemView {
     color: black; /* Color of items in dropdown */
@@ -245,8 +245,8 @@ color: black;
        </property>
       </widget>
      </item>
-     <item row="2" column="1">
-      <widget class="QComboBox" name="comboBox_3">
+     <item row="1" column="1">
+      <widget class="QComboBox" name="comboBox_2">
        <property name="styleSheet">
         <string notr="true">QComboBox QAbstractItemView {
     color: black; /* Color of items in dropdown */

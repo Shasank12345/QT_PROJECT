@@ -119,7 +119,7 @@ void VIEWATTENDANCE::on_pushButton_clicked()
 
 void VIEWATTENDANCE::on_pushButton_2_clicked()
 {
-    if (QWidget *parent = this->parentWidget()) {
+    if (QWidget *parent = this->parentWidget()){
         parent->show();
     }
     this->hide();

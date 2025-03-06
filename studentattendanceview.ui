@@ -115,15 +115,6 @@ color: black;
        </property>
       </widget>
      </item>
-     <item row="1" column="1">
-      <widget class="QComboBox" name="comboBox_2">
-       <property name="styleSheet">
-        <string notr="true">QComboBox QAbstractItemView {
-    color: black; /* Color of items in dropdown */
-}</string>
-       </property>
-      </widget>
-     </item>
      <item row="2" column="0">
       <widget class="QLabel" name="label_7">
        <property name="styleSheet">
@@ -199,6 +190,15 @@ color: black;
      </item>
      <item row="0" column="1">
       <widget class="QComboBox" name="comboBox">
+       <property name="styleSheet">
+        <string notr="true">QComboBox QAbstractItemView {
+    color: black; /* Color of items in dropdown */
+}</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QComboBox" name="comboBox_2">
        <property name="styleSheet">
         <string notr="true">QComboBox QAbstractItemView {
     color: black; /* Color of items in dropdown */

@@ -63,7 +63,8 @@ void viewroutinestudent::on_pushButton_clicked()
     model->setQuery(query);
 
     // Debugging: Check if data exists
-    if (model->rowCount() == 0) {
+    if (model->rowCount() == 0){
+
         QMessageBox msgBox(this);
         msgBox.setIcon(QMessageBox::Warning);
         msgBox.setWindowTitle("No Data");
