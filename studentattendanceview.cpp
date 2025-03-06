@@ -3,7 +3,7 @@
 #include"mainwindow.h"
 #include<QMessageBox>
 #include"QSqlQueryModel"
-
+#include"qmessagebox.h"
 
 Studentattendanceview::Studentattendanceview(const QString &studentemail,const QString &studentname,QWidget *parent)
     : QMainWindow(parent)

@@ -14,6 +14,7 @@
 #include <QSqlQuery>
 #include <QSqlError>
 #include <QMessageBox>
+#include"qmessagebox.h"
 
 StudentWindow::StudentWindow(const QString &email, QWidget *parent)
     : QMainWindow(parent)
