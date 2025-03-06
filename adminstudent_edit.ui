@@ -636,6 +636,9 @@
           <pointsize>12</pointsize>
          </font>
         </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
+        </property>
         <item>
          <property name="text">
           <string>NOT SELECTED</string>

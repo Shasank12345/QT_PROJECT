@@ -529,6 +529,9 @@ color: black;
           <pointsize>14</pointsize>
          </font>
         </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
+        </property>
        </widget>
       </item>
       <item row="2" column="0">
@@ -547,6 +550,9 @@ color: black;
          <font>
           <pointsize>14</pointsize>
          </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
         </property>
         <item>
          <property name="text">
