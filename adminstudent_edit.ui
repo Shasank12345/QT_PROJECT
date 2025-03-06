@@ -176,7 +176,7 @@
          <string notr="true">color: rgb(0, 0, 0);</string>
         </property>
         <property name="text">
-         <string>HOME</string>
+         <string>LOGOUT</string>
         </property>
        </widget>
       </item>
@@ -187,21 +187,6 @@
         </property>
         <property name="text">
          <string>BACK</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="save1_2">
-        <property name="font">
-         <font>
-          <pointsize>10</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: rgb(0, 0, 0);</string>
-        </property>
-        <property name="text">
-         <string>SAVE</string>
         </property>
        </widget>
       </item>
@@ -429,10 +414,10 @@
     <widget class="QWidget" name="layoutWidget_2">
      <property name="geometry">
       <rect>
-       <x>125</x>
-       <y>380</y>
+       <x>110</x>
+       <y>410</y>
        <width>560</width>
-       <height>224</height>
+       <height>51</height>
       </rect>
      </property>
      <property name="font">
@@ -441,6 +426,21 @@
       </font>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <item>
+       <widget class="QPushButton" name="home2">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string>LOGOUT</string>
+        </property>
+       </widget>
+      </item>
       <item>
        <widget class="QPushButton" name="back2">
         <property name="font">
@@ -468,21 +468,6 @@
         </property>
         <property name="text">
          <string>SAVE</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="home2">
-        <property name="font">
-         <font>
-          <pointsize>10</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: rgb(0, 0, 0);</string>
-        </property>
-        <property name="text">
-         <string>HOME</string>
         </property>
        </widget>
       </item>
@@ -537,22 +522,7 @@
          <string notr="true">color: rgb(0, 0, 0);</string>
         </property>
         <property name="text">
-         <string>HOME</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="view1">
-        <property name="font">
-         <font>
-          <pointsize>10</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: rgb(0, 0, 0);</string>
-        </property>
-        <property name="text">
-         <string>VIEW</string>
+         <string>LOGOUT</string>
         </property>
        </widget>
       </item>
@@ -568,6 +538,21 @@
         </property>
         <property name="text">
          <string>BACK</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="view1">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string>VIEW</string>
         </property>
        </widget>
       </item>
@@ -757,22 +742,7 @@
          <string notr="true">color: rgb(0, 0, 0);</string>
         </property>
         <property name="text">
-         <string>HOME</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="summit">
-        <property name="font">
-         <font>
-          <pointsize>10</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: rgb(0, 0, 0);</string>
-        </property>
-        <property name="text">
-         <string>SUMBIT</string>
+         <string>LOGOUT</string>
         </property>
        </widget>
       </item>
@@ -788,6 +758,21 @@
         </property>
         <property name="text">
          <string>BACK</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="summit">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string>SUMBIT</string>
         </property>
        </widget>
       </item>
@@ -928,17 +913,7 @@
          <string notr="true">color: rgb(0, 0, 0);</string>
         </property>
         <property name="text">
-         <string>HOME</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="save2">
-        <property name="styleSheet">
-         <string notr="true">color: rgb(0, 0, 0);</string>
-        </property>
-        <property name="text">
-         <string>SAVE</string>
+         <string>LOGOUT</string>
         </property>
        </widget>
       </item>
@@ -949,6 +924,16 @@
         </property>
         <property name="text">
          <string>BACK</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="save2">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string>SAVE</string>
         </property>
        </widget>
       </item>
@@ -1035,7 +1020,7 @@
          <string notr="true">color: rgb(0, 0, 0);</string>
         </property>
         <property name="placeholderText">
-         <string/>
+         <string>enter new contact</string>
         </property>
        </widget>
       </item>
@@ -1111,6 +1096,21 @@
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout_10">
       <item>
+       <widget class="QPushButton" name="home6">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string>LOGOUT</string>
+        </property>
+       </widget>
+      </item>
+      <item>
        <widget class="QPushButton" name="back5">
         <property name="font">
          <font>
@@ -1121,7 +1121,7 @@
          <string notr="true">color: rgb(0, 0, 0);</string>
         </property>
         <property name="text">
-         <string>Back</string>
+         <string>BACK</string>
         </property>
        </widget>
       </item>
@@ -1136,22 +1136,7 @@
          <string notr="true">color: rgb(0, 0, 0);</string>
         </property>
         <property name="text">
-         <string>Save</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="home6">
-        <property name="font">
-         <font>
-          <pointsize>10</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: rgb(0, 0, 0);</string>
-        </property>
-        <property name="text">
-         <string>Home</string>
+         <string>SAVE</string>
         </property>
        </widget>
       </item>
@@ -1185,22 +1170,7 @@
          <string notr="true">color: rgb(0, 0, 0);</string>
         </property>
         <property name="text">
-         <string>HOME</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="save5">
-        <property name="font">
-         <font>
-          <pointsize>10</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: rgb(0, 0, 0);</string>
-        </property>
-        <property name="text">
-         <string>SAVE</string>
+         <string>LOGOUT</string>
         </property>
        </widget>
       </item>
@@ -1216,6 +1186,21 @@
         </property>
         <property name="text">
          <string>BACK</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="save5">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string>SAVE</string>
         </property>
        </widget>
       </item>
@@ -1269,7 +1254,7 @@
          <string notr="true">color: rgb(0, 0, 0);</string>
         </property>
         <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;STUDENT OLD CONTACT:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;STUDENT OLD ADDRESS:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
       </item>
@@ -1311,7 +1296,7 @@
          <string notr="true">color: rgb(0, 0, 0);</string>
         </property>
         <property name="placeholderText">
-         <string/>
+         <string>   enter new address</string>
         </property>
        </widget>
       </item>
@@ -1430,7 +1415,7 @@
          <string notr="true">color: rgb(0, 0, 0);</string>
         </property>
         <property name="placeholderText">
-         <string/>
+         <string>   enter new email</string>
         </property>
        </widget>
       </item>
@@ -1506,17 +1491,7 @@
          <string notr="true">color: rgb(0, 0, 0);</string>
         </property>
         <property name="text">
-         <string>HOME</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="save6">
-        <property name="styleSheet">
-         <string notr="true">color: rgb(0, 0, 0);</string>
-        </property>
-        <property name="text">
-         <string>SAVE</string>
+         <string>LOGOUT</string>
         </property>
        </widget>
       </item>
@@ -1527,6 +1502,13 @@
         </property>
         <property name="text">
          <string>BACK</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton">
+        <property name="text">
+         <string>SAVE</string>
         </property>
        </widget>
       </item>
@@ -1656,7 +1638,7 @@
          <string notr="true">color: rgb(0, 0, 0);</string>
         </property>
         <property name="text">
-         <string>HOME</string>
+         <string>LOGOUT</string>
         </property>
        </widget>
       </item>
@@ -1804,53 +1786,47 @@
       </item>
      </layout>
     </widget>
-    <widget class="QPushButton" name="home222">
+    <widget class="QWidget" name="">
      <property name="geometry">
       <rect>
        <x>160</x>
        <y>320</y>
-       <width>111</width>
-       <height>29</height>
+       <width>501</width>
+       <height>31</height>
       </rect>
      </property>
-     <property name="styleSheet">
-      <string notr="true">color: rgb(0, 0, 0);</string>
-     </property>
-     <property name="text">
-      <string>HOME</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="back99">
-     <property name="geometry">
-      <rect>
-       <x>360</x>
-       <y>320</y>
-       <width>111</width>
-       <height>29</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: rgb(0, 0, 0);</string>
-     </property>
-     <property name="text">
-      <string>BACK</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="update100">
-     <property name="geometry">
-      <rect>
-       <x>570</x>
-       <y>320</y>
-       <width>101</width>
-       <height>29</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: rgb(0, 0, 0);</string>
-     </property>
-     <property name="text">
-      <string>UPDATE</string>
-     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_9">
+      <item>
+       <widget class="QPushButton" name="home222">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string>LOGOUT</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="back99">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string>BACK</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="update100">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string>UPDATE</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </widget>
    </widget>
    <widget class="QWidget" name="page_11">

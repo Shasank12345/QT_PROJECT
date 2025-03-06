@@ -465,6 +465,15 @@ void AdminStudent_Edit::on_save1_clicked()
         msgBox.exec();
         return;
     }
+    if (phn_no.length() != 10 ) {
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Warning);
+        msgBox.setWindowTitle("Input Error");
+        msgBox.setText("Please Enter valid  number:");
+        msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
+        msgBox.exec();
+        return;
+    }
     else if (address.isEmpty() ){
 
         QMessageBox msgBox(this);
@@ -696,61 +705,69 @@ void AdminStudent_Edit::on_save3_clicked()
     student_id = ui->lineEdit_15->text();
 
 
-    QSqlQuery qry;
+    if (contact.length() == 10 ) {
 
-    // Check if a record with the same student_id
-    qry.prepare("SELECT * FROM STUDENT_ENTRY WHERE Student_id = :student_id ");
-    qry.bindValue(":student_id", student_id);
+        QSqlQuery qry;
 
-
-    if (!qry.exec()) {
-
-
-        QMessageBox msgBox(this);
-        msgBox.setIcon(QMessageBox::Critical);
-        msgBox.setWindowTitle("Database Error");
-        msgBox.setText("Failed to execute query:"+qry.lastError().text() );
-        msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
-        msgBox.exec();
-        return;
-    }
-
-    if (qry.next()) {
-        // Update the existing record
-        qry.prepare("UPDATE STUDENT_ENTRY SET Contact_no = :contact WHERE Student_id = :student_id");
-        qry.bindValue(":contact", contact);
+        // Check if a record with the same student_id
+        qry.prepare("SELECT * FROM STUDENT_ENTRY WHERE Student_id = :student_id ");
         qry.bindValue(":student_id", student_id);
 
 
-        if (qry.exec()) {
+        if (!qry.exec()) {
+
 
             QMessageBox msgBox(this);
-            msgBox.setIcon(QMessageBox::Information);
-            msgBox.setWindowTitle("Success");
-            msgBox.setText("Contact updated successfully:");
+            msgBox.setIcon(QMessageBox::Critical);
+            msgBox.setWindowTitle("Database Error");
+            msgBox.setText("Failed to execute query:"+qry.lastError().text() );
             msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
             msgBox.exec();
             return;
+        }
+
+        if (qry.next()) {
+            // Update the existing record
+            qry.prepare("UPDATE STUDENT_ENTRY SET Contact_no = :contact WHERE Student_id = :student_id");
+            qry.bindValue(":contact", contact);
+            qry.bindValue(":student_id", student_id);
+
+
+            if (qry.exec()) {
+
+                QMessageBox msgBox(this);
+                msgBox.setIcon(QMessageBox::Information);
+                msgBox.setWindowTitle("Success");
+                msgBox.setText("Contact updated successfully:");
+                msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
+                msgBox.exec();
+                return;
+            } else {
+
+                QMessageBox msgBox(this);
+                msgBox.setIcon(QMessageBox::Warning);
+                msgBox.setWindowTitle("Update failed");
+                msgBox.setText("could not update the record:"+qry.lastError().text() );
+                msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
+                msgBox.exec();
+                return;
+            }
         } else {
 
             QMessageBox msgBox(this);
             msgBox.setIcon(QMessageBox::Warning);
-            msgBox.setWindowTitle("Update failed");
-            msgBox.setText("could not update the record:"+qry.lastError().text() );
+            msgBox.setWindowTitle("No match found");
+            msgBox.setText("No record found with the given student id.:");
             msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
             msgBox.exec();
             return;
         }
     } else {
-
-        QMessageBox msgBox(this);
-        msgBox.setIcon(QMessageBox::Warning);
-        msgBox.setWindowTitle("No match found");
-        msgBox.setText("No record found with the given student id.:");
-        msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
-        msgBox.exec();
+        QMessageBox::warning(this, "Invalid Input", "Contact number must be exactly 10 digits.");
         return;
     }
+
+
 }
 
 
@@ -821,8 +838,7 @@ void AdminStudent_Edit::on_save5_clicked()
     }
 }
 
-
-void AdminStudent_Edit::on_save6_clicked()
+void AdminStudent_Edit::on_pushButton_clicked()
 {
     QString email = ui->lineEdit_27->text();
     QString student_id = ui->lineEdit_26->text();
@@ -922,120 +938,6 @@ void AdminStudent_Edit::on_save6_clicked()
     msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
     msgBox.exec();
     return;
-}
-
-
-void AdminStudent_Edit::on_emailhome_clicked()
-{
-    MainWindow *mainWindow =new MainWindow();
-    mainWindow->show();
-    this->hide();
-}
-
-
-void AdminStudent_Edit::on_delet1_clicked()
-{
-    // Get the selected student_id from the combobox
-    QString student_id = ui->comboBox1->currentText();
-    QString id=student_id;
-    // Check if a valid student_id is selected
-    if (student_id.isEmpty()) {
-
-        QMessageBox msgBox(this);
-        msgBox.setIcon(QMessageBox::Warning);
-        msgBox.setWindowTitle("Input Error");
-        msgBox.setText("Please select a valid student Id to delete:");
-        msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
-        msgBox.exec();
-        return;
-    }
-
-    // Confirm deletion with the user
-    QMessageBox::StandardButton reply = QMessageBox::question(
-        this, "Delete Confirmation",
-        "Are you sure you want to delete Student ID: " + student_id + "?",
-        QMessageBox::Yes | QMessageBox::No
-        );
-
-    if (reply == QMessageBox::No) {
-        return; // User canceled the deletion
-    }
-
-    // Prepare the SQL query to delete the Student record
-    QSqlQuery qry;
-    qry.prepare("DELETE FROM STUDENT_ENTRY WHERE Student_id = :student_id");
-    qry.bindValue(":student_id", student_id);
-    QSqlQuery qry1;
-    qry1.prepare("DELETE FROM LOGINSTUDENT WHERE ID = :id");
-    qry1.bindValue(":id", id);
-    // Execute the query
-    if (qry.exec()&& qry1.exec()) {
-
-        QMessageBox msgBox(this);
-        msgBox.setIcon(QMessageBox::Information);
-        msgBox.setWindowTitle("Success");
-        msgBox.setText("Student record has been deleted successfully:");
-        msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
-        msgBox.exec();
-        return;
-
-        // Refresh the combobox to reflect changes
-    } else {
-
-        QMessageBox msgBox(this);
-        msgBox.setIcon(QMessageBox::Critical);
-        msgBox.setWindowTitle("Database Error");
-        msgBox.setText("Failed to Delete the student record:"+qry.lastError().text() );
-        msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
-        msgBox.exec();
-        return;
-    }
-}
-
-
-void AdminStudent_Edit::on_pushButton_clicked()
-{
-    QString id = ui->comboBox_2->currentText();
-
-    if (id.isEmpty()) {
-
-        QMessageBox msgBox(this);
-        msgBox.setIcon(QMessageBox::Warning);
-        msgBox.setWindowTitle("Input Error");
-        msgBox.setText("Please select Student Id:");
-        msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
-        msgBox.exec();
-        return;
-    }
-
-    QSqlQuery query;
-    query.prepare("SELECT Name FROM STUDENT_ENTRY WHERE Student_id = :id");
-    query.bindValue(":id", id);
-
-    if (query.exec()) {
-        if (query.next()) {
-            QString Name = query.value(0).toString();
-            ui->lineEdit_6->setText(Name); // Replace with your widget for displaying Name
-        } else {
-
-            QMessageBox msgBox(this);
-            msgBox.setIcon(QMessageBox::Information);
-            msgBox.setWindowTitle("Not found");
-            msgBox.setText("No name foud for the given student:"+query.lastError().text() );
-            msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
-            msgBox.exec();
-            return;
-        }
-    } else {
-
-        QMessageBox msgBox(this);
-        msgBox.setIcon(QMessageBox::Critical);
-        msgBox.setWindowTitle("Database Error");
-        msgBox.setText("Failed to retrive Name:"+query.lastError().text() );
-        msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
-        msgBox.exec();
-        return;
-    }
 }
 
 

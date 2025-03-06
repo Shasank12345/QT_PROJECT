@@ -14,7 +14,8 @@
    <string>RoutineWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-image: url(:/image/logipage.jpg);</string>
+   <string notr="true">
+background-image: url(:/image/book.jpg);</string>
   </property>
   <widget class="QStackedWidget" name="stackedWidget">
    <property name="geometry">
@@ -24,6 +25,9 @@
      <width>641</width>
      <height>571</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/image/book.jpg);</string>
    </property>
    <property name="currentIndex">
     <number>0</number>

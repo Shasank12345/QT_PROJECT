@@ -423,6 +423,15 @@ void AdminTeacher_Edit::on_save_clicked()
         msgBox.exec();
         return;
     }
+    if (phn_no.length() != 10 ) {
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Warning);
+        msgBox.setWindowTitle("Input Error");
+        msgBox.setText("Please Enter valid  number:");
+        msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
+        msgBox.exec();
+        return;
+    }
     else if (subject.isEmpty() ){
 
         QMessageBox msgBox(this);
@@ -756,55 +765,111 @@ void AdminTeacher_Edit::on_phn_edit_clicked()
     phn_no=ui->lineEdit_38->text();
     teacher_id = ui->lineEdit_20->text();
 
+    if (phn_no.length() == 10 ) {
 
-    QSqlQuery qry;
+        QSqlQuery qry;
 
-    qry.prepare("SELECT * FROM teacher_data WHERE Teacher_ID = :teacher_id ");
-    qry.bindValue(":teacher_id", teacher_id);
-
-
-    if (!qry.exec()) {
-        QMessageBox msgBox(this);
-        msgBox.setIcon(QMessageBox::Warning);
-        msgBox.setWindowTitle("Database Error");
-        msgBox.setText("Failed to execute query: " + qry.lastError().text());
-        msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
-        msgBox.exec();
-        return;
-    }
-
-    if (qry.next()) {
-        qry.prepare("UPDATE teacher_data SET Phone_Number = :phn_no WHERE Teacher_ID = :teacher_id");
-        qry.bindValue(":phn_no", phn_no);
+        qry.prepare("SELECT * FROM teacher_data WHERE Teacher_ID = :teacher_id ");
         qry.bindValue(":teacher_id", teacher_id);
 
 
-        if (qry.exec()) {
-            QMessageBox msgBox(this);
-            msgBox.setIcon(QMessageBox::Information);
-            msgBox.setWindowTitle(" Success");
-            msgBox.setText("Phone Number updated successfully.");
-            msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
-            msgBox.exec();
-            return;
-        } else {
+        if (!qry.exec()) {
             QMessageBox msgBox(this);
             msgBox.setIcon(QMessageBox::Warning);
-            msgBox.setWindowTitle(" Update Failed");
-            msgBox.setText("Could not update the record: " + qry.lastError().text());
+            msgBox.setWindowTitle("Database Error");
+            msgBox.setText("Failed to execute query: " + qry.lastError().text());
             msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
             msgBox.exec();
             return;
         }
+        if (qry.next()) {
+            qry.prepare("UPDATE teacher_data SET Phone_Number = :phn_no WHERE Teacher_ID = :teacher_id");
+            qry.bindValue(":phn_no", phn_no);
+            qry.bindValue(":teacher_id", teacher_id);
+
+
+            if (qry.exec()) {
+                QMessageBox msgBox(this);
+                msgBox.setIcon(QMessageBox::Information);
+                msgBox.setWindowTitle(" Success");
+                msgBox.setText("Phone Number updated successfully.");
+                msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
+                msgBox.exec();
+                return;
+            } else {
+                QMessageBox msgBox(this);
+                msgBox.setIcon(QMessageBox::Warning);
+                msgBox.setWindowTitle(" Update Failed");
+                msgBox.setText("Could not update the record: " + qry.lastError().text());
+                msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
+                msgBox.exec();
+                return;
+            }
+        } else {
+            QMessageBox msgBox(this);
+            msgBox.setIcon(QMessageBox::Warning);
+            msgBox.setWindowTitle(" No Match Found");
+            msgBox.setText("No record found with the given Teacher ID.");
+            msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
+            msgBox.exec();
+            return;
+        }
+
+
     } else {
-        QMessageBox msgBox(this);
-        msgBox.setIcon(QMessageBox::Warning);
-        msgBox.setWindowTitle(" No Match Found");
-        msgBox.setText("No record found with the given Teacher ID.");
-        msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
-        msgBox.exec();
+        QMessageBox::warning(this, "Invalid Input", "Phone number must be exactly 10 digits.");
         return;
     }
+
+
+    // QSqlQuery qry;
+
+    // qry.prepare("SELECT * FROM teacher_data WHERE Teacher_ID = :teacher_id ");
+    // qry.bindValue(":teacher_id", teacher_id);
+
+
+    // if (!qry.exec()) {
+    //     QMessageBox msgBox(this);
+    //     msgBox.setIcon(QMessageBox::Warning);
+    //     msgBox.setWindowTitle("Database Error");
+    //     msgBox.setText("Failed to execute query: " + qry.lastError().text());
+    //     msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
+    //     msgBox.exec();
+    //     return;
+    // }
+
+    // if (qry.next()) {
+    //     qry.prepare("UPDATE teacher_data SET Phone_Number = :phn_no WHERE Teacher_ID = :teacher_id");
+    //     qry.bindValue(":phn_no", phn_no);
+    //     qry.bindValue(":teacher_id", teacher_id);
+
+
+    //     if (qry.exec()) {
+    //         QMessageBox msgBox(this);
+    //         msgBox.setIcon(QMessageBox::Information);
+    //         msgBox.setWindowTitle(" Success");
+    //         msgBox.setText("Phone Number updated successfully.");
+    //         msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
+    //         msgBox.exec();
+    //         return;
+    //     } else {
+    //         QMessageBox msgBox(this);
+    //         msgBox.setIcon(QMessageBox::Warning);
+    //         msgBox.setWindowTitle(" Update Failed");
+    //         msgBox.setText("Could not update the record: " + qry.lastError().text());
+    //         msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
+    //         msgBox.exec();
+    //         return;
+    //     }
+    // } else {
+    //     QMessageBox msgBox(this);
+    //     msgBox.setIcon(QMessageBox::Warning);
+    //     msgBox.setWindowTitle(" No Match Found");
+    //     msgBox.setText("No record found with the given Teacher ID.");
+    //     msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
+    //     msgBox.exec();
+    //     return;
+    // }
 }
 
 

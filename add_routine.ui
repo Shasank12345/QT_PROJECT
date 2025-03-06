@@ -14,7 +14,7 @@
    <string>Dialog</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-image: url(:/image/logipage.jpg);</string>
+   <string notr="true">background-image: url(:/image/book.jpg);</string>
   </property>
   <widget class="QWidget" name="layoutWidget_2">
    <property name="geometry">
@@ -295,8 +295,8 @@ color: black;
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>130</x>
-     <y>350</y>
+     <x>120</x>
+     <y>360</y>
      <width>451</width>
      <height>51</height>
     </rect>

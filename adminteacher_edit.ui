@@ -751,9 +751,9 @@ color: black;
     <widget class="QWidget" name="horizontalLayoutWidget_2">
      <property name="geometry">
       <rect>
-       <x>260</x>
+       <x>174</x>
        <y>300</y>
-       <width>295</width>
+       <width>381</width>
        <height>41</height>
       </rect>
      </property>
@@ -764,7 +764,7 @@ color: black;
          <string notr="true">color: rgb(0, 0, 0);</string>
         </property>
         <property name="text">
-         <string>HOME</string>
+         <string>LOGOUT</string>
         </property>
        </widget>
       </item>
@@ -928,7 +928,7 @@ color: black;
          <string notr="true">color: rgb(0, 0, 0);</string>
         </property>
         <property name="text">
-         <string>HOME</string>
+         <string>LOGOUT</string>
         </property>
        </widget>
       </item>
@@ -1092,7 +1092,7 @@ color: black;
          <string notr="true">color: rgb(0, 0, 0);</string>
         </property>
         <property name="text">
-         <string>HOME</string>
+         <string>LOGOUT</string>
         </property>
        </widget>
       </item>
@@ -1250,7 +1250,7 @@ color: black;
          <string notr="true">color: rgb(0, 0, 0);</string>
         </property>
         <property name="text">
-         <string>HOME</string>
+         <string>LOGOUT</string>
         </property>
        </widget>
       </item>
@@ -1412,6 +1412,16 @@ color: black;
        <number>100</number>
       </property>
       <item>
+       <widget class="QPushButton" name="home4">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string>LOGOUT</string>
+        </property>
+       </widget>
+      </item>
+      <item>
        <widget class="QPushButton" name="viewback">
         <property name="styleSheet">
          <string notr="true">color: rgb(0, 0, 0);</string>
@@ -1429,16 +1439,6 @@ color: rgb(0, 0, 0);</string>
         </property>
         <property name="text">
          <string>SHOW DATA</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="home4">
-        <property name="styleSheet">
-         <string notr="true">color: rgb(0, 0, 0);</string>
-        </property>
-        <property name="text">
-         <string>HOME</string>
         </property>
        </widget>
       </item>
