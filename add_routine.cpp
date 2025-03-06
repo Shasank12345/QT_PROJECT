@@ -165,7 +165,7 @@ void Add_routine::on_Save_clicked()
     QSqlQuery checkClassTime;
     checkClassTime.prepare(
         "SELECT COUNT(*) FROM routine "
-        "WHERE Day = :day AND ((Class_start <= :end AND Class_end >= :start))");
+        "WHERE Day = :day AND NOT (Class_end <= :start OR Class_start >= :end)");
     checkClassTime.bindValue(":day", day);
     checkClassTime.bindValue(":start", start);
     checkClassTime.bindValue(":end", end);
