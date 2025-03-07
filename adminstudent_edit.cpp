@@ -591,20 +591,20 @@ void AdminStudent_Edit::on_summit_clicked()
 
     }
     if(choose=="NAME")
-    {
+    {   ui->lineEdit_7->clear();
         ui->lineEdit_8->setText(id);
         ui->lineEdit_9->setText(name);
         ui->stackedWidget->setCurrentIndex(4);
     }
     else if(choose=="ADDRESS")
-    {
+    {   ui->lineEdit_23->clear();
         ui->lineEdit_22->setText(id);
         ui->lineEdit_12->setText(name);
          address(id);
         ui->stackedWidget->setCurrentIndex(6);
     }
     else if(choose=="CONTACT NUMBER")
-    {
+    {    ui->lineEdit_16->clear();
         ui->lineEdit_15->setText(id);
         ui->lineEdit_10->setText(name);
          phn(id);
@@ -612,7 +612,7 @@ void AdminStudent_Edit::on_summit_clicked()
     }
 
     else if(choose=="EMAIL")
-    {
+    {   ui->lineEdit_27->clear();
         ui->lineEdit_26->setText(id);
         ui->lineEdit_14->setText(name);
          email(id);
@@ -822,7 +822,7 @@ void AdminStudent_Edit::on_save5_clicked()
             msgBox.setIcon(QMessageBox::Warning);
             msgBox.setWindowTitle("Update failed");
             msgBox.setText("couldnot update the record:"+qry.lastError().text() );
-            msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
+            msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; } ");
             msgBox.exec();
             return;
         }

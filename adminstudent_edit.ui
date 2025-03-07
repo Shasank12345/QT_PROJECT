@@ -163,9 +163,9 @@
     <widget class="QWidget" name="horizontalLayoutWidget_2">
      <property name="geometry">
       <rect>
-       <x>160</x>
+       <x>170</x>
        <y>350</y>
-       <width>411</width>
+       <width>421</width>
        <height>35</height>
       </rect>
      </property>
@@ -414,8 +414,8 @@
     <widget class="QWidget" name="layoutWidget_2">
      <property name="geometry">
       <rect>
-       <x>110</x>
-       <y>410</y>
+       <x>130</x>
+       <y>400</y>
        <width>560</width>
        <height>51</height>
       </rect>
@@ -725,8 +725,8 @@
      <property name="geometry">
       <rect>
        <x>120</x>
-       <y>350</y>
-       <width>501</width>
+       <y>340</y>
+       <width>521</width>
        <height>33</height>
       </rect>
      </property>
@@ -783,10 +783,10 @@
     <widget class="QLabel" name="label_14">
      <property name="geometry">
       <rect>
-       <x>260</x>
+       <x>250</x>
        <y>50</y>
        <width>261</width>
-       <height>41</height>
+       <height>61</height>
       </rect>
      </property>
      <property name="font">
@@ -806,8 +806,8 @@
       <rect>
        <x>130</x>
        <y>150</y>
-       <width>511</width>
-       <height>128</height>
+       <width>531</width>
+       <height>131</height>
       </rect>
      </property>
      <layout class="QFormLayout" name="formLayout_3">
@@ -901,8 +901,8 @@
      <property name="geometry">
       <rect>
        <x>130</x>
-       <y>290</y>
-       <width>491</width>
+       <y>330</y>
+       <width>511</width>
        <height>38</height>
       </rect>
      </property>
@@ -947,7 +947,7 @@
        <x>240</x>
        <y>40</y>
        <width>281</width>
-       <height>41</height>
+       <height>61</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -962,7 +962,7 @@
       <rect>
        <x>90</x>
        <y>130</y>
-       <width>561</width>
+       <width>571</width>
        <height>170</height>
       </rect>
      </property>
@@ -1083,8 +1083,8 @@
     <widget class="QWidget" name="layoutWidget_6">
      <property name="geometry">
       <rect>
-       <x>80</x>
-       <y>300</y>
+       <x>90</x>
+       <y>340</y>
        <width>571</width>
        <height>38</height>
       </rect>
@@ -1148,7 +1148,7 @@
      <property name="geometry">
       <rect>
        <x>90</x>
-       <y>300</y>
+       <y>330</y>
        <width>591</width>
        <height>38</height>
       </rect>
@@ -1209,9 +1209,9 @@
     <widget class="QWidget" name="formLayoutWidget_6">
      <property name="geometry">
       <rect>
-       <x>100</x>
-       <y>120</y>
-       <width>571</width>
+       <x>90</x>
+       <y>130</y>
+       <width>581</width>
        <height>170</height>
       </rect>
      </property>
@@ -1332,10 +1332,10 @@
     <widget class="QLabel" name="label_26">
      <property name="geometry">
       <rect>
-       <x>260</x>
-       <y>10</y>
+       <x>230</x>
+       <y>40</y>
        <width>281</width>
-       <height>41</height>
+       <height>61</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -1350,9 +1350,9 @@
     <widget class="QWidget" name="formLayoutWidget_7">
      <property name="geometry">
       <rect>
-       <x>160</x>
-       <y>170</y>
-       <width>501</width>
+       <x>140</x>
+       <y>140</y>
+       <width>521</width>
        <height>181</height>
       </rect>
      </property>
@@ -1480,8 +1480,8 @@
       <rect>
        <x>140</x>
        <y>360</y>
-       <width>511</width>
-       <height>38</height>
+       <width>521</width>
+       <height>41</height>
       </rect>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout_16">
@@ -1507,6 +1507,10 @@
       </item>
       <item>
        <widget class="QPushButton" name="pushButton">
+        <property name="styleSheet">
+         <string notr="true">
+color: rgb(0, 0, 0);</string>
+        </property>
         <property name="text">
          <string>SAVE</string>
         </property>
@@ -1520,7 +1524,7 @@
        <x>260</x>
        <y>40</y>
        <width>281</width>
-       <height>41</height>
+       <height>61</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -1551,7 +1555,7 @@
        <x>230</x>
        <y>20</y>
        <width>281</width>
-       <height>41</height>
+       <height>71</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -1565,7 +1569,7 @@
      <property name="geometry">
       <rect>
        <x>120</x>
-       <y>140</y>
+       <y>130</y>
        <width>511</width>
        <height>111</height>
       </rect>
@@ -1626,7 +1630,7 @@
      <property name="geometry">
       <rect>
        <x>120</x>
-       <y>230</y>
+       <y>290</y>
        <width>511</width>
        <height>41</height>
       </rect>
@@ -1685,9 +1689,9 @@
     <widget class="QWidget" name="formLayoutWidget_9">
      <property name="geometry">
       <rect>
-       <x>110</x>
-       <y>160</y>
-       <width>601</width>
+       <x>140</x>
+       <y>150</y>
+       <width>541</width>
        <height>151</height>
       </rect>
      </property>
@@ -1786,12 +1790,12 @@
       </item>
      </layout>
     </widget>
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
-       <x>160</x>
-       <y>320</y>
-       <width>501</width>
+       <x>140</x>
+       <y>340</y>
+       <width>541</width>
        <height>31</height>
       </rect>
      </property>

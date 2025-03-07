@@ -55,7 +55,7 @@ void viewroutinestudent::on_pushButton_clicked()
         msgBox.setIcon(QMessageBox::Critical);
         msgBox.setWindowTitle(" Database Error  ");
         msgBox.setText("Failed to execute query: " + query.lastError().text());
-        msgBox.setStyleSheet("QLabel { color: black; }");
+        msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
         msgBox.exec();
         return;
     }
@@ -69,7 +69,7 @@ void viewroutinestudent::on_pushButton_clicked()
         msgBox.setIcon(QMessageBox::Warning);
         msgBox.setWindowTitle("No Data");
         msgBox.setText("No records found for the selected criteria.");
-        msgBox.setStyleSheet("QLabel { color: black; }");
+        msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
         msgBox.exec();
         return;
         qDebug() << "No data found!";
@@ -112,9 +112,10 @@ void viewroutinestudent::on_pushButton_clicked()
     msgBox.setIcon(QMessageBox::Information);
     msgBox.setWindowTitle("  Success");
     msgBox.setText("Data retrieved and displayed successfully!");
-    msgBox.setStyleSheet("QLabel { color: black; }");
+    msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
     msgBox.exec();
     return;
+
 
 
 }

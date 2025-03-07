@@ -119,7 +119,6 @@ void takeattendance::on_pushButton_clicked()
             msgBox.setIcon(QMessageBox::Warning);
             msgBox.setWindowTitle("ERROR");
             msgBox.setText("FAILED TO SAVE DATA"+ query.lastError().text());
-
             msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
             msgBox.exec();
             return;
@@ -162,7 +161,14 @@ void takeattendance::on_comboBox_currentTextChanged(const QString &Name)
         }
     } else {
         qDebug() << "Error retrieving student ID:" << query.lastError().text();
-        QMessageBox::warning(this, "Database Error", "Failed to load student ID: " + query.lastError().text());
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Warning);
+        msgBox.setWindowTitle("DATABASE ERROR");
+        msgBox.setText("FAILED TO LOAD STUDENT ID"+ query.lastError().text());
+        msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
+        msgBox.exec();
+        return;
+
     }
 
 

@@ -141,6 +141,10 @@ color: black;
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
      <widget class="QPushButton" name="Home">
+      <property name="styleSheet">
+       <string notr="true">
+color: rgb(0, 0, 0);</string>
+      </property>
       <property name="text">
        <string>HOME</string>
       </property>
@@ -148,6 +152,10 @@ color: black;
     </item>
     <item>
      <widget class="QPushButton" name="delete_2">
+      <property name="styleSheet">
+       <string notr="true">
+color: rgb(0, 0, 0);</string>
+      </property>
       <property name="text">
        <string>DELETE</string>
       </property>
@@ -155,6 +163,10 @@ color: black;
     </item>
     <item>
      <widget class="QPushButton" name="Back">
+      <property name="styleSheet">
+       <string notr="true">
+color: rgb(0, 0, 0);</string>
+      </property>
       <property name="text">
        <string>BACK</string>
       </property>

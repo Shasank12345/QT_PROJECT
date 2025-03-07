@@ -20,7 +20,7 @@
    <widget class="QTableView" name="tableView">
     <property name="geometry">
      <rect>
-      <x>120</x>
+      <x>130</x>
       <y>270</y>
       <width>551</width>
       <height>331</height>

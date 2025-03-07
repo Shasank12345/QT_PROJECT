@@ -22,7 +22,13 @@ LOGINWINDOW::LOGINWINDOW(QString role,QWidget *parent)
     db.setDatabaseName("../../FACULTY.db");
 
     if (!db.open()) {
-        QMessageBox::warning(this, "DATABASE ERROR", "FAILED TO OPEN THE DATABASE: " + db.lastError().text());
+
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Warning);
+        msgBox.setWindowTitle(" Database Error  ");
+        msgBox.setText("Failed to open the database: " + db.lastError().text());
+        msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
+        msgBox.exec();
         return;
     }
 
@@ -100,7 +106,7 @@ void LOGINWINDOW::on_pushButton_clicked()
         if (query.next()) {
            // QMessageBox::information(this, "LOGIN SUCCESSFUL", "WELCOME " + EMAIL);
             QMessageBox msgBox(this);
-            msgBox.setIcon(QMessageBox::Warning);
+            msgBox.setIcon(QMessageBox::Information);
             msgBox.setWindowTitle("LOGIN SUCCESSFUL");
             msgBox.setText("WELCOME" + EMAIL);
             // Apply a stylesheet to change text color in QLabel (which displays the text)

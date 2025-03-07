@@ -64,7 +64,7 @@ void EditRoutine::popo()
         msgBox.setIcon(QMessageBox::Warning);
         msgBox.setWindowTitle(" Database Error  ");
         msgBox.setText("Failed to retrieve Teacher IDs:  " + qry.lastError().text());
-        msgBox.setStyleSheet("QLabel { color: black; }");
+        msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
         msgBox.exec();
         return;
     }
@@ -96,7 +96,14 @@ void EditRoutine::on_comboBox_currentTextChanged(const QString &arg1)
     else {
 
         qDebug() << "Error retrieving:" << query.lastError().text();
-        QMessageBox::warning(this, "Database Error", "Failed to load: " + query.lastError().text());
+
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Warning);
+        msgBox.setWindowTitle(" Database Error  ");
+        msgBox.setText("Failed to load: " + query.lastError().text());
+        msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
+        msgBox.exec();
+        return;
     }
 
 
@@ -121,7 +128,13 @@ void EditRoutine::on_pushButton_4_clicked()
     }
     else{
         qDebug() << "Error retrieving:" << Q.lastError().text();
-        QMessageBox::warning(this, "Database Error", "Failed to load: " + Q.lastError().text());
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Warning);
+        msgBox.setWindowTitle(" Database Error  ");
+        msgBox.setText("Failed to load: " + Q.lastError().text());
+        msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
+        msgBox.exec();
+        return;
 
     }
     Q.prepare("SELECT Class_end FROM routine WHERE Teacher_name = ? AND Day = ?");
@@ -134,7 +147,13 @@ void EditRoutine::on_pushButton_4_clicked()
     }
     else{
         qDebug() << "Error retrieving:" << Q.lastError().text();
-        QMessageBox::warning(this, "Database Error", "Failed to load: " + Q.lastError().text());
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Warning);
+        msgBox.setWindowTitle(" Database Error  ");
+        msgBox.setText("Failed to load: " + Q.lastError().text());
+        msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
+        msgBox.exec();
+        return;
 
     }
 
@@ -195,7 +214,13 @@ void EditRoutine::on_comboBox_9_currentTextChanged(const QString &arg1)
     else {
 
         qDebug() << "Error retrieving:" << query.lastError().text();
-        QMessageBox::warning(this, "Database Error", "Failed to load: " + query.lastError().text());
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Warning);
+        msgBox.setWindowTitle(" Database Error  ");
+        msgBox.setText("Failed to Load: " + query.lastError().text());
+        msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
+        msgBox.exec();
+        return;
     }
 }
 

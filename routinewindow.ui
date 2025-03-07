@@ -30,7 +30,7 @@ background-image: url(:/image/book.jpg);</string>
     <string notr="true">background-image: url(:/image/book.jpg);</string>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="page">
     <widget class="QLabel" name="label">
@@ -100,6 +100,10 @@ color: black;
           <pointsize>15</pointsize>
          </font>
         </property>
+        <property name="styleSheet">
+         <string notr="true">
+color: rgb(0, 0, 0);</string>
+        </property>
         <property name="text">
          <string>ADD</string>
         </property>
@@ -131,6 +135,10 @@ color: black;
          <font>
           <pointsize>15</pointsize>
          </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+color: rgb(0, 0, 0);</string>
         </property>
         <property name="text">
          <string>VIEW</string>
@@ -184,6 +192,10 @@ color: black;
           <pointsize>15</pointsize>
          </font>
         </property>
+        <property name="styleSheet">
+         <string notr="true">
+color: rgb(0, 0, 0);</string>
+        </property>
         <property name="text">
          <string>DELETE</string>
         </property>
@@ -195,6 +207,10 @@ color: black;
          <font>
           <pointsize>15</pointsize>
          </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+color: rgb(0, 0, 0);</string>
         </property>
         <property name="text">
          <string>EDIT</string>
@@ -223,6 +239,10 @@ color: black;
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
        <widget class="QPushButton" name="home">
+        <property name="styleSheet">
+         <string notr="true">
+color: rgb(0, 0, 0);</string>
+        </property>
         <property name="text">
          <string>LOGOUT</string>
         </property>
@@ -230,6 +250,10 @@ color: black;
       </item>
       <item>
        <widget class="QPushButton" name="back">
+        <property name="styleSheet">
+         <string notr="true">
+color: rgb(0, 0, 0);</string>
+        </property>
         <property name="text">
          <string>BACK</string>
         </property>

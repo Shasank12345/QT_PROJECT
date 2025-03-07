@@ -49,7 +49,7 @@ void StudentWindow:: loadstudentname()
         msgBox.setIcon(QMessageBox::Warning);
         msgBox.setWindowTitle("Error");
         msgBox.setText("Failed to load student name: " + query.lastError().text());
-        msgBox.setStyleSheet("QLabel { color: black; }");
+        msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
         msgBox.exec();
     }
 }

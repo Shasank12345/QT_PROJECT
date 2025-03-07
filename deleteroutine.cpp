@@ -29,9 +29,14 @@ void deleteroutine::adddata()
             ui->comboBox->addItem(name);
         }
     } else {
-        QMessageBox::critical(this,
-                              "Database Error",
-                              "Failed to retrieve Teacher IDs: " + qry.lastError().text());
+
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Critical);
+        msgBox.setWindowTitle("DATABASE ERROR");
+        msgBox.setText("FAILED TO RETRIVE TEACHER IDS"+ qry.lastError().text());
+        msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
+        msgBox.exec();
+        return;
     }
 }
 
@@ -70,6 +75,13 @@ void deleteroutine::on_Delete_clicked()
     if (name.isEmpty() || day.isEmpty()) {
         QMessageBox::warning(this, "Input Error", "Please select both Name and Day.");
         return;
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Warning);
+        msgBox.setWindowTitle(" Input Error  ");
+        msgBox.setText("Please select both name and day: ");
+        msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
+        msgBox.exec();
+        return;
     }
     // Confirm deletion with the user
     QMessageBox::StandardButton reply = QMessageBox::question(
@@ -88,9 +100,23 @@ void deleteroutine::on_Delete_clicked()
     qry.bindValue(":day", day);
 
     if (qry.exec()) {
-        QMessageBox::information(this, "Success", "Routine deleted successfully.");
+
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Information);
+        msgBox.setWindowTitle(" Success  ");
+        msgBox.setText("Routine deleted successfully: ");
+        msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
+        msgBox.exec();
+        return;
     } else {
-        QMessageBox::critical(this, "Database Error", "Failed to delete routine: " + qry.lastError().text());
+
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Critical);
+        msgBox.setWindowTitle(" Database Error  ");
+        msgBox.setText("Failed to delete routine: " + qry.lastError().text());
+        msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
+        msgBox.exec();
+        return;
     }
 }
 
@@ -104,7 +130,14 @@ void deleteroutine::on_delete_2_clicked()
     QString day = ui->comboBox_2->currentText();
 
     if (name.isEmpty() || day.isEmpty()) {
-        QMessageBox::warning(this, "Input Error", "Please select both Name and Day.");
+
+        return;
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Warning);
+        msgBox.setWindowTitle(" Input Error  ");
+        msgBox.setText("Please select both name and day: ");
+        msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
+        msgBox.exec();
         return;
     }
     // Confirm deletion with the user
@@ -124,9 +157,23 @@ void deleteroutine::on_delete_2_clicked()
     qry.bindValue(":day", day);
 
     if (qry.exec()) {
-        QMessageBox::information(this, "Success", "Routine deleted successfully.");
+        ;
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Information);
+        msgBox.setWindowTitle(" Success  ");
+        msgBox.setText("Routine deleted successfully: ");
+        msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
+        msgBox.exec();
+        return;
     } else {
-        QMessageBox::critical(this, "Database Error", "Failed to delete routine: " + qry.lastError().text());
+
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Critical);
+        msgBox.setWindowTitle(" Database Error  ");
+        msgBox.setText("Failed to delete routine: " + qry.lastError().text());
+        msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
+        msgBox.exec();
+        return;
     }
 }
 
