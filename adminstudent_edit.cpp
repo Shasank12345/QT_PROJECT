@@ -1077,7 +1077,6 @@ void AdminStudent_Edit::on_update100_clicked()
     }
 }
 
-
 void AdminStudent_Edit::on_pushButton_3_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
@@ -1091,9 +1090,70 @@ void AdminStudent_Edit::on_pushButton_4_clicked()
     this->hide();
 }
 
+void AdminStudent_Edit::on_delet1_clicked()
+{
+    QString name=ui->lineEdit_18->text();
+    // Get the selected student_id from the combobox
+    QString student_id = ui->comboBox1->currentText();
+    QString id=student_id;
+    // Check if a valid student_id is selected
+    if (student_id.isEmpty()) {
+
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Warning);
+        msgBox.setWindowTitle("Input Error");
+        msgBox.setText("Please select a valid student Id to delete:");
+        msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
+        msgBox.exec();
+        return;
+    }
+    QMessageBox msgBox;
+    msgBox.setWindowTitle("Delete Confirmation");
+    msgBox.setText(QString("Are you sure you want to delete detail of " + name +" ?"));
+    msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
 
 
+    msgBox.setStyleSheet(
+        "QLabel { color:white; }"
+        "QPushButton {color:white; }"
+        );
 
+    QMessageBox::StandardButton reply = static_cast<QMessageBox::StandardButton>(msgBox.exec());
+
+    if (reply == QMessageBox::No) {
+        return;
+    }
+
+    // Prepare the SQL query to delete the Student record
+    QSqlQuery qry;
+    qry.prepare("DELETE FROM STUDENT_ENTRY WHERE Student_id = :student_id");
+    qry.bindValue(":student_id", student_id);
+    QSqlQuery qry1;
+    qry1.prepare("DELETE FROM LOGINSTUDENT WHERE ID = :id");
+    qry1.bindValue(":id", id);
+    // Execute the query
+    if (qry.exec()&& qry1.exec()) {
+
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Information);
+        msgBox.setWindowTitle("Success");
+        msgBox.setText("Student record has been deleted successfully:");
+        msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
+        msgBox.exec();
+        return;
+
+        // Refresh the combobox to reflect changes
+    } else {
+
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Critical);
+        msgBox.setWindowTitle("Database Error");
+        msgBox.setText("Failed to Delete the student record:"+qry.lastError().text() );
+        msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
+        msgBox.exec();
+        return;
+    }
+}
 
 
 
