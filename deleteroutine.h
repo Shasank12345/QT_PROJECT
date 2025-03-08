@@ -30,15 +30,14 @@ private slots:
 
     void on_delete_2_clicked();
 
-    //void on_comboBox_activated(int index);
 
-    //void on_comboBox_2_activated(int index);
 
+    void on_comboBox_2_currentTextChanged(const QString &arg1);
 
 private:
     Ui::deleteroutine *ui;
 public:
-    void adddata();
+   // void adddata();
     void day();
 };
 

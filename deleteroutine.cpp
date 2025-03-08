@@ -17,28 +17,6 @@ deleteroutine::deleteroutine(QWidget *parent)
 }
 
 
-void deleteroutine::adddata()
-{
-    ui->comboBox->clear();
-    QSqlQuery qry;
-    qry.prepare("SELECT Name FROM teacher_data");
-
-    if (qry.exec()) {
-        while (qry.next()) {
-            QString name = qry.value(0).toString();
-            ui->comboBox->addItem(name);
-        }
-    } else {
-
-        QMessageBox msgBox(this);
-        msgBox.setIcon(QMessageBox::Critical);
-        msgBox.setWindowTitle("DATABASE ERROR");
-        msgBox.setText("FAILED TO RETRIVE TEACHER IDS"+ qry.lastError().text());
-        msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
-        msgBox.exec();
-        return;
-    }
-}
 
 void deleteroutine::day()
 {
@@ -84,11 +62,12 @@ void deleteroutine::on_Delete_clicked()
         return;
     }
     // Confirm deletion with the user
-    QMessageBox::StandardButton reply = QMessageBox::question(
-        this, "Delete Confirmation",
-        "Are you sure you want to delete " + name + "routine ?",
-        QMessageBox::Yes | QMessageBox::No
-        );
+    QMessageBox msgBox;
+    msgBox.setWindowTitle("Delete Confirmation");
+    msgBox.setText(QString("Are you sure you want to delete <b><span style='color:black;'>%1</span></b> routine?").arg(name));
+    msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+
+    QMessageBox::StandardButton reply = static_cast<QMessageBox::StandardButton>(msgBox.exec());
 
     if (reply == QMessageBox::No) {
         return; // User canceled the deletion
@@ -140,40 +119,30 @@ void deleteroutine::on_delete_2_clicked()
         msgBox.exec();
         return;
     }
-    // Confirm deletion with the user
+    QMessageBox msgBox;
+    msgBox.setWindowTitle("Delete Confirmation");
+    msgBox.setText(QString("Are you sure you want to delete routine of").arg(name, day));
+    msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
 
-    // QMessageBox msgBox;
-    // msgBox.setStyleSheet("QLabel{ color: black; }");
-    // msgBox.setText("Are you sure you want to delete " + name + " routine of " + day + "?");
-    // msgBox.setWindowTitle("Delete Confirmation");
-    // msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
-    QMessageBox::StandardButton reply = QMessageBox::question(
-        this, "Delete Confirmation",
-        "Are you sure you want to delete " + name + " routine of " + day + "?",
-        QMessageBox::Yes | QMessageBox::No
+
+    msgBox.setStyleSheet(
+        "QLabel { color:white; }"
+        "QPushButton {color:white; }"
         );
 
-    QWidget *msgBox = findChild<QWidget*>("qt_msgbox_label");
-    if (msgBox) {
-        msgBox->setStyleSheet("color: black;");
-    }
-
-
-
-    // QMessageBox::StandardButton reply = static_cast<QMessageBox::StandardButton>(msgBox.exec());
-
+    QMessageBox::StandardButton reply = static_cast<QMessageBox::StandardButton>(msgBox.exec());
 
     if (reply == QMessageBox::No) {
         return; // User canceled the deletion
     }
 
     QSqlQuery qry;
-    qry.prepare("DELETE FROM routine WHERE Teacher_Name = :name AND Day = :day");
-    qry.bindValue(":name", name);
-    qry.bindValue(":day", day);
+    qry.prepare("DELETE FROM routine WHERE Teacher_Name = ? AND Day = ?");
+    qry.addBindValue(name);
+    qry.addBindValue(day);
 
     if (qry.exec()) {
-        ;
+
         QMessageBox msgBox(this);
         msgBox.setIcon(QMessageBox::Information);
         msgBox.setWindowTitle(" Success  ");
@@ -196,4 +165,30 @@ void deleteroutine::on_delete_2_clicked()
 
 
 
+
+
+void deleteroutine::on_comboBox_2_currentTextChanged(const QString &arg1)
+{
+    ui->comboBox->clear();
+    QSqlQuery qry;
+    qry.prepare("SELECT Teacher_Name FROM routine WHERE Day= ?");
+    qry.addBindValue(arg1);
+
+    if (qry.exec()) {
+        while (qry.next()) {
+            QString name = qry.value(0).toString();
+            ui->comboBox->addItem(name);
+        }
+    } else {
+
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Critical);
+        msgBox.setWindowTitle("DATABASE ERROR");
+        msgBox.setText("FAILED TO RETRIVE TEACHER NAME"+ qry.lastError().text());
+        msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
+        msgBox.exec();
+        return;
+    }
+
+}
 
