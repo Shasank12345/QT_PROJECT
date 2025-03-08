@@ -23,7 +23,7 @@ VIEWATTENDANCE::VIEWATTENDANCE(const QString &teacherEmail, const QString &teach
 
 void VIEWATTENDANCE::populatecombo2()
 {
-    ui->comboBox_3->addItems({"Sunday", "Monday", "Tuseday", "Wednesday", "Thrusday", "Friday"});
+    ui->comboBox_3->addItems({"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"});
 }
 
 

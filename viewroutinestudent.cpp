@@ -23,7 +23,7 @@ viewroutinestudent::~viewroutinestudent()
 
 void viewroutinestudent::populatecombo()
 {
-    ui->comboBox_3->addItems({"Sunday", "Monday", "Tuseday", "Wednesday", "Thrusday", "Friday"});
+    ui->comboBox_3->addItems({"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"});
 
 
 

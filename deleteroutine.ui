@@ -146,7 +146,7 @@ color: black;
 color: rgb(0, 0, 0);</string>
       </property>
       <property name="text">
-       <string>HOME</string>
+       <string>LOGOUT</string>
       </property>
      </widget>
     </item>

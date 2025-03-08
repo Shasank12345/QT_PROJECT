@@ -36,7 +36,7 @@ void Studentattendanceview::on_pushButton_5_clicked()
 
 void Studentattendanceview::days()
 {
-    ui->comboBox_4->addItems({"Sunday", "Monday", "Tuseday", "Wednesday", "Thrusday", "Friday"});
+    ui->comboBox_4->addItems({"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"});
 }
 
 

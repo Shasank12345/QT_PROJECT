@@ -88,7 +88,14 @@ void LOGINWINDOW::on_pushButton_clicked()
     } else if (userRole == "student") {
         table = "LOGINSTUDENT";
     } else {
-        QMessageBox::warning(this, "LOGIN ERROR", "Invalid user role selected.");
+
+        QMessageBox msgBox(this);
+        msgBox.setIcon(QMessageBox::Warning);
+        msgBox.setWindowTitle("LOGIN ERROR");
+        msgBox.setText("INVALID USER ROLE SELECTED");
+        // Apply a stylesheet to change text color in QLabel (which displays the text)
+        msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
+        msgBox.exec();
         return;
     }
 

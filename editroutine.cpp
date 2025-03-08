@@ -45,7 +45,7 @@ void EditRoutine::popu()
         return;
     }
 
-    ui->comboBox_2->addItems({"Sunday", "Monday", "Tuseday", "Wednesday", "Thrusday", "Friday"});
+    ui->comboBox_2->addItems({"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"});
 }
 void EditRoutine::popo()
 {

@@ -44,7 +44,7 @@ void takeattendance::populatecombox1()
 
 void takeattendance::populatecombo4()
 {
-     ui->comboBox_4->addItems({"Sunday", "Monday", "Tuseday", "Wednesday", "Thrusday", "Friday"});
+     ui->comboBox_4->addItems({"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"});
 
 }
 

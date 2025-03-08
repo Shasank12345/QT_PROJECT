@@ -40,7 +40,7 @@ void TeacherWindow::loadTeacherSubject()
         msgBox.setIcon(QMessageBox::Warning);
         msgBox.setWindowTitle("Error");
         msgBox.setText("Failed to load teacher subject: " + query.lastError().text());
-        msgBox.setStyleSheet("QLabel { color: black; }");
+        msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
         msgBox.exec();
     }
 }

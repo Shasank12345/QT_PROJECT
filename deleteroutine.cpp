@@ -42,7 +42,7 @@ void deleteroutine::adddata()
 
 void deleteroutine::day()
 {
-    ui->comboBox_2->addItems({"Sunday", "Monday", "Tuseday", "Wednesday", "Thrusday", "Friday"});
+    ui->comboBox_2->addItems({"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"});
 }
 
 
@@ -141,11 +141,27 @@ void deleteroutine::on_delete_2_clicked()
         return;
     }
     // Confirm deletion with the user
+
+    // QMessageBox msgBox;
+    // msgBox.setStyleSheet("QLabel{ color: black; }");
+    // msgBox.setText("Are you sure you want to delete " + name + " routine of " + day + "?");
+    // msgBox.setWindowTitle("Delete Confirmation");
+    // msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
     QMessageBox::StandardButton reply = QMessageBox::question(
         this, "Delete Confirmation",
-        "Are you sure you want to delete " + name + " routine of " + day +"?",
+        "Are you sure you want to delete " + name + " routine of " + day + "?",
         QMessageBox::Yes | QMessageBox::No
         );
+
+    QWidget *msgBox = findChild<QWidget*>("qt_msgbox_label");
+    if (msgBox) {
+        msgBox->setStyleSheet("color: black;");
+    }
+
+
+
+    // QMessageBox::StandardButton reply = static_cast<QMessageBox::StandardButton>(msgBox.exec());
+
 
     if (reply == QMessageBox::No) {
         return; // User canceled the deletion

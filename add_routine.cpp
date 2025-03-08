@@ -38,7 +38,7 @@ void Add_routine::adddata()
         msgBox.setIcon(QMessageBox::Warning);
         msgBox.setWindowTitle(" Database Error  ");
         msgBox.setText("Failed to retrieve Teacher IDs:  " + qry.lastError().text());
-        msgBox.setStyleSheet("QLabel { color: black; }");
+        msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
         msgBox.exec();
         return;
     }
@@ -46,7 +46,7 @@ void Add_routine::adddata()
 
 void Add_routine::day()
 {
-    ui->comboBox_3->addItems({"Sunday", "Monday", "Tuseday", "Wednesday", "Thrusday", "Friday"});
+    ui->comboBox_3->addItems({"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"});
 }
 
 
@@ -97,7 +97,7 @@ void Add_routine::on_search_clicked()
         msgBox.setIcon(QMessageBox::Warning);
         msgBox.setWindowTitle(" Database Error  ");
         msgBox.setText("Failed to retrieve Teacher IDs:  " + query.lastError().text());
-        msgBox.setStyleSheet("QLabel { color: black; }");
+        msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
         msgBox.exec();
         return;
     }
@@ -127,7 +127,7 @@ void Add_routine::on_Save_clicked()
         msgBox.setIcon(QMessageBox::Warning);
         msgBox.setWindowTitle("  Input Error ");
         msgBox.setText( "Please Select Subject.");
-        msgBox.setStyleSheet("QLabel { color: black; }");
+        msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
         msgBox.exec();
         return;
     }
@@ -137,7 +137,7 @@ void Add_routine::on_Save_clicked()
         msgBox.setIcon(QMessageBox::Warning);
         msgBox.setWindowTitle("  Input Error ");
         msgBox.setText( "Please Select Day.");
-        msgBox.setStyleSheet("QLabel { color: black; }");
+        msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
         msgBox.exec();
         return;
     }
@@ -146,7 +146,7 @@ void Add_routine::on_Save_clicked()
         msgBox.setIcon(QMessageBox::Warning);
         msgBox.setWindowTitle("  Input Error ");
         msgBox.setText( "Please Select Class Start Time.");
-        msgBox.setStyleSheet("QLabel { color: black; }");
+        msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
         msgBox.exec();
         return;
     }
@@ -156,7 +156,7 @@ void Add_routine::on_Save_clicked()
         msgBox.setIcon(QMessageBox::Warning);
         msgBox.setWindowTitle("  Input Error ");
         msgBox.setText( "Please Select Class end Time.");
-        msgBox.setStyleSheet("QLabel { color: black; }");
+        msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
         msgBox.exec();
         return;
     }
@@ -177,7 +177,7 @@ void Add_routine::on_Save_clicked()
             msgBox.setIcon(QMessageBox::Critical);
             msgBox.setWindowTitle("  Conflict  ");
             msgBox.setText( "This time slot is already occupied on " + day + ".");
-            msgBox.setStyleSheet("QLabel { color: black; }");
+            msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
             msgBox.exec();
             return;
         }
@@ -187,7 +187,7 @@ void Add_routine::on_Save_clicked()
         msgBox.setIcon(QMessageBox::Critical);
         msgBox.setWindowTitle(" Database Error  ");
         msgBox.setText("Failed to check schedule conflicts: " + checkClassTime.lastError().text());
-        msgBox.setStyleSheet("QLabel { color: black; }");
+        msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
         msgBox.exec();
         return;
         return;
@@ -208,7 +208,7 @@ void Add_routine::on_Save_clicked()
             msgBox.setIcon(QMessageBox::Critical);
             msgBox.setWindowTitle("  Conflict  ");
             msgBox.setText( name +"has class on "+ day);
-            msgBox.setStyleSheet("QLabel { color: black; }");
+            msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
             msgBox.exec();
             return;
         }
@@ -217,7 +217,7 @@ void Add_routine::on_Save_clicked()
         msgBox.setIcon(QMessageBox::Critical);
         msgBox.setWindowTitle(" Database Error  ");
         msgBox.setText("Failed to check for schedule conflicts: " + checkmultipleclass.lastError().text());
-        msgBox.setStyleSheet("QLabel { color: black; }");
+        msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
         msgBox.exec();
         return;
     }
@@ -236,7 +236,7 @@ void Add_routine::on_Save_clicked()
         msgBox.setIcon(QMessageBox::Information);
         msgBox.setWindowTitle("  Success");
         msgBox.setText("Teacher Routine saved successfully.");
-        msgBox.setStyleSheet("QLabel { color: black; }");
+        msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
         msgBox.exec();
         return;
 
@@ -245,7 +245,7 @@ void Add_routine::on_Save_clicked()
         msgBox.setIcon(QMessageBox::Critical);
         msgBox.setWindowTitle(" Database Error  ");
         msgBox.setText("Failed to save teacher information: " + insert.lastError().text());
-        msgBox.setStyleSheet("QLabel { color: black; }");
+        msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
         msgBox.exec();
         return;
     }
@@ -271,7 +271,7 @@ void Add_routine::on_comboBox_currentTextChanged(const QString &Name)
         msgBox.setIcon(QMessageBox::Critical);
         msgBox.setWindowTitle(" Database Error  ");
         msgBox.setText("Failed to retrive subject: " + query.lastError().text());
-        msgBox.setStyleSheet("QLabel { color: black; }");
+        msgBox.setStyleSheet("QLabel { color: black; }QPushButton { color: black; }");
         msgBox.exec();
         return;
 

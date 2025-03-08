@@ -31,7 +31,7 @@ VIEWROUTINE::VIEWROUTINE(QString t,QString s,QWidget *parent)
 
 void VIEWROUTINE::day()
 {
-    ui->comboBox_3->addItems({"Sunday", "Monday", "Tuseday", "Wednesday", "Thrusday", "Friday"});
+    ui->comboBox_3->addItems({"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"});
 }
 
 
